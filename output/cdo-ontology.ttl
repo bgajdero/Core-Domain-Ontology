@@ -4,6 +4,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @base <https://onto.colossi.network/cdo> .
 
 <https://onto.colossi.network/cdo> rdf:type owl:Ontology ;
@@ -13,11 +14,11 @@
         <http://purl.org/vocab/vann/preferredNamespaceUri> "https://raw.githubusercontent.com/bgajdero/Core-Data-Ontology/refs/heads/main/output/cdo-ontology.ttl" ;
         <http://purl.org/dc/elements/1.1/creator> "Paul Knowles (paul@secours.ai)" ,
                                                 "Bart Gajderowicz (bartg@mie.utoronto.ca)" ,
-                                                "Kieth Dugas (keith@secours.ai)" ;
+                                                "Keith Dugas (keith.dugas@secours.ai)" ;
         <http://purl.org/dc/elements/1.1/description> """Introducing an Informatics Domain Model and Core Data Ontology for Computational Systems.""" ;
-        <http://purl.org/dc/elements/1.1/issued> "2024-09-20T00:00:00"^^xsd:dateTime ;
-        <http://purl.org/dc/elements/1.1/modified> "2024-09-20T00:00:00"^^xsd:dateTime ;
-        <http://purl.org/dc/elements/1.1/rights> "Copyright @ 2024 Paul Knowles, Bart Gajderowicz" ;
+        <http://purl.org/dc/elements/1.1/issued> "2025-03-20T00:00:00"^^xsd:dateTime ;
+        <http://purl.org/dc/elements/1.1/modified> "2025-03-20T00:00:00"^^xsd:dateTime ;
+        <http://purl.org/dc/elements/1.1/rights> "Copyright @ 2024 Paul Knowles, Bart Gajderowicz, Keith Dugas" ;
         <http://purl.org/dc/elements/1.1/title> "Core Data Ontology" ;
         owl:versionInfo "1.0" .
 
@@ -31,16 +32,28 @@
             rdfs:range :Concept .
 
 
+###  https://onto.colossi.network/cdo#acknowledges
+:acknowledges rdf:type owl:ObjectProperty ;
+              rdfs:domain :Receipt ;
+              rdfs:range :Payload .
+
+
 ###  https://onto.colossi.network/cdo#capturedAs
 :capturedAs rdf:type owl:ObjectProperty ;
             rdfs:domain :Data ;
             rdfs:range :Object .
 
 
-###  https://onto.colossi.network/cdo#constitutes
-:constitutes rdf:type owl:ObjectProperty ;
-             rdfs:domain :Value ;
-             rdfs:range :Payload .
+###  https://onto.colossi.network/cdo#constructs
+:constructs rdf:type owl:ObjectProperty ;
+            rdfs:domain :Mechanism ;
+            rdfs:range :Scheme .
+
+
+###  https://onto.colossi.network/cdo#contains
+:contains rdf:type owl:ObjectProperty ;
+          rdfs:domain :Notice ;
+          rdfs:range :Frame .
 
 
 ###  https://onto.colossi.network/cdo#contextualizes
@@ -67,6 +80,18 @@
              rdfs:range :Term .
 
 
+###  https://onto.colossi.network/cdo#enables
+:enables rdf:type owl:ObjectProperty ;
+         rdfs:domain :Form ;
+         rdfs:range :Mechanism .
+
+
+###  https://onto.colossi.network/cdo#encodes
+:encodes rdf:type owl:ObjectProperty ;
+         rdfs:domain :Packet ;
+         rdfs:range :State .
+
+
 ###  https://onto.colossi.network/cdo#enteredAs
 :enteredAs rdf:type owl:ObjectProperty ;
            rdfs:domain :Data ;
@@ -81,26 +106,32 @@
 
 ###  https://onto.colossi.network/cdo#formsBasisOf
 :formsBasisOf rdf:type owl:ObjectProperty ;
-              rdfs:domain :Context ;
+              rdfs:domain :Note ;
               rdfs:range :Package .
 
 
-###  https://onto.colossi.network/cdo#hasAttributes
-:hasAttributes rdf:type owl:ObjectProperty ;
-               rdfs:domain :Schema ;
-               rdfs:range :Attribute .
+###  https://onto.colossi.network/cdo#fulfills
+:fulfills rdf:type owl:ObjectProperty ;
+          rdfs:domain :Method ;
+          rdfs:range :Purpose .
+
+
+###  https://onto.colossi.network/cdo#guides
+:guides rdf:type owl:ObjectProperty ;
+        rdfs:domain :Purpose ;
+        rdfs:range :Reason .
+
+
+###  https://onto.colossi.network/cdo#hasAttribute
+:hasAttribute rdf:type owl:ObjectProperty ;
+              rdfs:domain :Object ;
+              rdfs:range :Attribute .
 
 
 ###  https://onto.colossi.network/cdo#hasCausality
 :hasCausality rdf:type owl:ObjectProperty ;
               rdfs:domain :Event ;
               rdfs:range :Reason .
-
-
-###  https://onto.colossi.network/cdo#hasForm
-:hasForm rdf:type owl:ObjectProperty ;
-         rdfs:domain :Attribute ;
-         rdfs:range :Form .
 
 
 ###  https://onto.colossi.network/cdo#hasIntelligence
@@ -127,12 +158,6 @@
               rdfs:range :Scheme .
 
 
-###  https://onto.colossi.network/cdo#hasValidity
-:hasValidity rdf:type owl:ObjectProperty ;
-             rdfs:domain :Fact ;
-             rdfs:range :Package .
-
-
 ###  https://onto.colossi.network/cdo#initiates
 :initiates rdf:type owl:ObjectProperty ;
            rdfs:domain :Action ;
@@ -151,10 +176,10 @@
             rdfs:range :Goal .
 
 
-###  https://onto.colossi.network/cdo#isAddressedBy
-:isAddressedBy rdf:type owl:ObjectProperty ;
-               rdfs:domain :Effect ;
-               rdfs:range :Scheme .
+###  https://onto.colossi.network/cdo#isAcknowledgedBy
+:isAcknowledgedBy rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Record ;
+                  rdfs:range :Receipt .
 
 
 ###  https://onto.colossi.network/cdo#isAffectedBy
@@ -163,10 +188,16 @@
               rdfs:range :Cause .
 
 
-###  https://onto.colossi.network/cdo#isBasisFor
-:isBasisFor rdf:type owl:ObjectProperty ;
-            rdfs:domain :Packet ;
-            rdfs:range :Fact .
+###  https://onto.colossi.network/cdo#isAffirmedBy
+:isAffirmedBy rdf:type owl:ObjectProperty ;
+              rdfs:domain :Statement ;
+              rdfs:range :Fact .
+
+
+###  https://onto.colossi.network/cdo#isAggregatedIn
+:isAggregatedIn rdf:type owl:ObjectProperty ;
+                rdfs:domain :Log ;
+                rdfs:range :Ledger .
 
 
 ###  https://onto.colossi.network/cdo#isCausal
@@ -175,22 +206,59 @@
           rdfs:range :Effect .
 
 
-###  https://onto.colossi.network/cdo#isContextual
-:isContextual rdf:type owl:ObjectProperty ;
-              rdfs:domain :Frame ;
-              rdfs:range :Context .
+###  https://onto.colossi.network/cdo#isComposedOf
+:isComposedOf rdf:type owl:ObjectProperty ;
+              owl:inverseOf :isStemmaticTo ;
+              rdfs:domain :Log ;
+              rdfs:range :Record .
 
 
-###  https://onto.colossi.network/cdo#isDefinedBy
-:isDefinedBy rdf:type owl:ObjectProperty ;
-             rdfs:domain :Object ;
-             rdfs:range :Attribute .
+###  https://onto.colossi.network/cdo#isContexualizedBy
+:isContexualizedBy rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Interface ;
+                   rdfs:range :Frame .
 
 
-###  https://onto.colossi.network/cdo#isDocumentedIn
-:isDocumentedIn rdf:type owl:ObjectProperty ;
-                rdfs:domain :Term ;
-                rdfs:range :Notice .
+###  https://onto.colossi.network/cdo#isDeclaredBy
+:isDeclaredBy rdf:type owl:ObjectProperty ;
+              rdfs:domain :Payload ;
+              rdfs:range :Statement .
+
+
+###  https://onto.colossi.network/cdo#isEnabledBy
+:isEnabledBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Value ;
+             rdfs:range :Function .
+
+
+###  https://onto.colossi.network/cdo#isEncapsulatedBy
+:isEncapsulatedBy rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Field ;
+                  rdfs:range :Shell .
+
+
+###  https://onto.colossi.network/cdo#isEncodedAs
+:isEncodedAs rdf:type owl:ObjectProperty ;
+             rdfs:domain :Chart ;
+             rdfs:range :Text .
+
+
+###  https://onto.colossi.network/cdo#isEpistemicTo
+:isEpistemicTo rdf:type owl:ObjectProperty ;
+               rdfs:domain :Frame ;
+               rdfs:range :Notice .
+
+
+###  https://onto.colossi.network/cdo#isExecutedThrough
+:isExecutedThrough rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Function ;
+                   rdfs:range :Packet .
+
+
+###  https://onto.colossi.network/cdo#isExposedThrough
+:isExposedThrough rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Term ;
+                  rdfs:range :Interface .
 
 
 ###  https://onto.colossi.network/cdo#isExpressedAs
@@ -199,52 +267,94 @@
                rdfs:range :Method .
 
 
-###  https://onto.colossi.network/cdo#isFramedBy
-:isFramedBy rdf:type owl:ObjectProperty ;
-            rdfs:domain :Notice ;
-            rdfs:range :Frame .
-
-
 ###  https://onto.colossi.network/cdo#isJustifiedBy
 :isJustifiedBy rdf:type owl:ObjectProperty ;
                rdfs:domain :Method ;
                rdfs:range :Reason .
 
 
-###  https://onto.colossi.network/cdo#isLogged
-:isLogged rdf:type owl:ObjectProperty ;
-          rdfs:domain :Field ;
-          rdfs:range :Log .
+###  https://onto.colossi.network/cdo#isLoggedAs
+:isLoggedAs rdf:type owl:ObjectProperty ;
+            rdfs:domain :Packet ;
+            rdfs:range :Record .
 
 
-###  https://onto.colossi.network/cdo#isStemmatic
-:isStemmatic rdf:type owl:ObjectProperty ;
-             rdfs:domain :Log ;
-             rdfs:range :Record .
+###  https://onto.colossi.network/cdo#isPartOf
+:isPartOf rdf:type owl:ObjectProperty ;
+          rdfs:domain :Shell ;
+          rdfs:range :Record .
 
 
-###  https://onto.colossi.network/cdo#isSystemic
-:isSystemic rdf:type owl:ObjectProperty ;
-            rdfs:domain :Form ;
-            rdfs:range :Schema .
+###  https://onto.colossi.network/cdo#isProcessedBy
+:isProcessedBy rdf:type owl:ObjectProperty ;
+               rdfs:domain :Attribute ;
+               rdfs:range :Kernel .
 
 
-###  https://onto.colossi.network/cdo#isTextual
-:isTextual rdf:type owl:ObjectProperty ;
-           rdfs:domain :Schema ;
-           rdfs:range :Text .
+###  https://onto.colossi.network/cdo#isRealizedThrough
+:isRealizedThrough rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Effect ;
+                   rdfs:range :Mechanism .
 
 
-###  https://onto.colossi.network/cdo#isTractual
-:isTractual rdf:type owl:ObjectProperty ;
-            rdfs:domain :Record ;
-            rdfs:range :Track .
+###  https://onto.colossi.network/cdo#isRecordedIn
+:isRecordedIn rdf:type owl:ObjectProperty ;
+              rdfs:domain :State ;
+              rdfs:range :Log .
+
+
+###  https://onto.colossi.network/cdo#isReferencedBy
+:isReferencedBy rdf:type owl:ObjectProperty ;
+                rdfs:domain :Notice ;
+                rdfs:range :Policy .
+
+
+###  https://onto.colossi.network/cdo#isRegulatedBy
+:isRegulatedBy rdf:type owl:ObjectProperty ;
+               rdfs:domain :Notice ;
+               rdfs:range :Policy .
+
+
+###  https://onto.colossi.network/cdo#isStemmaticTo
+:isStemmaticTo rdf:type owl:ObjectProperty ;
+               rdfs:domain :Record ;
+               rdfs:range :Log .
+
+
+###  https://onto.colossi.network/cdo#isSystematic
+:isSystematic rdf:type owl:ObjectProperty ;
+              rdfs:domain :Packet ;
+              rdfs:range :Payload .
+
+
+###  https://onto.colossi.network/cdo#isSystemicTo
+:isSystemicTo rdf:type owl:ObjectProperty ;
+              rdfs:domain :Schema ;
+              rdfs:range :Form .
+
+
+###  https://onto.colossi.network/cdo#isTrackedBy
+:isTrackedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Ledger ;
+             rdfs:range :Track .
 
 
 ###  https://onto.colossi.network/cdo#isTransmittedBy
 :isTransmittedBy rdf:type owl:ObjectProperty ;
                  rdfs:domain :Payload ;
                  rdfs:range :Packet .
+
+
+###  https://onto.colossi.network/cdo#isVisualizedAs
+:isVisualizedAs rdf:type owl:ObjectProperty ;
+                rdfs:domain :Form ;
+                rdfs:range :Chart .
+
+
+###  https://onto.colossi.network/cdo#loggedAt
+:loggedAt rdf:type owl:ObjectProperty ;
+          rdfs:domain :Log ;
+          rdfs:range <http://www.w3.org/2006/time#Instant> .
 
 
 ###  https://onto.colossi.network/cdo#occursIn
@@ -257,6 +367,12 @@
 :processes rdf:type owl:ObjectProperty ;
            rdfs:domain :Action ;
            rdfs:range :Value .
+
+
+###  https://onto.colossi.network/cdo#structures
+:structures rdf:type owl:ObjectProperty ;
+            rdfs:domain :Kernel ;
+            rdfs:range :Schema .
 
 
 ###  https://onto.colossi.network/cdo#traces
@@ -277,34 +393,48 @@
            rdfs:range :Stemma .
 
 
-###  https://onto.colossi.network/cdo#utlizes
-:utlizes rdf:type owl:ObjectProperty ;
-         rdfs:domain :Package ;
-         rdfs:range :Method .
+###  https://onto.colossi.network/cdo#utilizes
+:utilizes rdf:type owl:ObjectProperty ;
+          rdfs:domain :Package ;
+          rdfs:range :Method .
+
+
+###  https://onto.colossi.network/cdo#validates
+:validates rdf:type owl:ObjectProperty ;
+           rdfs:domain :Fact ;
+           rdfs:range :Package .
 
 
 #################################################################
 #    Classes
 #################################################################
 
+###  http://www.w3.org/2006/time#Instant
+<http://www.w3.org/2006/time#Instant> rdf:type owl:Class .
+
+
 ###  https://onto.colossi.network/cdo#Action
 :Action rdf:type owl:Class ;
-        rdfs:subClassOf :Active .
+        rdfs:subClassOf :Active ;
+        rdfs:comment "The execution of a transformation or harmonization operation."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Active
 :Active rdf:type owl:Class ;
-        rdfs:subClassOf :Behaviour .
+        rdfs:subClassOf :Behaviour ;
+        rdfs:comment "A manually triggered pipeline process for schema adjustments. (Action)"^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Attribute
 :Attribute rdf:type owl:Class ;
-           rdfs:subClassOf :CDOThing .
+           rdfs:subClassOf :CDOThing ;
+           rdfs:comment "A specific metadata field (e.g., column name in a schema)."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Behaviour
 :Behaviour rdf:type owl:Class ;
-           rdfs:subClassOf :CDOThing .
+           rdfs:subClassOf :CDOThing ;
+           rdfs:comment "The monitoring of harmonization consistency across datasets. Superclass of Action and Object."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#CDOThing
@@ -315,158 +445,260 @@
 
 ###  https://onto.colossi.network/cdo#Cause
 :Cause rdf:type owl:Class ;
-       rdfs:subClassOf :CDOThing .
+       rdfs:subClassOf :CDOThing ;
+       rdfs:comment "The causal relationship between raw data variations and harmonization requirements. Relates Action to Object)."^^xsd:string .
+
+
+###  https://onto.colossi.network/cdo#Chart
+:Chart rdf:type owl:Class ;
+       rdfs:subClassOf :CDOThing ;
+       rdfs:comment "The rendered display with data from the form."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Concept
 :Concept rdf:type owl:Class ;
-         rdfs:subClassOf :Subjective .
-
-
-###  https://onto.colossi.network/cdo#Context
-:Context rdf:type owl:Class ;
-         rdfs:subClassOf :CDOThing .
+         rdfs:subClassOf :Subjective ;
+         rdfs:comment "The semantic mapping of schema elements to ontology terms."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Data
 :Data rdf:type owl:Class ;
-      rdfs:subClassOf :CDOThing .
+      rdfs:subClassOf :CDOThing ;
+      rdfs:comment "The structured and unstructured data ingested into the pipeline."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Effect
 :Effect rdf:type owl:Class ;
-        rdfs:subClassOf :CDOThing .
+        rdfs:subClassOf :CDOThing ;
+        rdfs:comment "The impact of schema standardization on downstream AI model performance. Relates Object to Event"^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Event
 :Event rdf:type owl:Class ;
-       rdfs:subClassOf :Objective .
+       rdfs:subClassOf :Objective ;
+       rdfs:comment "A new dataset ingestion or schema synthesis process initiation."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Fact
 :Fact rdf:type owl:Class ;
       rdfs:subClassOf :CDOThing ;
-      rdfs:comment "A Value is factual once a Packet's ACK (acknowledgement) message is received."^^xsd:string .
+      rdfs:comment "A verified, processed data point ensuring accuracy."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Field
 :Field rdf:type owl:Class ;
-       rdfs:subClassOf :CDOThing .
+       rdfs:subClassOf :CDOThing ;
+       rdfs:comment "A specific record field (e.g., a column within a structured dataset)."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Form
 :Form rdf:type owl:Class ;
-      rdfs:subClassOf :CDOThing .
+      rdfs:subClassOf :CDOThing ;
+      rdfs:comment "The DSL-formatted schema model used for standardization."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Frame
 :Frame rdf:type owl:Class ;
-       rdfs:subClassOf :CDOThing .
+       rdfs:subClassOf :CDOThing ;
+       rdfs:comment "The contextual metadata describing the relationship between schema attributes and ontology terms."^^xsd:string .
+
+
+###  https://onto.colossi.network/cdo#Function
+:Function rdf:type owl:Class ;
+          rdfs:subClassOf :CDOThing ;
+          rdfs:comment "The normalization and harmonization functions applied to data."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Goal
 :Goal rdf:type owl:Class ;
-      rdfs:subClassOf :CDOThing .
+      rdfs:subClassOf :CDOThing ;
+      rdfs:comment "The objec tive of transforming data into an AI-ready format. Relates Concept to Event."^^xsd:string .
+
+
+###  https://onto.colossi.network/cdo#Interface
+:Interface rdf:type owl:Class ;
+           rdfs:subClassOf :CDOThing ;
+           rdfs:comment "The API allowing external data sources to connect to the pipeline."^^xsd:string .
+
+
+###  https://onto.colossi.network/cdo#Kernel
+:Kernel rdf:type owl:Class ;
+        rdfs:subClassOf :CDOThing ;
+        rdfs:comment "The core processing unit performing schema synthesization."^^xsd:string .
+
+
+###  https://onto.colossi.network/cdo#Ledger
+:Ledger rdf:type owl:Class ;
+        rdfs:subClassOf :CDOThing ;
+        rdfs:comment "The immutable audit trail of all pipeline operations."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Log
 :Log rdf:type owl:Class ;
-     rdfs:subClassOf :CDOThing .
+     rdfs:subClassOf :CDOThing ;
+     rdfs:comment "The recorded process logs of the schema synthesization and transformation pipeline."^^xsd:string .
+
+
+###  https://onto.colossi.network/cdo#Mechanism
+:Mechanism rdf:type owl:Class ;
+           rdfs:subClassOf :CDOThing ;
+           rdfs:comment "The transformation logic applied to raw data during harmonization."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Method
 :Method rdf:type owl:Class ;
-        rdfs:subClassOf :CDOThing .
+        rdfs:subClassOf :CDOThing ;
+        rdfs:comment "The specific technique used for package harmonization and frame contextualization. Relates Action to Concept:"^^xsd:string .
+
+
+###  https://onto.colossi.network/cdo#Note
+:Note rdf:type owl:Class ;
+      rdfs:subClassOf :CDOThing ;
+      rdfs:comment "A record of human-interpreted decisions made in data transformation."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Notice
 :Notice rdf:type owl:Class ;
-        rdfs:subClassOf :CDOThing .
+        rdfs:subClassOf :CDOThing ;
+        rdfs:comment "A system alert regarding inconsistencies in harmonization or missing ontology mappings."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Object
 :Object rdf:type owl:Class ;
-        rdfs:subClassOf :Passive .
+        rdfs:subClassOf :Passive ;
+        rdfs:comment "The dataset ingested into the pipeline for processing."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Objective
 :Objective rdf:type owl:Class ;
-           rdfs:subClassOf :Perspective .
+           rdfs:subClassOf :Perspective ;
+           rdfs:comment "The measurable accuracy of harmonized data transformation. Superclass of Event."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Package
 :Package rdf:type owl:Class ;
-         rdfs:subClassOf :CDOThing .
+         rdfs:subClassOf :CDOThing ;
+         rdfs:comment "The complete harmonized dataset with transformation instructions."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Packet
 :Packet rdf:type owl:Class ;
-        rdfs:subClassOf :CDOThing .
+        rdfs:subClassOf :CDOThing ;
+        rdfs:comment "A data bundle of structured metadata and schema updates."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Passive
 :Passive rdf:type owl:Class ;
-         rdfs:subClassOf :Behaviour .
+         rdfs:subClassOf :Behaviour ;
+         rdfs:comment "A background validation system ensuring harmonized data integrity. (Object)"^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Payload
 :Payload rdf:type owl:Class ;
-         rdfs:subClassOf :CDOThing .
+         rdfs:subClassOf :CDOThing ;
+         rdfs:comment "The extracted and transformed structured dataset ready for training AI models."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Perspective
 :Perspective rdf:type owl:Class ;
-             rdfs:subClassOf :CDOThing .
+             rdfs:subClassOf :CDOThing ;
+             rdfs:comment "The interpretative stance on structuring AI training data. Can be an instance of either Subjective (superclass of Concept) or Objective (Superclass of Event)."^^xsd:string .
+
+
+###  https://onto.colossi.network/cdo#Policy
+:Policy rdf:type owl:Class ;
+        rdfs:subClassOf :CDOThing ;
+        rdfs:comment "The enforced data governance rules ensuring compliance."^^xsd:string .
+
+
+###  https://onto.colossi.network/cdo#Purpose
+:Purpose rdf:type owl:Class ;
+         rdfs:subClassOf :CDOThing ;
+         rdfs:comment "The intent behind structuring and harmonizing datasets for AI model training."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Reason
 :Reason rdf:type owl:Class ;
-        rdfs:subClassOf :CDOThing .
+        rdfs:subClassOf :CDOThing ;
+        rdfs:comment "The rationale for selecting specific schema transformations. Relates Action to Event."^^xsd:string .
+
+
+###  https://onto.colossi.network/cdo#Receipt
+:Receipt rdf:type owl:Class ;
+         rdfs:subClassOf :CDOThing ;
+         rdfs:comment "A cryptographic proof confirming a dataset transformation and validation."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Record
 :Record rdf:type owl:Class ;
-        rdfs:subClassOf :CDOThing .
+        rdfs:subClassOf :CDOThing ;
+        rdfs:comment "A harmonized data entry within the transformed dataset."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Schema
 :Schema rdf:type owl:Class ;
-        rdfs:subClassOf :CDOThing .
+        rdfs:subClassOf :CDOThing ;
+        rdfs:comment "The unified schema generated for harmonizing structured and unstructured data."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Scheme
 :Scheme rdf:type owl:Class ;
-        rdfs:subClassOf :CDOThing .
+        rdfs:subClassOf :CDOThing ;
+        rdfs:comment "The structured workflow guiding schema synthesis and frame contextualization. Relates Object to Concept."^^xsd:string .
+
+
+###  https://onto.colossi.network/cdo#Shell
+:Shell rdf:type owl:Class ;
+       rdfs:subClassOf :CDOThing ;
+       rdfs:comment "The secured environment protecting transformations at each stage."^^xsd:string .
+
+
+###  https://onto.colossi.network/cdo#State
+:State rdf:type owl:Class ;
+       rdfs:subClassOf :CDOThing ;
+       rdfs:comment "The current status of a dataset as it moves through pipeline stages."^^xsd:string .
+
+
+###  https://onto.colossi.network/cdo#Statement
+:Statement rdf:type owl:Class ;
+           rdfs:subClassOf :CDOThing ;
+           rdfs:comment "The declared compliance of a dataset with regulatory standards."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Stemma
 :Stemma rdf:type owl:Class ;
-        rdfs:subClassOf :CDOThing .
+        rdfs:subClassOf :CDOThing ;
+        rdfs:comment "The lineage representation of each transformation process, forming a full provenance record."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Subjective
 :Subjective rdf:type owl:Class ;
-            rdfs:subClassOf :Perspective .
+            rdfs:subClassOf :Perspective ;
+            rdfs:comment "The human-defined priority of ontology terms within semantic mapping. (Concept)"^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Term
 :Term rdf:type owl:Class ;
-      rdfs:subClassOf :CDOThing .
+      rdfs:subClassOf :CDOThing ;
+      rdfs:comment "A standardized term used for ontology-based contextualization."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Text
 :Text rdf:type owl:Class ;
-      rdfs:subClassOf :CDOThing .
+      rdfs:subClassOf :CDOThing ;
+      rdfs:comment "Unstructured data converted into structured format via NLP."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Track
 :Track rdf:type owl:Class ;
-       rdfs:subClassOf :CDOThing .
+       rdfs:subClassOf :CDOThing ;
+       rdfs:comment "The sequential tracking of dataset modifications across the pipeline."^^xsd:string .
 
 
 ###  https://onto.colossi.network/cdo#Value
 :Value rdf:type owl:Class ;
-       rdfs:subClassOf :CDOThing .
+       rdfs:subClassOf :CDOThing ;
+       rdfs:comment "A computed quality score assessing data integrity."^^xsd:string .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

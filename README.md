@@ -36,3 +36,8 @@ The following command uses thse defintoins to generate the .OWL file:
 1. Review output in [output/cdo-ontology.owl](output/cdo-ontology.owl)
 
 1. Use Protege to generate a Turle (.ttl) file from the .owl file, such as [output/cdo-ontology.ttl](output/cdo-ontology.ttl).
+
+#### Tests
+- Instances for testing purpuses can be found in [tests/cdo-ontology-instances.ttl](tests/cdo-ontology-instances.ttl).
+
+- The competency questions and SPARQL queries can be found in [tests/CompetencyQuestions-SPARQL.txt](tests/CompetencyQuestions-SPARQL.txt).

@@ -1,0 +1,360 @@
+@prefix : <https://onto.colossi.network/cdo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@base <https://onto.colossi.network/cdo> .
+
+:Object_patient_1_history a :Object;
+	rdfs:label "patient 1 anonymized medical history.".
+:Object_patient_2_history a :Object;
+	rdfs:label "patient 2 anonymized medical history.".
+:Object_patient_3_history a :Object;
+	rdfs:label "patient 3 anonymized medical history.".
+
+
+:Attribute_systolic_blood_pressure_120_mmhg a :Attribute;
+	rdfs:label "systolic blood pressure = 120 mm hg".
+:Attribute_diastolic_blood_pressure_80_mmhg a :Attribute;
+	rdfs:label "systolic blood pressure = 80 mm hg".
+
+
+:Kernel_differential_privacy_module a :Kernel;
+	rdfs:label "The core computational unit in a federated learning model (e.g., differential privacy module).".
+
+
+:Schema_patient_record_ab a :Schema;
+	rdfs:label "The standardized data model AB for patient records.".
+:Schema_patient_record_bc a :Schema;
+	rdfs:label "The standardized data model BC for patient records.".
+
+
+:Form_wellness_questionnaire a :Form;
+	rdfs:label "A structured questionnaire collecting patient-reported outcomes for a wellness study.".
+
+
+:Chart_patient_1_vitals a :Chart;
+	rdfs:label "A rendered dashboard showing aggregated patient 1 vitals (e.g., heart rate, glucose levels) over time for clinical review or model validation.".
+:Chart_patient_2_vitals a :Chart;
+	rdfs:label "A rendered dashboard showing aggregated patient 2 vitals (e.g., heart rate, glucose levels) over time for clinical review or model validation.".
+:Chart_patient_3_vitals a :Chart;
+	rdfs:label "A rendered dashboard showing aggregated patient 3 vitals (e.g., heart rate, glucose levels) over time for clinical review or model validation.".
+
+
+:Text_patient_1_clinician_a_diagnostics a :Text;
+	rdfs:label "A raw transcript of patient1-clinicianA interactions used for diagnostics.".
+:Text_patient_2_clinician_a_diagnostics a :Text;
+	rdfs:label "A raw transcript of patient2-clinicianA interactions used for diagnostics.".
+:Text_patient_3_clinician_a_diagnostics a :Text;
+	rdfs:label "A raw transcript of patient3-clinicianA interactions used for diagnostics.".
+:Text_patient_1_clinician_b_diagnostics a :Text;
+	rdfs:label "A raw transcript of patient1-clinicianB interactions used for diagnostics.".
+:Text_patient_2_clinician_b_diagnostics a :Text;
+	rdfs:label "A raw transcript of patient2-clinicianB interactions used for diagnostics.".
+:Text_patient_3_clinician_b_diagnostics a :Text;
+	rdfs:label "A raw transcript of patient3-clinicianB interactions used for diagnostics.".
+
+:Mechanism_homomorphic_encryption a :Mechanism;
+	rdfs:label "The homomorphic encryption method enabling privacy-preserving computation.".
+
+#Kinematical Causality
+#new events that generate, consume, or read data, concepts, and its tracing capabilities
+
+
+:Event_hospital_x_admission_recorded a :Event;
+	rdfs:label "A hospital X admission recorded in the federated learning dataset.".
+:Event_hospital_y_admission_recorded a :Event;
+	rdfs:label "A hospital Y admission recorded in the federated learning dataset.".
+:Event_hospital_z_admission_recorded a :Event;
+	rdfs:label "A hospital Z admission recorded in the federated learning dataset.".
+
+
+:Field_blood_presure_reading a :Field;
+	rdfs:label "A specific feature within a dataset, such as “blood pressure reading.”".
+
+
+:Shell_blood_pressure_calculations a :Shell;
+	rdfs:label "An isolated execution environment (e.g., trusted execution environment or secure enclave) that prevents unauthorized access to sensitive patient blood pressure data during federated computations by securely isolating patient-specific data during model training.".
+
+
+:Record_patient_1_blood_pressure_reading a :Record;
+	rdfs:label "Patient 1 data entry used in training (e.g., blood pressure reading).".
+:Record_patient_2_blood_pressure_reading a :Record;
+	rdfs:label "Patient 2 data entry used in training (e.g., blood pressure reading).".
+:Record_patient_3_blood_pressure_reading a :Record;
+	rdfs:label "Patient 3 data entry used in training (e.g., blood pressure reading).".
+
+
+:Log_blood_pressure_reading_1_1 a :Log;
+	rdfs:label "An activity log of model training using the patient 1 blood pressure reading, including timestamps of data exchanges.";
+    :loggedAt "2025-01-20T23:59:59Z"^^xsd:dateTimeStamp.
+:Log_blood_pressure_reading_1_2 a :Log;
+	rdfs:label "An activity log of model training using the patient 1 blood pressure reading, including timestamps of data exchanges.";
+    :loggedAt "2025-01-21T23:59:59Z"^^xsd:dateTimeStamp.
+:Log_blood_pressure_reading_1_3 a :Log;
+	rdfs:label "An activity log of model training using the patient 1 blood pressure reading, including timestamps of data exchanges.";
+    :loggedAt "2025-01-22T23:59:59Z"^^xsd:dateTimeStamp.
+:Log_blood_pressure_reading_2_1 a :Log;
+	rdfs:label "An activity log of model training using the patient 2 blood pressure reading, including timestamps of data exchanges.";
+    :loggedAt "2025-02-20T23:59:59Z"^^xsd:dateTimeStamp.
+:Log_blood_pressure_reading_2_2 a :Log;
+	rdfs:label "An activity log of model training using the patient 2 blood pressure reading, including timestamps of data exchanges.";
+    :loggedAt "2025-02-21T23:59:59Z"^^xsd:dateTimeStamp.
+:Log_blood_pressure_reading_2_3 a :Log;
+	rdfs:label "An activity log of model training using the patient 2 blood pressure reading, including timestamps of data exchanges.";
+    :loggedAt "2025-02-22T23:59:59Z"^^xsd:dateTimeStamp.
+:Log_blood_pressure_reading_3_1 a :Log;
+	rdfs:label "An activity log of model training using the patient 3 blood pressure reading, including timestamps of data exchanges.";
+    :loggedAt "2025-03-20T23:59:59Z"^^xsd:dateTimeStamp.
+:Log_blood_pressure_reading_3_2 a :Log;
+	rdfs:label "An activity log of model training using the patient 3 blood pressure reading, including timestamps of data exchanges.";
+    :loggedAt "2025-03-21T23:59:59Z"^^xsd:dateTimeStamp.
+:Log_blood_pressure_reading_3_3 a :Log;
+	rdfs:label "An activity log of model training using the patient 3 blood pressure reading, including timestamps of data exchanges.";
+    :loggedAt "2025-03-22T23:59:59Z"^^xsd:dateTimeStamp.
+
+
+:Ledger_blood_pressure_reading a :Ledger;
+	rdfs:label "A distributed audit trail of federated model updates across participating hospitals for a patient’s blood pressure reading.".
+
+
+:Track_blood_pressure_reading a :Track;
+	rdfs:label "The sequence of model weights updated over multiple training rounds using a patient’s blood pressure readings.".
+
+
+:Stemma_blood_pressure_reading a :Stemma;
+	rdfs:label "A provenance record tracing the lineage of a federated learning dataset that includes a patient’s blood pressure reading.".
+
+
+:State_cardivascular_training a :State;
+	rdfs:label "The current machine-determined condition of a cardiovascular dataset or predictive model at a specific point in its lifecycle is training — typically expressed as discrete, system-recognizable values".
+:State_cardivascular_ready a :State;
+	rdfs:label "The current machine-determined condition of a cardiovascular dataset or predictive model at a specific point in its lifecycle is ready for inference — typically expressed as discrete, system-recognizable values".
+:State_cardivascular_idle a :State;
+	rdfs:label "The current machine-determined condition of a cardiovascular dataset or predictive model at a specific point in its lifecycle is idle — typically expressed as discrete, system-recognizable values".
+:State_cardivascular_archived a :State;
+	rdfs:label "The current machine-determined condition of a cardiovascular dataset or predictive model at a specific point in its lifecycle is archived — typically expressed as discrete, system-recognizable values".
+
+#Dynamical Intelligence
+#execution of a module to perform some logable action, which results in an Event.
+#refers to the ability to adapt, learn, and respond effectively in ever-changing and unpredictable environments (e.g., imitation learning with minimal epochs for relearning as required).
+
+
+:Action_perscribed_treatment a :Action;
+	rdfs:label "The execution of a model-triggered operation, encompassing local model updates within a federated learning pipeline, as well as real-world responses such as prescribed treatments or interventions derived from diagnostic outputs.".
+
+
+:Value_diabetes_prediction_a1c_level_7_2 a :Value;
+	rdfs:label "A quantified metric such as “A1C level = 7.2%” in diabetes prediction.".
+
+
+:Function_differential_privacy_function a :Function;
+	rdfs:label "The differential privacy function applied to secure patient data contributions.".
+
+
+:Packet_graient_updates a :Packet;
+	rdfs:label "A secure data exchange bundle containing gradient updates from a hospital.".
+
+
+:Payload_patient_1_tensor_data a :Payload;
+	rdfs:label "The encrypted tensor data transferred between patient 1 devices in federated training.".
+:Payload_patient_2_tensor_data a :Payload;
+	rdfs:label "The encrypted tensor data transferred between patient 2 devices in federated training.".
+:Payload_patient_3_tensor_data a :Payload;
+	rdfs:label "The encrypted tensor data transferred between patient 3 devices in federated training.".
+
+
+:Statement_hospital_x_compliance_declaration a :Statement;
+	rdfs:label "A hospital X declaration of compliance with federated learning privacy policies.".
+:Statement_hospital_y_compliance_declaration a :Statement;
+	rdfs:label "A hospital Y declaration of compliance with federated learning privacy policies.".
+:Statement_hospital_z_compliance_declaration a :Statement;
+	rdfs:label "A hospital Z declaration of compliance with federated learning privacy policies.".
+
+
+:Fact_cardiovascular_finding a :Fact;
+	rdfs:label "A validated medical finding derived from federated learning insights.".
+
+
+:Package_blood_pressure_model_updates a :Package;
+	rdfs:label "A bundled set of federated model updates before aggregation.".
+
+
+:Receipt_received a :Receipt;
+	rdfs:label "A cryptographic proof that a model update was received.".
+:Receipt_verified a :Receipt;
+	rdfs:label "A cryptographic proof that a model update was verified.".
+
+#Epistemological Knowledge
+#external (local to application) definition of object being processed, along with its contextual meaning, classification, and intended purpose as defined through.
+
+:Concept_cardiovascular_risk a :Concept;
+	rdfs:label "The definition of “cardiovascular risk” in a federated model’s training objective.".
+
+
+:Term_hypertension a :Term;
+	rdfs:label "A standardized medical term (e.g., “Hypertension” ICD-11 code).".
+
+
+:Interface_hospital_x_api a :Interface;
+	rdfs:label "The API for hospital X to contribute de-identified data to the federation.".
+:Interface_hospital_y_api a :Interface;
+	rdfs:label "The API for hospital Y to contribute de-identified data to the federation.".
+:Interface_hospital_z_api a :Interface;
+	rdfs:label "The API for hospital Z to contribute de-identified data to the federation.".
+
+
+:Frame_patient_1_excercise_habits a :Frame;
+	rdfs:label "The contextual metadata describing patient 1 exercise habits for risk assessment.".
+:Frame_patient_2_excercise_habits a :Frame;
+	rdfs:label "The contextual metadata describing patient 2 exercise habits for risk assessment.".
+:Frame_patient_3_excercise_habits a :Frame;
+	rdfs:label "The contextual metadata describing patient 3 exercise habits for risk assessment.".
+
+
+:Notice_insufficient_data_diversity_alert a :Notice;
+	rdfs:label "An alert that a model update failed due to insufficient data diversity.".
+
+
+:Policy_hospital_x_federated_learning_participation_agreement a :Policy;
+	rdfs:label "The institution X federated learning participation agreement.".
+:Policy_hospital_y_federated_learning_participation_agreement a :Policy;
+	rdfs:label "The institution Y federated learning participation agreement.".
+:Policy_hospital_z_federated_learning_participation_agreement a :Policy;
+	rdfs:label "The institution Z federated learning participation agreement.".
+
+
+:Note_clinician_a_patient_1_training_note_1 a :Note;
+	rdfs:label "A clinician A comment or annotation (e.g., contraindications or data quality issues) explaining why a specific patient 1 record was excluded from model training.".
+:Note_clinician_a_patient_2_training_note_2 a :Note;
+	rdfs:label "A clinician A comment or annotation (e.g., contraindications or data quality issues) explaining why a specific patient 2 record was excluded from model training.".
+:Note_clinician_a_patient_3_training_note_3 a :Note;
+	rdfs:label "A clinician A comment or annotation (e.g., contraindications or data quality issues) explaining why a specific patient 3 record was excluded from model training.".
+:Note_clinician_b_patient_1_training_note_1 a :Note;
+	rdfs:label "A clinician B comment or annotation (e.g., contraindications or data quality issues) explaining why a specific patient 1 record was excluded from model training.".
+:Note_clinician_b_patient_2_training_note_2 a :Note;
+	rdfs:label "A clinician B comment or annotation (e.g., contraindications or data quality issues) explaining why a specific patient 2 record was excluded from model training.".
+:Note_clinician_b_patient_3_training_note_3 a :Note;
+	rdfs:label "A clinician B comment or annotation (e.g., contraindications or data quality issues) explaining why a specific patient 3 record was excluded from model training.".
+
+
+:Purpose_early_detection_of_type_2_diabetes a :Purpose;
+	rdfs:label "The intention behind a federated model: early detection of Type 2 diabetes.".
+
+#Domain Correlations
+:Scheme_structured_workflow_training_updates a :Scheme;
+	rdfs:label "A structured workflow for federated model training and updates.".
+
+
+:Reason_exclude_data_rationale a :Reason;
+	rdfs:label "The rationale for excluding certain patient data due to privacy constraints.".
+
+
+:Cause_correlation_detected_between_lifestyle_factor_and_cardiovascular_condition a :Cause;
+	rdfs:label "A detected correlation between a lifestyle factor (e.g., smoking) and the presence of a cardiovascular condition in a patient record.".
+
+
+:Effect_progression_to_cardiovascular_event a :Effect;
+	rdfs:label "The progression to a diagnosed cardiovascular event (e.g., heart attack) as recorded in the patient’s medical history—serving as both an observed outcome and a prognosis indicator.".
+
+
+:Method_generate_actionable_health_insights a :Method;
+	rdfs:label "The continuous patient monitoring technique applied to generate actionable health insights within the federated learning model.".
+
+
+:Goal_target_accuracy_improvement a :Goal;
+	rdfs:label "The target accuracy improvement for a federated model predicting heart disease risk.".
+
+
+
+
+# Relationships
+:Object_patient_1_history :hasAttribute :Attribute_diastolic_blood_pressure_80_mmhg.
+:Object_patient_1_history :hasAttribute :Attribute_systolic_blood_pressure_120_mmhg.
+:Object_patient_2_history :hasAttribute :Attribute_diastolic_blood_pressure_80_mmhg.
+:Object_patient_2_history :hasAttribute :Attribute_systolic_blood_pressure_120_mmhg.
+:Object_patient_3_history :hasAttribute :Attribute_diastolic_blood_pressure_80_mmhg.
+:Object_patient_3_history :hasAttribute :Attribute_systolic_blood_pressure_120_mmhg.
+
+:Attribute_diastolic_blood_pressure_80_mmhg :isProcessedBy :Kernel_differential_privacy_module.
+:Attribute_systolic_blood_pressure_120_mmhg :isProcessedBy :Kernel_differential_privacy_module.
+
+:Kernel_differential_privacy_module :structures :Schema_patient_record_ab.
+:Kernel_differential_privacy_module :structures :Schema_patient_record_bc.
+
+:Schema_patient_record_ab :isSystemicTo :Form_wellness_questionnaire.
+:Schema_patient_record_bc :isSystemicTo :Form_wellness_questionnaire.
+
+:Form_wellness_questionnaire :isVisualizedAs :Chart_patient_1_vitals.
+:Form_wellness_questionnaire :isVisualizedAs :Chart_patient_2_vitals.
+:Form_wellness_questionnaire :isVisualizedAs :Chart_patient_3_vitals.
+:Chart_patient_1_vitals :isEncodedAs :Text_patient_1_clinician_a_diagnostics.
+:Chart_patient_1_vitals :isEncodedAs :Text_patient_1_clinician_b_diagnostics.
+:Chart_patient_2_vitals :isEncodedAs :Text_patient_2_clinician_a_diagnostics.
+:Chart_patient_2_vitals :isEncodedAs :Text_patient_2_clinician_b_diagnostics.
+:Chart_patient_3_vitals :isEncodedAs :Text_patient_3_clinician_a_diagnostics.
+:Chart_patient_3_vitals :isEncodedAs :Text_patient_3_clinician_b_diagnostics.
+
+:Event_hospital_x_admission_recorded :occursIn :Field_blood_presure_reading.
+:Event_hospital_y_admission_recorded :occursIn :Field_blood_presure_reading.
+:Event_hospital_z_admission_recorded :occursIn :Field_blood_presure_reading.
+
+:Field_blood_presure_reading :isEncapsulatedBy :Shell_blood_pressure_calculations.
+:Field_blood_presure_reading :isEncapsulatedBy :Shell_blood_pressure_calculations.
+:Field_blood_presure_reading :isEncapsulatedBy :Shell_blood_pressure_calculations.
+
+:Shell_blood_pressure_calculations :isPartOf :Record_patient_1_blood_pressure_reading.
+:Shell_blood_pressure_calculations :isPartOf :Record_patient_2_blood_pressure_reading.
+:Shell_blood_pressure_calculations :isPartOf :Record_patient_3_blood_pressure_reading.
+
+:Record_patient_1_blood_pressure_reading :isStemmaticTo :Log_blood_pressure_reading_1_1.
+:Record_patient_1_blood_pressure_reading :isStemmaticTo :Log_blood_pressure_reading_1_2.
+:Record_patient_1_blood_pressure_reading :isStemmaticTo :Log_blood_pressure_reading_1_3.
+:Record_patient_2_blood_pressure_reading :isStemmaticTo :Log_blood_pressure_reading_2_1.
+:Record_patient_2_blood_pressure_reading :isStemmaticTo :Log_blood_pressure_reading_2_2.
+:Record_patient_2_blood_pressure_reading :isStemmaticTo :Log_blood_pressure_reading_2_3.
+:Record_patient_3_blood_pressure_reading :isStemmaticTo :Log_blood_pressure_reading_3_1.
+:Record_patient_3_blood_pressure_reading :isStemmaticTo :Log_blood_pressure_reading_3_2.
+:Record_patient_3_blood_pressure_reading :isStemmaticTo :Log_blood_pressure_reading_3_3.
+
+:Log_blood_pressure_reading_1_1 :isAggregatedIn :Ledger_blood_pressure_reading.
+:Log_blood_pressure_reading_1_2 :isAggregatedIn :Ledger_blood_pressure_reading.
+:Log_blood_pressure_reading_1_3 :isAggregatedIn :Ledger_blood_pressure_reading.
+:Log_blood_pressure_reading_2_1 :isAggregatedIn :Ledger_blood_pressure_reading.
+:Log_blood_pressure_reading_2_2 :isAggregatedIn :Ledger_blood_pressure_reading.
+:Log_blood_pressure_reading_2_3 :isAggregatedIn :Ledger_blood_pressure_reading.
+:Log_blood_pressure_reading_3_1 :isAggregatedIn :Ledger_blood_pressure_reading.
+:Log_blood_pressure_reading_3_2 :isAggregatedIn :Ledger_blood_pressure_reading.
+:Log_blood_pressure_reading_3_3 :isAggregatedIn :Ledger_blood_pressure_reading.
+
+:Ledger_blood_pressure_reading :isTrackedBy :Track_blood_pressure_reading.
+
+:Track_blood_pressure_reading :hasLineage :Stemma_blood_pressure_reading.
+:Text_patient_1_clinician_a_diagnostics :underpins :Stemma_blood_pressure_reading.
+:Text_patient_2_clinician_a_diagnostics :underpins :Stemma_blood_pressure_reading.
+:Text_patient_3_clinician_a_diagnostics :underpins :Stemma_blood_pressure_reading.
+:Text_patient_1_clinician_b_diagnostics :underpins :Stemma_blood_pressure_reading.
+:Text_patient_2_clinician_b_diagnostics :underpins :Stemma_blood_pressure_reading.
+:Text_patient_3_clinician_b_diagnostics :underpins :Stemma_blood_pressure_reading.
+
+:Stemma_blood_pressure_reading :traces :Effect_progression_to_cardiovascular_event.
+:Effect_progression_to_cardiovascular_event :isRealizedThrough :Mechanism_homomorphic_encryption.
+:Mechanism_homomorphic_encryption :constructs :Schema_patient_record_ab.
+:Mechanism_homomorphic_encryption :constructs :Schema_patient_record_bc.
+
+:Event_hospital_x_admission_recorded :demonstrates :Effect_progression_to_cardiovascular_event.
+:Event_hospital_y_admission_recorded :demonstrates :Effect_progression_to_cardiovascular_event.
+:Event_hospital_z_admission_recorded :demonstrates :Effect_progression_to_cardiovascular_event.
+
+:Object_patient_1_history :hasStructure :Schema_patient_record_ab.
+:Object_patient_2_history :hasStructure :Schema_patient_record_ab.
+:Object_patient_3_history :hasStructure :Schema_patient_record_bc.
+
+:Object_patient_1_history :isCausal :Effect_progression_to_cardiovascular_event.
+:Object_patient_2_history :isCausal :Effect_progression_to_cardiovascular_event.
+:Object_patient_3_history :isCausal :Effect_progression_to_cardiovascular_event.
+
+:Form_wellness_questionnaire :enables :Mechanism_homomorphic_encryption.
+

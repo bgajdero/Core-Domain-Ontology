@@ -1,0 +1,83 @@
+Competency Questions
+1. What data was provided in a patient's medical history?
+
+PREFIX : <https://onto.colossi.network/cdo#>
+select DISTINCT ?attribute 
+WHERE {
+    ?attribute a :Attribute.
+}
+
+
+
+2. What Schema was used to represent the patient's data?
+
+PREFIX : <https://onto.colossi.network/cdo#>
+select DISTINCT ?attribute ?schema
+WHERE {
+    ?attribute a :Attribute.
+    ?attribute :isProcessedBy [:structures ?schema].
+}
+
+
+3. What effect does the patient's data have?
+PREFIX : <https://onto.colossi.network/cdo#>
+select DISTINCT ?object ?effect
+WHERE {
+    ?object a :Object.
+    ?object :isCausal ?effect.
+}
+
+
+4. What Schema was used to have the effect?
+PREFIX : <https://onto.colossi.network/cdo#>
+select DISTINCT ?schema ?effect
+WHERE {
+    ?object a :Object.
+    ?object :hasAttribute ?attrib.
+    ?attrib :isProcessedBy ?kernal.
+    ?kernal :structures ?schema.
+    ?schema :isSystemicTo ?form.
+    ?form :isVisualizedAs ?chart.
+    ?chart :isEncodedAs ?text.
+    ?text :underpins ?stemma.
+    ?stemma :traces ?effect
+}
+
+
+5. What Scheme was used to structure the data?
+
+PREFIX : <https://onto.colossi.network/cdo#>
+select DISTINCT ?scheme ?attrib
+WHERE {
+    ?object a :Object.
+    ?object :hasAttribute ?attrib.
+    ?attrib :isProcessedBy ?kernal.
+    ?kernal :structures ?schema.
+    ?schema :isSystemicTo ?form.
+    ?form :isVisualizedAs ?chart.
+    ?chart :isEncodedAs ?text.
+    ?text :underpins ?stemma.
+    ?stemma :traces ?effect.
+    ?effect :isRealizedThrough ?mechanism.
+    ?mechanism :constructs ?scheme.
+}
+
+
+6. In what date range were the data logged on the ledger?
+
+PREFIX : <https://onto.colossi.network/cdo#>
+select DISTINCT ?attrib (min(?date) as ?min) (max(?date) as ?max)
+WHERE {
+    ?object a :Object.
+    ?object :hasAttribute ?attrib.
+    ?attrib :isProcessedBy ?kernal.
+    ?kernal :structures ?schema.
+    ?schema :isSystemicTo ?form.
+    ?form :isVisualizedAs ?chart.
+    ?chart :isEncodedAs ?text.
+    ?text :underpins ?stemma.
+    ?track :hasLineage ?stemma.
+    ?ledger :isTrackedBy ?track.
+    ?log :isAggregatedIn ?ledger.
+    ?log :loggedAt ?date.
+} group by ?attrib
