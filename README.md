@@ -15,9 +15,9 @@ This ontology can be cited as:
 
 Ontology: [output/cdo-ontology.owl](output/cdo-ontology.owl)
 
-Docs: [docs/index.html](docs/index.html)
+[Documentation](https://bartg.org/Core-Domain-Ontology/index.html)
 
-#### Tests
+#### Tests (drafts)
 - Instances for testing purpuses can be found in [tests/cdo-ontology-instances.ttl](tests/cdo-ontology-instances.ttl).
 
 - The competency questions and SPARQL queries can be found in [tests/CompetencyQuestions-SPARQL.txt](tests/CompetencyQuestions-SPARQL.txt).
