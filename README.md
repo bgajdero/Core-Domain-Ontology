@@ -15,6 +15,8 @@ This ontology can be cited as:
 
 Ontology: [output/cdo-ontology.owl](output/cdo-ontology.owl)
 
+Docs: [docs/index.html](docs/index.html)
+
 #### Tests
 - Instances for testing purpuses can be found in [tests/cdo-ontology-instances.ttl](tests/cdo-ontology-instances.ttl).
 
