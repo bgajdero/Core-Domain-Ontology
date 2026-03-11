@@ -1,0 +1,2842 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>Core Domain Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://onto.colossi.network/cdo#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://onto.colossi.network/cdo#","name":"Core Domain Ontology", "headline":"Document describing the ontology https://onto.colossi.network/cdo#", "dateReleased":"Wed Mar 11 12:21:46 MDT 2026", "dateModified":"2026-03-11", "version":"
+Version 1 March 11, 2026", "license":"http://creativecommons.org/licenses/by/3.0/", "author":[{"@type":"Person","name":"Bart Gajderowicz (bart.gajderowicz@usu.edu"},{"@type":"Person","name":"Keith Dugas (keith.dugas@secours.ai)"},{"@type":"Person","name":"Paul Knowles (paul@secours.ai)"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Core Domain Ontology</h1>
+
+
+<dl>
+<dt>Modified on: 2026-03-11</dt>
+<dt>Revision:</dt>
+<dd>
+Version 1 March 11, 2026</dd>
+<dt>Issued on:</dt>
+<dd>2025-03-20</dd>
+<dt>Authors:</dt>
+<dd>Bart Gajderowicz (bart.gajderowicz@usu.edu</dd><dd>Keith Dugas (keith.dugas@secours.ai)</dd><dd>Paul Knowles (paul@secours.ai)</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://creativecommons.org/licenses/by/3.0/" target="_blank"><img src="https://img.shields.io/badge/License-http://creativecommons.org/licenses/by/3.0/-blue.svg" alt="http://creativecommons.org/licenses/by/3.0/" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Bart Gajderowicz (bart.gajderowicz@usu.edu, Keith Dugas (keith.dugas@secours.ai), Paul Knowles (paul@secours.ai). Core Domain Ontology. Revision: 
+Version 1 March 11, 2026.</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+This is a placeholder text for the abstract. The abstract should contain a couple of sentences summarizing the ontology and its purpose.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Core Domain Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Action" title="https://onto.colossi.network/cdo#Action">
+         <span>Action</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Active" title="https://onto.colossi.network/cdo#Active">
+         <span>Active</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Attribute" title="https://onto.colossi.network/cdo#Attribute">
+         <span>Attribute</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Behaviour" title="https://onto.colossi.network/cdo#Behaviour">
+         <span>Behaviour</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Card" title="https://onto.colossi.network/cdo#Card">
+         <span>Card</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Cause" title="https://onto.colossi.network/cdo#Cause">
+         <span>Cause</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Chart" title="https://onto.colossi.network/cdo#Chart">
+         <span>Chart</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Concept" title="https://onto.colossi.network/cdo#Concept">
+         <span>Concept</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Domain" title="https://onto.colossi.network/cdo#Domain">
+         <span>Domain</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Effect" title="https://onto.colossi.network/cdo#Effect">
+         <span>Effect</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Event" title="https://onto.colossi.network/cdo#Event">
+         <span>Event</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Fact" title="https://onto.colossi.network/cdo#Fact">
+         <span>Fact</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Field" title="https://onto.colossi.network/cdo#Field">
+         <span>Field</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Form" title="https://onto.colossi.network/cdo#Form">
+         <span>Form</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Frame" title="https://onto.colossi.network/cdo#Frame">
+         <span>Frame</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Function" title="https://onto.colossi.network/cdo#Function">
+         <span>Function</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Goal" title="https://onto.colossi.network/cdo#Goal">
+         <span>Goal</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Index" title="https://onto.colossi.network/cdo#Index">
+         <span>Index</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Ledger" title="https://onto.colossi.network/cdo#Ledger">
+         <span>Ledger</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Log" title="https://onto.colossi.network/cdo#Log">
+         <span>Log</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Mechanism" title="https://onto.colossi.network/cdo#Mechanism">
+         <span>Mechanism</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Method" title="https://onto.colossi.network/cdo#Method">
+         <span>Method</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Note" title="https://onto.colossi.network/cdo#Note">
+         <span>Note</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Notice" title="https://onto.colossi.network/cdo#Notice">
+         <span>Notice</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Object" title="https://onto.colossi.network/cdo#Object">
+         <span>Object</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Objective" title="https://onto.colossi.network/cdo#Objective">
+         <span>Objective</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Package" title="https://onto.colossi.network/cdo#Package">
+         <span>Package</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Packet" title="https://onto.colossi.network/cdo#Packet">
+         <span>Packet</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Parameter" title="https://onto.colossi.network/cdo#Parameter">
+         <span>Parameter</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Passive" title="https://onto.colossi.network/cdo#Passive">
+         <span>Passive</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Payload" title="https://onto.colossi.network/cdo#Payload">
+         <span>Payload</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Perspective" title="https://onto.colossi.network/cdo#Perspective">
+         <span>Perspective</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Policy" title="https://onto.colossi.network/cdo#Policy">
+         <span>Policy</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Purpose" title="https://onto.colossi.network/cdo#Purpose">
+         <span>Purpose</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Reason" title="https://onto.colossi.network/cdo#Reason">
+         <span>Reason</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Receipt" title="https://onto.colossi.network/cdo#Receipt">
+         <span>Receipt</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Record" title="https://onto.colossi.network/cdo#Record">
+         <span>Record</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Schema" title="https://onto.colossi.network/cdo#Schema">
+         <span>Schema</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Scheme" title="https://onto.colossi.network/cdo#Scheme">
+         <span>Scheme</span>
+      </a>
+   </li>
+   <li>
+      <a href="#State" title="https://onto.colossi.network/cdo#State">
+         <span>State</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Statement" title="https://onto.colossi.network/cdo#Statement">
+         <span>Statement</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Stemma" title="https://onto.colossi.network/cdo#Stemma">
+         <span>Stemma</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Subjective" title="https://onto.colossi.network/cdo#Subjective">
+         <span>Subjective</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Term" title="https://onto.colossi.network/cdo#Term">
+         <span>Term</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Text" title="https://onto.colossi.network/cdo#Text">
+         <span>Text</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Token" title="https://onto.colossi.network/cdo#Token">
+         <span>Token</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Track" title="https://onto.colossi.network/cdo#Track">
+         <span>Track</span>
+      </a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#accessedBy" title="https://onto.colossi.network/cdo#accessedBy">
+         <span>accessed By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#acknowledges" title="https://onto.colossi.network/cdo#acknowledges">
+         <span>acknowledges</span>
+      </a>
+   </li>
+   <li>
+      <a href="#affirms" title="https://onto.colossi.network/cdo#affirms">
+         <span>affirms</span>
+      </a>
+   </li>
+   <li>
+      <a href="#aimsToward" title="https://onto.colossi.network/cdo#aimsToward">
+         <span>aims Toward</span>
+      </a>
+   </li>
+   <li>
+      <a href="#annotates" title="https://onto.colossi.network/cdo#annotates">
+         <span>annotates</span>
+      </a>
+   </li>
+   <li>
+      <a href="#authorizes" title="https://onto.colossi.network/cdo#authorizes">
+         <span>authorizes</span>
+      </a>
+   </li>
+   <li>
+      <a href="#capturedAs" title="https://onto.colossi.network/cdo#capturedAs">
+         <span>captured As</span>
+      </a>
+   </li>
+   <li>
+      <a href="#conditions" title="https://onto.colossi.network/cdo#conditions">
+         <span>conditions</span>
+      </a>
+   </li>
+   <li>
+      <a href="#constructs" title="https://onto.colossi.network/cdo#constructs">
+         <span>constructs</span>
+      </a>
+   </li>
+   <li>
+      <a href="#defines" title="https://onto.colossi.network/cdo#defines">
+         <span>defines</span>
+      </a>
+   </li>
+   <li>
+      <a href="#definesLayoutFor"
+         title="https://onto.colossi.network/cdo#definesLayoutFor">
+         <span>defines Layout For</span>
+      </a>
+   </li>
+   <li>
+      <a href="#delivers" title="https://onto.colossi.network/cdo#delivers">
+         <span>delivers</span>
+      </a>
+   </li>
+   <li>
+      <a href="#documents" title="https://onto.colossi.network/cdo#documents">
+         <span>documents</span>
+      </a>
+   </li>
+   <li>
+      <a href="#encapsulates" title="https://onto.colossi.network/cdo#encapsulates">
+         <span>encapsulates</span>
+      </a>
+   </li>
+   <li>
+      <a href="#enteredAs" title="https://onto.colossi.network/cdo#enteredAs">
+         <span>entered As</span>
+      </a>
+   </li>
+   <li>
+      <a href="#exchangedThrough"
+         title="https://onto.colossi.network/cdo#exchangedThrough">
+         <span>exchanged Through</span>
+      </a>
+   </li>
+   <li>
+      <a href="#frames" title="https://onto.colossi.network/cdo#frames">
+         <span>frames</span>
+      </a>
+   </li>
+   <li>
+      <a href="#fulfills" title="https://onto.colossi.network/cdo#fulfills">
+         <span>fulfills</span>
+      </a>
+   </li>
+   <li>
+      <a href="#guides" title="https://onto.colossi.network/cdo#guides">
+         <span>guides</span>
+      </a>
+   </li>
+   <li>
+      <a href="#initiates" title="https://onto.colossi.network/cdo#initiates">
+         <span>initiates</span>
+      </a>
+   </li>
+   <li>
+      <a href="#interprets" title="https://onto.colossi.network/cdo#interprets">
+         <span>interprets</span>
+      </a>
+   </li>
+   <li>
+      <a href="#invokes" title="https://onto.colossi.network/cdo#invokes">
+         <span>invokes</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isActivatedBy" title="https://onto.colossi.network/cdo#isActivatedBy">
+         <span>is Activated By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isAddressedBy" title="https://onto.colossi.network/cdo#isAddressedBy">
+         <span>is Addressed By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isAnnotatedBy" title="https://onto.colossi.network/cdo#isAnnotatedBy">
+         <span>is Annotated By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isBundledIn" title="https://onto.colossi.network/cdo#isBundledIn">
+         <span>is Bundled In</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isCommittedTo" title="https://onto.colossi.network/cdo#isCommittedTo">
+         <span>is Committed To</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isDescribedBy" title="https://onto.colossi.network/cdo#isDescribedBy">
+         <span>is Described By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isDrivenBy" title="https://onto.colossi.network/cdo#isDrivenBy">
+         <span>is Driven By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isExpressedBy" title="https://onto.colossi.network/cdo#isExpressedBy">
+         <span>is Expressed By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isImpactedBy" title="https://onto.colossi.network/cdo#isImpactedBy">
+         <span>is Impacted By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isInstanceOf" title="https://onto.colossi.network/cdo#isInstanceOf">
+         <span>is Instance Of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isModifiedBy" title="https://onto.colossi.network/cdo#isModifiedBy">
+         <span>is Modified By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isPackagedAs" title="https://onto.colossi.network/cdo#isPackagedAs">
+         <span>is Packaged As</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isRealizedThrough"
+         title="https://onto.colossi.network/cdo#isRealizedThrough">
+         <span>is Realized Through</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isRecordedAs" title="https://onto.colossi.network/cdo#isRecordedAs">
+         <span>is Recorded As</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isRegisteredBy" title="https://onto.colossi.network/cdo#isRegisteredBy">
+         <span>is Registered By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isRepresentedBy" title="https://onto.colossi.network/cdo#isRepresentedBy">
+         <span>is Represented By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isStructuredBy" title="https://onto.colossi.network/cdo#isStructuredBy">
+         <span>is Structured By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isTransmittedAs" title="https://onto.colossi.network/cdo#isTransmittedAs">
+         <span>is Transmitted As</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isWrittenTo" title="https://onto.colossi.network/cdo#isWrittenTo">
+         <span>is Written To</span>
+      </a>
+   </li>
+   <li>
+      <a href="#loggedAt" title="https://onto.colossi.network/cdo#loggedAt">
+         <span>logged At</span>
+      </a>
+   </li>
+   <li>
+      <a href="#occursIn" title="https://onto.colossi.network/cdo#occursIn">
+         <span>occurs In</span>
+      </a>
+   </li>
+   <li>
+      <a href="#orders" title="https://onto.colossi.network/cdo#orders">
+         <span>orders</span>
+      </a>
+   </li>
+   <li>
+      <a href="#produces" title="https://onto.colossi.network/cdo#produces">
+         <span>produces</span>
+      </a>
+   </li>
+   <li>
+      <a href="#qualifies" title="https://onto.colossi.network/cdo#qualifies">
+         <span>qualifies</span>
+      </a>
+   </li>
+   <li>
+      <a href="#realizes" title="https://onto.colossi.network/cdo#realizes">
+         <span>realizes</span>
+      </a>
+   </li>
+   <li>
+      <a href="#represents" title="https://onto.colossi.network/cdo#represents">
+         <span>represents</span>
+      </a>
+   </li>
+   <li>
+      <a href="#stimulates" title="https://onto.colossi.network/cdo#stimulates">
+         <span>stimulates</span>
+      </a>
+   </li>
+   <li>
+      <a href="#supports" title="https://onto.colossi.network/cdo#supports">
+         <span>supports</span>
+      </a>
+   </li>
+   <li>
+      <a href="#traces" title="https://onto.colossi.network/cdo#traces">
+         <span>traces</span>
+      </a>
+   </li>
+   <li>
+      <a href="#undergoes" title="https://onto.colossi.network/cdo#undergoes">
+         <span>undergoes</span>
+      </a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">Core Domain Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">
+Core Domain Ontology (CDO) is a semantic model developed to support the Informatics Domain Model IDM. 
+The CDO is structured around five central nodes: objects, events, concepts, actions, and domain, which 
+underpin various aspects of planning, reasoning, and execution in digital systems. It enables 
+decentralized data representation, transformation, and alignment. 
+                                </span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Core Domain Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Core Domain Ontology.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#Action" title="https://onto.colossi.network/cdo#Action"> <span>Action</span> </a></li>
+  <li><a href="#Active" title="https://onto.colossi.network/cdo#Active"> <span>Active</span> </a></li>
+  <li><a href="#Attribute" title="https://onto.colossi.network/cdo#Attribute"> <span>Attribute</span> </a></li>
+  <li><a href="#Behaviour" title="https://onto.colossi.network/cdo#Behaviour"> <span>Behaviour</span> </a></li>
+  <li><a href="#Card" title="https://onto.colossi.network/cdo#Card"> <span>Card</span> </a></li>
+  <li><a href="#Cause" title="https://onto.colossi.network/cdo#Cause"> <span>Cause</span> </a></li>
+  <li><a href="#Chart" title="https://onto.colossi.network/cdo#Chart"> <span>Chart</span> </a></li>
+  <li><a href="#Concept" title="https://onto.colossi.network/cdo#Concept"> <span>Concept</span> </a></li>
+  <li><a href="#Domain" title="https://onto.colossi.network/cdo#Domain"> <span>Domain</span> </a></li>
+  <li><a href="#Effect" title="https://onto.colossi.network/cdo#Effect"> <span>Effect</span> </a></li>
+  <li><a href="#Event" title="https://onto.colossi.network/cdo#Event"> <span>Event</span> </a></li>
+  <li><a href="#Fact" title="https://onto.colossi.network/cdo#Fact"> <span>Fact</span> </a></li>
+  <li><a href="#Field" title="https://onto.colossi.network/cdo#Field"> <span>Field</span> </a></li>
+  <li><a href="#Form" title="https://onto.colossi.network/cdo#Form"> <span>Form</span> </a></li>
+  <li><a href="#Frame" title="https://onto.colossi.network/cdo#Frame"> <span>Frame</span> </a></li>
+  <li><a href="#Function" title="https://onto.colossi.network/cdo#Function"> <span>Function</span> </a></li>
+  <li><a href="#Goal" title="https://onto.colossi.network/cdo#Goal"> <span>Goal</span> </a></li>
+  <li><a href="#Index" title="https://onto.colossi.network/cdo#Index"> <span>Index</span> </a></li>
+  <li><a href="#Ledger" title="https://onto.colossi.network/cdo#Ledger"> <span>Ledger</span> </a></li>
+  <li><a href="#Log" title="https://onto.colossi.network/cdo#Log"> <span>Log</span> </a></li>
+  <li><a href="#Mechanism" title="https://onto.colossi.network/cdo#Mechanism"> <span>Mechanism</span> </a></li>
+  <li><a href="#Method" title="https://onto.colossi.network/cdo#Method"> <span>Method</span> </a></li>
+  <li><a href="#Note" title="https://onto.colossi.network/cdo#Note"> <span>Note</span> </a></li>
+  <li><a href="#Notice" title="https://onto.colossi.network/cdo#Notice"> <span>Notice</span> </a></li>
+  <li><a href="#Object" title="https://onto.colossi.network/cdo#Object"> <span>Object</span> </a></li>
+  <li><a href="#Objective" title="https://onto.colossi.network/cdo#Objective"> <span>Objective</span> </a></li>
+  <li><a href="#Package" title="https://onto.colossi.network/cdo#Package"> <span>Package</span> </a></li>
+  <li><a href="#Packet" title="https://onto.colossi.network/cdo#Packet"> <span>Packet</span> </a></li>
+  <li><a href="#Parameter" title="https://onto.colossi.network/cdo#Parameter"> <span>Parameter</span> </a></li>
+  <li><a href="#Passive" title="https://onto.colossi.network/cdo#Passive"> <span>Passive</span> </a></li>
+  <li><a href="#Payload" title="https://onto.colossi.network/cdo#Payload"> <span>Payload</span> </a></li>
+  <li><a href="#Perspective" title="https://onto.colossi.network/cdo#Perspective"> <span>Perspective</span> </a></li>
+  <li><a href="#Policy" title="https://onto.colossi.network/cdo#Policy"> <span>Policy</span> </a></li>
+  <li><a href="#Purpose" title="https://onto.colossi.network/cdo#Purpose"> <span>Purpose</span> </a></li>
+  <li><a href="#Reason" title="https://onto.colossi.network/cdo#Reason"> <span>Reason</span> </a></li>
+  <li><a href="#Receipt" title="https://onto.colossi.network/cdo#Receipt"> <span>Receipt</span> </a></li>
+  <li><a href="#Record" title="https://onto.colossi.network/cdo#Record"> <span>Record</span> </a></li>
+  <li><a href="#Schema" title="https://onto.colossi.network/cdo#Schema"> <span>Schema</span> </a></li>
+  <li><a href="#Scheme" title="https://onto.colossi.network/cdo#Scheme"> <span>Scheme</span> </a></li>
+  <li><a href="#State" title="https://onto.colossi.network/cdo#State"> <span>State</span> </a></li>
+  <li><a href="#Statement" title="https://onto.colossi.network/cdo#Statement"> <span>Statement</span> </a></li>
+  <li><a href="#Stemma" title="https://onto.colossi.network/cdo#Stemma"> <span>Stemma</span> </a></li>
+  <li><a href="#Subjective" title="https://onto.colossi.network/cdo#Subjective"> <span>Subjective</span> </a></li>
+  <li><a href="#Term" title="https://onto.colossi.network/cdo#Term"> <span>Term</span> </a></li>
+  <li><a href="#Text" title="https://onto.colossi.network/cdo#Text"> <span>Text</span> </a></li>
+  <li><a href="#Token" title="https://onto.colossi.network/cdo#Token"> <span>Token</span> </a></li>
+  <li><a href="#Track" title="https://onto.colossi.network/cdo#Track"> <span>Track</span> </a></li>
+ </ul>
+ <div class="entity" id="Action">
+  <h3>Action<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Action</p>
+  <div class="comment">
+   <span class="markdown">an intentional operation performed within a computational system that acts upon data to achieve a specific outcome, such as creation, transformation, transmission, or deletion.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#initiates" title="https://onto.colossi.network/cdo#initiates">initiates</a> <sup class="type-op" title="object property">op</sup>, <a href="#isActivatedBy" title="https://onto.colossi.network/cdo#isActivatedBy">is Activated By</a> <sup class="type-op" title="object property">op</sup>, <a href="#isInstanceOf" title="https://onto.colossi.network/cdo#isInstanceOf">is Instance Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#exchangedThrough" title="https://onto.colossi.network/cdo#exchangedThrough">exchanged Through</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Active">
+  <h3>Active<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Active</p>
+  <div class="comment">
+   <span class="markdown">data that is currently in use, being processed, or engaged in real-time operations within a computational system, often contributing to immediate functions, decisions, or interactions.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#stimulates" title="https://onto.colossi.network/cdo#stimulates">stimulates</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Attribute">
+  <h3>Attribute<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Attribute</p>
+  <div class="comment">
+   <span class="markdown">a defined unit of information within a data object that expresses a specific property, characteristic, or qualifier used to describe, differentiate, or structure the underlying entity.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isDescribedBy" title="https://onto.colossi.network/cdo#isDescribedBy">is Described By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Behaviour">
+  <h3>Behaviour<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Behaviour</p>
+  <div class="comment">
+   <span class="markdown">the observable pattern of responses, interactions, or state changes exhibited by data within a computational system in reaction to specific inputs, conditions, or stimuli.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#aimsToward" title="https://onto.colossi.network/cdo#aimsToward">aims Toward</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#conditions" title="https://onto.colossi.network/cdo#conditions">conditions</a> <sup class="type-op" title="object property">op</sup>, <a href="#stimulates" title="https://onto.colossi.network/cdo#stimulates">stimulates</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Card">
+  <h3>Card<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Card</p>
+  <div class="comment">
+   <span class="markdown">the central structural element within a data object that governs how its attributes are organized, interpreted, or processed within a given computational or semantic framework.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isBundledIn" title="https://onto.colossi.network/cdo#isBundledIn">is Bundled In</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Cause">
+  <h3>Cause<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Cause</p>
+  <div class="comment">
+   <span class="markdown">an identified factor or trigger within a computational system that initiates or gives rise to a data event, state change, or processing action, often captured for traceability or causal analysis.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#initiates" title="https://onto.colossi.network/cdo#initiates">initiates</a> <sup class="type-op" title="object property">op</sup>, <a href="#isImpactedBy" title="https://onto.colossi.network/cdo#isImpactedBy">is Impacted By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Chart">
+  <h3>Chart<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Chart</p>
+  <div class="comment">
+   <span class="markdown">a visual representation of structured data within a computational system, expressed through tables, graphs, or diagrams to reveal patterns, trends, or relationships for interpretation or analysis.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isAnnotatedBy" title="https://onto.colossi.network/cdo#isAnnotatedBy">is Annotated By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isRepresentedBy" title="https://onto.colossi.network/cdo#isRepresentedBy">is Represented By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Concept">
+  <h3>Concept<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Concept</p>
+  <div class="comment">
+   <span class="markdown">an abstract, structured idea within a computational system that provides semantic meaning or contextual framing to data, enabling consistent interpretation, classification, and interoperability across domains.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#defines" title="https://onto.colossi.network/cdo#defines">defines</a> <sup class="type-op" title="object property">op</sup>, <a href="#isExpressedBy" title="https://onto.colossi.network/cdo#isExpressedBy">is Expressed By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#accessedBy" title="https://onto.colossi.network/cdo#accessedBy">accessed By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Domain">
+  <h3>Domain<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Domain</p>
+  <div class="comment">
+   <span class="markdown">facts and statistics entered into a computational system, structured for reference, processing, or analysis within a defined informational context.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#accessedBy" title="https://onto.colossi.network/cdo#accessedBy">accessed By</a> <sup class="type-op" title="object property">op</sup>, <a href="#capturedAs" title="https://onto.colossi.network/cdo#capturedAs">captured As</a> <sup class="type-op" title="object property">op</sup>, <a href="#enteredAs" title="https://onto.colossi.network/cdo#enteredAs">entered As</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDrivenBy" title="https://onto.colossi.network/cdo#isDrivenBy">is Driven By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Effect">
+  <h3>Effect<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Effect</p>
+  <div class="comment">
+   <span class="markdown">a resulting change or outcome within a computational system that occurs as a consequence of a specific data cause, action, or condition, often used to evaluate impact or derive meaning.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isRealizedThrough" title="https://onto.colossi.network/cdo#isRealizedThrough">is Realized Through</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#orders" title="https://onto.colossi.network/cdo#orders">orders</a> <sup class="type-op" title="object property">op</sup>, <a href="#realizes" title="https://onto.colossi.network/cdo#realizes">realizes</a> <sup class="type-op" title="object property">op</sup>, <a href="#undergoes" title="https://onto.colossi.network/cdo#undergoes">undergoes</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Event">
+  <h3>Event<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Event</p>
+  <div class="comment">
+   <span class="markdown">a recorded occurrence within a computational system that captures a change of state, action, or condition in time, often triggering processes or serving as a reference point in data trails.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#occursIn" title="https://onto.colossi.network/cdo#occursIn">occurs In</a> <sup class="type-op" title="object property">op</sup>, <a href="#realizes" title="https://onto.colossi.network/cdo#realizes">realizes</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#enteredAs" title="https://onto.colossi.network/cdo#enteredAs">entered As</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Fact">
+  <h3>Fact<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Fact</p>
+  <div class="comment">
+   <span class="markdown">a verified unit of information within a computational system that represents an objective truth or observed reality, serving as a foundational element for analysis, inference, or decision-making.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#affirms" title="https://onto.colossi.network/cdo#affirms">affirms</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Field">
+  <h3>Field<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Field</p>
+  <div class="comment">
+   <span class="markdown">a designated element within a data structure that holds a specific value corresponding to a defined attribute, enabling organized storage, access, and retrieval of information in a computational system.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isAddressedBy" title="https://onto.colossi.network/cdo#isAddressedBy">is Addressed By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#occursIn" title="https://onto.colossi.network/cdo#occursIn">occurs In</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Form">
+  <h3>Form<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Form</p>
+  <div class="comment">
+   <span class="markdown">a particular configuration or expression of data shaped by its structure, type, or representation within a computational system, often determining how it is stored, displayed, or exchanged.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#represents" title="https://onto.colossi.network/cdo#represents">represents</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#definesLayoutFor" title="https://onto.colossi.network/cdo#definesLayoutFor">defines Layout For</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Frame">
+  <h3>Frame<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Frame</p>
+  <div class="comment">
+   <span class="markdown">a semantic structure within a computational system that organizes and contextualizes data by linking attributes to concepts, enabling meaningful interpretation, interoperability, and knowledge representation.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#interprets" title="https://onto.colossi.network/cdo#interprets">interprets</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isExpressedBy" title="https://onto.colossi.network/cdo#isExpressedBy">is Expressed By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Function">
+  <h3>Function<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Function</p>
+  <div class="comment">
+   <span class="markdown">a discrete, executable operation within a computational system that performs a defined task on data—such as computation, transformation, retrieval, or validation—to support a broader process or outcome.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#encapsulates" title="https://onto.colossi.network/cdo#encapsulates">encapsulates</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#invokes" title="https://onto.colossi.network/cdo#invokes">invokes</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Goal">
+  <h3>Goal<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Goal</p>
+  <div class="comment">
+   <span class="markdown">a defined objective or desired outcome that guides the collection, processing, or analysis of data within a computational system, often shaping methodologies, metrics, or system behavior.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#aimsToward" title="https://onto.colossi.network/cdo#aimsToward">aims Toward</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Index">
+  <h3>Index<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Index</p>
+  <div class="comment">
+   <span class="markdown">a structured containment layer that encapsulates one or more fields, defining local boundaries, validation logic, and schema constraints within a form or data model.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isRegisteredBy" title="https://onto.colossi.network/cdo#isRegisteredBy">is Registered By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isAddressedBy" title="https://onto.colossi.network/cdo#isAddressedBy">is Addressed By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Ledger">
+  <h3>Ledger<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Ledger</p>
+  <div class="comment">
+   <span class="markdown">an ordered and immutable collection of data logs or events maintained within a computational system to provide a verifiable record of actions, transactions, or changes over time.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isRecordedAs" title="https://onto.colossi.network/cdo#isRecordedAs">is Recorded As</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isWrittenTo" title="https://onto.colossi.network/cdo#isWrittenTo">is Written To</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Log">
+  <h3>Log<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Log</p>
+  <div class="comment">
+   <span class="markdown">a chronological record of system-generated or user-triggered events captured within a computational system to support monitoring, auditing, debugging, or traceability.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#loggedAt" title="https://onto.colossi.network/cdo#loggedAt">logged At</a> <sup class="type-op" title="object property">op</sup>, <a href="#produces" title="https://onto.colossi.network/cdo#produces">produces</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isCommittedTo" title="https://onto.colossi.network/cdo#isCommittedTo">is Committed To</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Mechanism">
+  <h3>Mechanism<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Mechanism</p>
+  <div class="comment">
+   <span class="markdown">an established structural or procedural construct within a computational system that enables the flow, transformation, or enforcement of rules upon data as part of a broader operational process.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#constructs" title="https://onto.colossi.network/cdo#constructs">constructs</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isRealizedThrough" title="https://onto.colossi.network/cdo#isRealizedThrough">is Realized Through</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Method">
+  <h3>Method<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Method</p>
+  <div class="comment">
+   <span class="markdown">a defined and repeatable procedure within a computational system used to process, analyze, or manipulate data according to a systematic approach or established protocol.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#fulfills" title="https://onto.colossi.network/cdo#fulfills">fulfills</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Note">
+  <h3>Note<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Note</p>
+  <div class="comment">
+   <span class="markdown">a brief annotation or explanatory comment attached to a data element within a computational system, providing contextual insight, clarification, or guidance without altering the underlying data.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#annotates" title="https://onto.colossi.network/cdo#annotates">annotates</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#documents" title="https://onto.colossi.network/cdo#documents">documents</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Notice">
+  <h3>Notice<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Notice</p>
+  <div class="comment">
+   <span class="markdown">a time-sensitive notification within a computational system that conveys important information, conditions, or changes related to data, prompting awareness, preparation, or responsive action.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#acknowledges" title="https://onto.colossi.network/cdo#acknowledges">acknowledges</a> <sup class="type-op" title="object property">op</sup>, <a href="#authorizes" title="https://onto.colossi.network/cdo#authorizes">authorizes</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Object">
+  <h3>Object<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Object</p>
+  <div class="comment">
+   <span class="markdown">a structured data construct within a computational system that represents a defined entity or data model that encapsulates both its attributes and kernels for its structural interpretation or operation.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#exchangedThrough" title="https://onto.colossi.network/cdo#exchangedThrough">exchanged Through</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDescribedBy" title="https://onto.colossi.network/cdo#isDescribedBy">is Described By</a> <sup class="type-op" title="object property">op</sup>, <a href="#isImpactedBy" title="https://onto.colossi.network/cdo#isImpactedBy">is Impacted By</a> <sup class="type-op" title="object property">op</sup>, <a href="#isStructuredBy" title="https://onto.colossi.network/cdo#isStructuredBy">is Structured By</a> <sup class="type-op" title="object property">op</sup>, <a href="#undergoes" title="https://onto.colossi.network/cdo#undergoes">undergoes</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#capturedAs" title="https://onto.colossi.network/cdo#capturedAs">captured As</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Objective">
+  <h3>Objective<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Objective</p>
+  <div class="comment">
+   <span class="markdown">data that represents observable facts or measurable phenomena within a computational system, recorded without personal bias or interpretation and verifiable through consistent methods or standards.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#frames" title="https://onto.colossi.network/cdo#frames">frames</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Package">
+  <h3>Package<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Package</p>
+  <div class="comment">
+   <span class="markdown">a bundled collection of programs or subroutines within a computational system, organized for coherent transport, processing, or reuse as a functional unit.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isTransmittedAs" title="https://onto.colossi.network/cdo#isTransmittedAs">is Transmitted As</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isPackagedAs" title="https://onto.colossi.network/cdo#isPackagedAs">is Packaged As</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Packet">
+  <h3>Packet<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Packet</p>
+  <div class="comment">
+   <span class="markdown">a structured unit of data formatted for transmission within or between computational systems, containing both payload and control information to ensure proper delivery, interpretation, and routing.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#delivers" title="https://onto.colossi.network/cdo#delivers">delivers</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isTransmittedAs" title="https://onto.colossi.network/cdo#isTransmittedAs">is Transmitted As</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Parameter">
+  <h3>Parameter<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Parameter</p>
+  <div class="comment">
+   <span class="markdown">a semantic modifier within a computational system that refines the intent, scope, or behavior of a term or command, enabling contextual interpretation and meaningful configuration.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#interprets" title="https://onto.colossi.network/cdo#interprets">interprets</a> <sup class="type-op" title="object property">op</sup>, <a href="#isModifiedBy" title="https://onto.colossi.network/cdo#isModifiedBy">is Modified By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Passive">
+  <h3>Passive<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Passive</p>
+  <div class="comment">
+   <span class="markdown">data that resides in a computational system without actively influencing or participating in current processes, typically stored for reference, archival, or deferred analysis.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#conditions" title="https://onto.colossi.network/cdo#conditions">conditions</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Payload">
+  <h3>Payload<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Payload</p>
+  <div class="comment">
+   <span class="markdown">the core content or meaningful information carried within a data packet, excluding metadata or control structures, and intended for processing, storage, or interpretation by the receiving system.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isPackagedAs" title="https://onto.colossi.network/cdo#isPackagedAs">is Packaged As</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#encapsulates" title="https://onto.colossi.network/cdo#encapsulates">encapsulates</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Perspective">
+  <h3>Perspective<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Perspective</p>
+  <div class="comment">
+   <span class="markdown">a specific contextual or interpretive viewpoint applied to data within a computational system, shaping how it is understood, framed, or utilized based on user roles, objectives, or analytical models.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#frames" title="https://onto.colossi.network/cdo#frames">frames</a> <sup class="type-op" title="object property">op</sup>, <a href="#qualifies" title="https://onto.colossi.network/cdo#qualifies">qualifies</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Policy">
+  <h3>Policy<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Policy</p>
+  <div class="comment">
+   <span class="markdown">a defined set of principles or rules within a computational system that governs the collection, usage, access, sharing, or retention of data to ensure compliance, security, and ethical management.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#authorizes" title="https://onto.colossi.network/cdo#authorizes">authorizes</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Purpose">
+  <h3>Purpose<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Purpose</p>
+  <div class="comment">
+   <span class="markdown">the declared operational reason within a computational or analytical context for which data is collected, processed, or utilized, distinct from legal justification and focused on functional intent at the data layer.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#guides" title="https://onto.colossi.network/cdo#guides">guides</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#fulfills" title="https://onto.colossi.network/cdo#fulfills">fulfills</a> <sup class="type-op" title="object property">op</sup>, <a href="#isInstanceOf" title="https://onto.colossi.network/cdo#isInstanceOf">is Instance Of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Reason">
+  <h3>Reason<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Reason</p>
+  <div class="comment">
+   <span class="markdown">an explanatory reference within a computational system that justifies or clarifies the motivation behind a specific data-related action, decision, or condition, distinct from legal or policy mandates.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#guides" title="https://onto.colossi.network/cdo#guides">guides</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDrivenBy" title="https://onto.colossi.network/cdo#isDrivenBy">is Driven By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Receipt">
+  <h3>Receipt<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Receipt</p>
+  <div class="comment">
+   <span class="markdown">a recorded acknowledgment within a computational system confirming the successful reception of a data object, message, or transaction, often including metadata such as timestamp, source, and verification status.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#acknowledges" title="https://onto.colossi.network/cdo#acknowledges">acknowledges</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Record">
+  <h3>Record<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Record</p>
+  <div class="comment">
+   <span class="markdown">a structured collection of related data fields treated as a single unit within a computational system, typically representing an instance of an entity or event for storage, retrieval, or processing.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#documents" title="https://onto.colossi.network/cdo#documents">documents</a> <sup class="type-op" title="object property">op</sup>, <a href="#isCommittedTo" title="https://onto.colossi.network/cdo#isCommittedTo">is Committed To</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isRegisteredBy" title="https://onto.colossi.network/cdo#isRegisteredBy">is Registered By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Schema">
+  <h3>Schema<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Schema</p>
+  <div class="comment">
+   <span class="markdown">a structured framework that defines the organization, types, and relationships of data attributes within a data object, guiding its validation, interpretation, and integration in computational systems.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#definesLayoutFor" title="https://onto.colossi.network/cdo#definesLayoutFor">defines Layout For</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isBundledIn" title="https://onto.colossi.network/cdo#isBundledIn">is Bundled In</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Scheme">
+  <h3>Scheme<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Scheme</p>
+  <div class="comment">
+   <span class="markdown">a defined and ordered arrangement of related data structures—such as schemas, fields, or classification systems—within a computational system, used to organize, relate, and standardize data across contexts.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#constructs" title="https://onto.colossi.network/cdo#constructs">constructs</a> <sup class="type-op" title="object property">op</sup>, <a href="#isStructuredBy" title="https://onto.colossi.network/cdo#isStructuredBy">is Structured By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="State">
+  <h3>State<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#State</p>
+  <div class="comment">
+   <span class="markdown">the specific condition or configuration of a data object or system component at a given point in time, reflecting its current values, status, or operational context within a computational process.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isRepresentedBy" title="https://onto.colossi.network/cdo#isRepresentedBy">is Represented By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#represents" title="https://onto.colossi.network/cdo#represents">represents</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Statement">
+  <h3>Statement<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Statement</p>
+  <div class="comment">
+   <span class="markdown">a clearly defined expression of a fact, rule, or condition within a computational system, often used to declare, assert, or instruct how data should be processed, interpreted, or constrained.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#affirms" title="https://onto.colossi.network/cdo#affirms">affirms</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#delivers" title="https://onto.colossi.network/cdo#delivers">delivers</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Stemma">
+  <h3>Stemma<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Stemma</p>
+  <div class="comment">
+   <span class="markdown">a branching diagram or structural lineage within a computational system that traces the derivation, transformation, or version history of data across sources or processes.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isWrittenTo" title="https://onto.colossi.network/cdo#isWrittenTo">is Written To</a> <sup class="type-op" title="object property">op</sup>, <a href="#orders" title="https://onto.colossi.network/cdo#orders">orders</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#produces" title="https://onto.colossi.network/cdo#produces">produces</a> <sup class="type-op" title="object property">op</sup>, <a href="#supports" title="https://onto.colossi.network/cdo#supports">supports</a> <sup class="type-op" title="object property">op</sup>, <a href="#traces" title="https://onto.colossi.network/cdo#traces">traces</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Subjective">
+  <h3>Subjective<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Subjective</p>
+  <div class="comment">
+   <span class="markdown">data that reflects personal opinions, interpretations, emotions, or perceptions captured within a computational system, often influenced by individual experience or context rather than objective measurement.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#qualifies" title="https://onto.colossi.network/cdo#qualifies">qualifies</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Term">
+  <h3>Term<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Term</p>
+  <div class="comment">
+   <span class="markdown">a defined word or phrase used within a computational system to label, express, or reference a data concept, enabling standardized interpretation and communication across structured data environments.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isModifiedBy" title="https://onto.colossi.network/cdo#isModifiedBy">is Modified By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#defines" title="https://onto.colossi.network/cdo#defines">defines</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Text">
+  <h3>Text<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Text</p>
+  <div class="comment">
+   <span class="markdown">alphanumeric content within a computational system that conveys human-readable information, typically used for labels, descriptions, entries, or communication in structured or unstructured formats.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#supports" title="https://onto.colossi.network/cdo#supports">supports</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#annotates" title="https://onto.colossi.network/cdo#annotates">annotates</a> <sup class="type-op" title="object property">op</sup>, <a href="#isAnnotatedBy" title="https://onto.colossi.network/cdo#isAnnotatedBy">is Annotated By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Token">
+  <h3>Token<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Token</p>
+  <div class="comment">
+   <span class="markdown">a discrete invocation unit within a computational system that conveys delegated authority and actively initiates the execution of specific actions or functions, serving as a proximal trigger within controlled workflows.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#invokes" title="https://onto.colossi.network/cdo#invokes">invokes</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isActivatedBy" title="https://onto.colossi.network/cdo#isActivatedBy">is Activated By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Track">
+  <h3>Track<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#Track</p>
+  <div class="comment">
+   <span class="markdown">a structured sequence of linked data points or events within a computational system that traces the progression, movement, or lifecycle of an entity or process over time.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#traces" title="https://onto.colossi.network/cdo#traces">traces</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isRecordedAs" title="https://onto.colossi.network/cdo#isRecordedAs">is Recorded As</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#accessedBy" title="https://onto.colossi.network/cdo#accessedBy"> <span>accessed By</span> </a></li>
+  <li><a href="#acknowledges" title="https://onto.colossi.network/cdo#acknowledges"> <span>acknowledges</span> </a></li>
+  <li><a href="#affirms" title="https://onto.colossi.network/cdo#affirms"> <span>affirms</span> </a></li>
+  <li><a href="#aimsToward" title="https://onto.colossi.network/cdo#aimsToward"> <span>aims Toward</span> </a></li>
+  <li><a href="#annotates" title="https://onto.colossi.network/cdo#annotates"> <span>annotates</span> </a></li>
+  <li><a href="#authorizes" title="https://onto.colossi.network/cdo#authorizes"> <span>authorizes</span> </a></li>
+  <li><a href="#capturedAs" title="https://onto.colossi.network/cdo#capturedAs"> <span>captured As</span> </a></li>
+  <li><a href="#conditions" title="https://onto.colossi.network/cdo#conditions"> <span>conditions</span> </a></li>
+  <li><a href="#constructs" title="https://onto.colossi.network/cdo#constructs"> <span>constructs</span> </a></li>
+  <li><a href="#defines" title="https://onto.colossi.network/cdo#defines"> <span>defines</span> </a></li>
+  <li><a href="#definesLayoutFor" title="https://onto.colossi.network/cdo#definesLayoutFor"> <span>defines Layout For</span> </a></li>
+  <li><a href="#delivers" title="https://onto.colossi.network/cdo#delivers"> <span>delivers</span> </a></li>
+  <li><a href="#documents" title="https://onto.colossi.network/cdo#documents"> <span>documents</span> </a></li>
+  <li><a href="#encapsulates" title="https://onto.colossi.network/cdo#encapsulates"> <span>encapsulates</span> </a></li>
+  <li><a href="#enteredAs" title="https://onto.colossi.network/cdo#enteredAs"> <span>entered As</span> </a></li>
+  <li><a href="#exchangedThrough" title="https://onto.colossi.network/cdo#exchangedThrough"> <span>exchanged Through</span> </a></li>
+  <li><a href="#frames" title="https://onto.colossi.network/cdo#frames"> <span>frames</span> </a></li>
+  <li><a href="#fulfills" title="https://onto.colossi.network/cdo#fulfills"> <span>fulfills</span> </a></li>
+  <li><a href="#guides" title="https://onto.colossi.network/cdo#guides"> <span>guides</span> </a></li>
+  <li><a href="#initiates" title="https://onto.colossi.network/cdo#initiates"> <span>initiates</span> </a></li>
+  <li><a href="#interprets" title="https://onto.colossi.network/cdo#interprets"> <span>interprets</span> </a></li>
+  <li><a href="#invokes" title="https://onto.colossi.network/cdo#invokes"> <span>invokes</span> </a></li>
+  <li><a href="#isActivatedBy" title="https://onto.colossi.network/cdo#isActivatedBy"> <span>is Activated By</span> </a></li>
+  <li><a href="#isAddressedBy" title="https://onto.colossi.network/cdo#isAddressedBy"> <span>is Addressed By</span> </a></li>
+  <li><a href="#isAnnotatedBy" title="https://onto.colossi.network/cdo#isAnnotatedBy"> <span>is Annotated By</span> </a></li>
+  <li><a href="#isBundledIn" title="https://onto.colossi.network/cdo#isBundledIn"> <span>is Bundled In</span> </a></li>
+  <li><a href="#isCommittedTo" title="https://onto.colossi.network/cdo#isCommittedTo"> <span>is Committed To</span> </a></li>
+  <li><a href="#isDescribedBy" title="https://onto.colossi.network/cdo#isDescribedBy"> <span>is Described By</span> </a></li>
+  <li><a href="#isDrivenBy" title="https://onto.colossi.network/cdo#isDrivenBy"> <span>is Driven By</span> </a></li>
+  <li><a href="#isExpressedBy" title="https://onto.colossi.network/cdo#isExpressedBy"> <span>is Expressed By</span> </a></li>
+  <li><a href="#isImpactedBy" title="https://onto.colossi.network/cdo#isImpactedBy"> <span>is Impacted By</span> </a></li>
+  <li><a href="#isInstanceOf" title="https://onto.colossi.network/cdo#isInstanceOf"> <span>is Instance Of</span> </a></li>
+  <li><a href="#isModifiedBy" title="https://onto.colossi.network/cdo#isModifiedBy"> <span>is Modified By</span> </a></li>
+  <li><a href="#isPackagedAs" title="https://onto.colossi.network/cdo#isPackagedAs"> <span>is Packaged As</span> </a></li>
+  <li><a href="#isRealizedThrough" title="https://onto.colossi.network/cdo#isRealizedThrough"> <span>is Realized Through</span> </a></li>
+  <li><a href="#isRecordedAs" title="https://onto.colossi.network/cdo#isRecordedAs"> <span>is Recorded As</span> </a></li>
+  <li><a href="#isRegisteredBy" title="https://onto.colossi.network/cdo#isRegisteredBy"> <span>is Registered By</span> </a></li>
+  <li><a href="#isRepresentedBy" title="https://onto.colossi.network/cdo#isRepresentedBy"> <span>is Represented By</span> </a></li>
+  <li><a href="#isStructuredBy" title="https://onto.colossi.network/cdo#isStructuredBy"> <span>is Structured By</span> </a></li>
+  <li><a href="#isTransmittedAs" title="https://onto.colossi.network/cdo#isTransmittedAs"> <span>is Transmitted As</span> </a></li>
+  <li><a href="#isWrittenTo" title="https://onto.colossi.network/cdo#isWrittenTo"> <span>is Written To</span> </a></li>
+  <li><a href="#loggedAt" title="https://onto.colossi.network/cdo#loggedAt"> <span>logged At</span> </a></li>
+  <li><a href="#occursIn" title="https://onto.colossi.network/cdo#occursIn"> <span>occurs In</span> </a></li>
+  <li><a href="#orders" title="https://onto.colossi.network/cdo#orders"> <span>orders</span> </a></li>
+  <li><a href="#produces" title="https://onto.colossi.network/cdo#produces"> <span>produces</span> </a></li>
+  <li><a href="#qualifies" title="https://onto.colossi.network/cdo#qualifies"> <span>qualifies</span> </a></li>
+  <li><a href="#realizes" title="https://onto.colossi.network/cdo#realizes"> <span>realizes</span> </a></li>
+  <li><a href="#represents" title="https://onto.colossi.network/cdo#represents"> <span>represents</span> </a></li>
+  <li><a href="#stimulates" title="https://onto.colossi.network/cdo#stimulates"> <span>stimulates</span> </a></li>
+  <li><a href="#supports" title="https://onto.colossi.network/cdo#supports"> <span>supports</span> </a></li>
+  <li><a href="#traces" title="https://onto.colossi.network/cdo#traces"> <span>traces</span> </a></li>
+  <li><a href="#undergoes" title="https://onto.colossi.network/cdo#undergoes"> <span>undergoes</span> </a></li>
+ </ul>
+ <div class="entity" id="accessedBy">
+  <h3>accessed By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#accessedBy</p>
+  <div class="comment">
+   <span class="markdown">relates a Domain to a Concept, indicating that a Domain is accessed by a Concept.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Domain" title="https://onto.colossi.network/cdo#Domain">Domain</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Concept" title="https://onto.colossi.network/cdo#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="acknowledges">
+  <h3>acknowledges<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#acknowledges</p>
+  <div class="comment">
+   <span class="markdown">relates a Receipt to a Notice, indicating that a Receipt acknowledges a Notice.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Receipt" title="https://onto.colossi.network/cdo#Receipt">Receipt</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Notice" title="https://onto.colossi.network/cdo#Notice">Notice</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="affirms">
+  <h3>affirms<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#affirms</p>
+  <div class="comment">
+   <span class="markdown">relates a Statement to a Fact, indicating that a Statement affirms a Fact.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Statement" title="https://onto.colossi.network/cdo#Statement">Statement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Fact" title="https://onto.colossi.network/cdo#Fact">Fact</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="aimsToward">
+  <h3>aims Toward<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#aimsToward</p>
+  <div class="comment">
+   <span class="markdown">relates a Behaviour to a Goal, indicating that a Behaviour aims toward a Goal.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Behaviour" title="https://onto.colossi.network/cdo#Behaviour">Behaviour</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Goal" title="https://onto.colossi.network/cdo#Goal">Goal</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="annotates">
+  <h3>annotates<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#annotates</p>
+  <div class="comment">
+   <span class="markdown">relates a Note to a Text, indicating that a Note annotates a Text.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Note" title="https://onto.colossi.network/cdo#Note">Note</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Text" title="https://onto.colossi.network/cdo#Text">Text</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="authorizes">
+  <h3>authorizes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#authorizes</p>
+  <div class="comment">
+   <span class="markdown">relates a Policy to a Notice, indicating that a Policy authorizes a Notice.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Policy" title="https://onto.colossi.network/cdo#Policy">Policy</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Notice" title="https://onto.colossi.network/cdo#Notice">Notice</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="capturedAs">
+  <h3>captured As<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#capturedAs</p>
+  <div class="comment">
+   <span class="markdown">relates a Domain to an Object, indicating that a Domain is captured as an Object.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Domain" title="https://onto.colossi.network/cdo#Domain">Domain</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Object" title="https://onto.colossi.network/cdo#Object">Object</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="conditions">
+  <h3>conditions<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#conditions</p>
+  <div class="comment">
+   <span class="markdown">relates a Passive to a Behaviour, indicating that a Passive conditions a Behaviour.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Passive" title="https://onto.colossi.network/cdo#Passive">Passive</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Behaviour" title="https://onto.colossi.network/cdo#Behaviour">Behaviour</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="constructs">
+  <h3>constructs<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#constructs</p>
+  <div class="comment">
+   <span class="markdown">relates a Mechanism to a Scheme, indicating that a Mechanism constructs a Scheme.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Mechanism" title="https://onto.colossi.network/cdo#Mechanism">Mechanism</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Scheme" title="https://onto.colossi.network/cdo#Scheme">Scheme</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="defines">
+  <h3>defines<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#defines</p>
+  <div class="comment">
+   <span class="markdown">relates a Concept to a Term, indicating that a Concept defines a Term.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Concept" title="https://onto.colossi.network/cdo#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Term" title="https://onto.colossi.network/cdo#Term">Term</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="definesLayoutFor">
+  <h3>defines Layout For<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#definesLayoutFor</p>
+  <div class="comment">
+   <span class="markdown">relates a Schema to a Form, indicating that a Schema defines layout for a Form.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Schema" title="https://onto.colossi.network/cdo#Schema">Schema</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Form" title="https://onto.colossi.network/cdo#Form">Form</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="delivers">
+  <h3>delivers<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#delivers</p>
+  <div class="comment">
+   <span class="markdown">relates a Packet to a Statement, indicating that a Packet delivers a Statement.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Packet" title="https://onto.colossi.network/cdo#Packet">Packet</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Statement" title="https://onto.colossi.network/cdo#Statement">Statement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="documents">
+  <h3>documents<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#documents</p>
+  <div class="comment">
+   <span class="markdown">relates a Record to a Note, indicating that a Record documents a Note.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Record" title="https://onto.colossi.network/cdo#Record">Record</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Note" title="https://onto.colossi.network/cdo#Note">Note</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="encapsulates">
+  <h3>encapsulates<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#encapsulates</p>
+  <div class="comment">
+   <span class="markdown">relates a Function to a Payload, indicating that a Function encapsulates a Payload.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Function" title="https://onto.colossi.network/cdo#Function">Function</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Payload" title="https://onto.colossi.network/cdo#Payload">Payload</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="enteredAs">
+  <h3>entered As<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#enteredAs</p>
+  <div class="comment">
+   <span class="markdown">relates a Domain to an Event, indicating that a Domain is entered as an Event.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Domain" title="https://onto.colossi.network/cdo#Domain">Domain</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Event" title="https://onto.colossi.network/cdo#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="exchangedThrough">
+  <h3>exchanged Through<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#exchangedThrough</p>
+  <div class="comment">
+   <span class="markdown">relates an Object to an Action, indicating that an Object exchanged through an Action.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Object" title="https://onto.colossi.network/cdo#Object">Object</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Action" title="https://onto.colossi.network/cdo#Action">Action</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="frames">
+  <h3>frames<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#frames</p>
+  <div class="comment">
+   <span class="markdown">relates a Perspective to an Objective, indicating that a Perspective frames an Objective.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Perspective" title="https://onto.colossi.network/cdo#Perspective">Perspective</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Objective" title="https://onto.colossi.network/cdo#Objective">Objective</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="fulfills">
+  <h3>fulfills<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#fulfills</p>
+  <div class="comment">
+   <span class="markdown">relates a Method to a Purpose, indicating that a Method fulfills a Purpose.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Method" title="https://onto.colossi.network/cdo#Method">Method</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Purpose" title="https://onto.colossi.network/cdo#Purpose">Purpose</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="guides">
+  <h3>guides<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#guides</p>
+  <div class="comment">
+   <span class="markdown">relates a Purpose to a Reason, indicating that a Purpose guides a Reason.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Purpose" title="https://onto.colossi.network/cdo#Purpose">Purpose</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Reason" title="https://onto.colossi.network/cdo#Reason">Reason</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="initiates">
+  <h3>initiates<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#initiates</p>
+  <div class="comment">
+   <span class="markdown">relates an Action to a Cause, indicating that an Action initiates a Cause.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Action" title="https://onto.colossi.network/cdo#Action">Action</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Cause" title="https://onto.colossi.network/cdo#Cause">Cause</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="interprets">
+  <h3>interprets<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#interprets</p>
+  <div class="comment">
+   <span class="markdown">relates a Frame to a Parameter, indicating that a Frame interprets a Parameter.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Frame" title="https://onto.colossi.network/cdo#Frame">Frame</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Parameter" title="https://onto.colossi.network/cdo#Parameter">Parameter</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="invokes">
+  <h3>invokes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#invokes</p>
+  <div class="comment">
+   <span class="markdown">relates a Token to a Function, indicating that a Token invokes a Function.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Token" title="https://onto.colossi.network/cdo#Token">Token</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Function" title="https://onto.colossi.network/cdo#Function">Function</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isActivatedBy">
+  <h3>is Activated By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isActivatedBy</p>
+  <div class="comment">
+   <span class="markdown">relates an Action to a Token, indicating that an Action is activated by a Token.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Action" title="https://onto.colossi.network/cdo#Action">Action</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Token" title="https://onto.colossi.network/cdo#Token">Token</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isAddressedBy">
+  <h3>is Addressed By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isAddressedBy</p>
+  <div class="comment">
+   <span class="markdown">relates a Field to an Index, indicating that a Field is addressed by an Index.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Field" title="https://onto.colossi.network/cdo#Field">Field</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Index" title="https://onto.colossi.network/cdo#Index">Index</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isAnnotatedBy">
+  <h3>is Annotated By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isAnnotatedBy</p>
+  <div class="comment">
+   <span class="markdown">relates a Chart to a Text, indicating that a Chart is annotated by a Text.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Chart" title="https://onto.colossi.network/cdo#Chart">Chart</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Text" title="https://onto.colossi.network/cdo#Text">Text</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isBundledIn">
+  <h3>is Bundled In<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isBundledIn</p>
+  <div class="comment">
+   <span class="markdown">relates a Card to a Schema, indicating that a Card is bundled in a Schema.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Card" title="https://onto.colossi.network/cdo#Card">Card</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Schema" title="https://onto.colossi.network/cdo#Schema">Schema</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isCommittedTo">
+  <h3>is Committed To<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isCommittedTo</p>
+  <div class="comment">
+   <span class="markdown">relates a Record to a Log, indicating that a Record is committed to a Log.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Record" title="https://onto.colossi.network/cdo#Record">Record</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Log" title="https://onto.colossi.network/cdo#Log">Log</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isDescribedBy">
+  <h3>is Described By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isDescribedBy</p>
+  <div class="comment">
+   <span class="markdown">relates an Object to an Attribute, indicating that an Object is described by an Attribute.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Object" title="https://onto.colossi.network/cdo#Object">Object</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Attribute" title="https://onto.colossi.network/cdo#Attribute">Attribute</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isDrivenBy">
+  <h3>is Driven By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isDrivenBy</p>
+  <div class="comment">
+   <span class="markdown">relates a Domain to a Reason, indicating that a Domain is driven by a Reason.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Domain" title="https://onto.colossi.network/cdo#Domain">Domain</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Reason" title="https://onto.colossi.network/cdo#Reason">Reason</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isExpressedBy">
+  <h3>is Expressed By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isExpressedBy</p>
+  <div class="comment">
+   <span class="markdown">relates a Concept to a Frame, indicating that a Concept is expressed by a Frame.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Concept" title="https://onto.colossi.network/cdo#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Frame" title="https://onto.colossi.network/cdo#Frame">Frame</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isImpactedBy">
+  <h3>is Impacted By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isImpactedBy</p>
+  <div class="comment">
+   <span class="markdown">relates an Object to a Cause, indicating that an Object is impacted by a Cause.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Object" title="https://onto.colossi.network/cdo#Object">Object</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Cause" title="https://onto.colossi.network/cdo#Cause">Cause</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isInstanceOf">
+  <h3>is Instance Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isInstanceOf</p>
+  <div class="comment">
+   <span class="markdown">relates an Action to a Purpose, indicating that an Action is instance of a Purpose.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Action" title="https://onto.colossi.network/cdo#Action">Action</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Purpose" title="https://onto.colossi.network/cdo#Purpose">Purpose</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isModifiedBy">
+  <h3>is Modified By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isModifiedBy</p>
+  <div class="comment">
+   <span class="markdown">relates a Term to a Parameter, indicating that a Term is modified by a Parameter.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Term" title="https://onto.colossi.network/cdo#Term">Term</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Parameter" title="https://onto.colossi.network/cdo#Parameter">Parameter</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isPackagedAs">
+  <h3>is Packaged As<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isPackagedAs</p>
+  <div class="comment">
+   <span class="markdown">relates a Payload to a Package, indicating that a Payload is packaged as a Package.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Payload" title="https://onto.colossi.network/cdo#Payload">Payload</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Package" title="https://onto.colossi.network/cdo#Package">Package</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isRealizedThrough">
+  <h3>is Realized Through<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isRealizedThrough</p>
+  <div class="comment">
+   <span class="markdown">relates an Effect to a Mechanism, indicating that an Effect is realized through a Mechanism.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Effect" title="https://onto.colossi.network/cdo#Effect">Effect</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Mechanism" title="https://onto.colossi.network/cdo#Mechanism">Mechanism</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isRecordedAs">
+  <h3>is Recorded As<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isRecordedAs</p>
+  <div class="comment">
+   <span class="markdown">relates a Ledger to a Track, indicating that a Ledger is recorded as a Track.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Ledger" title="https://onto.colossi.network/cdo#Ledger">Ledger</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Track" title="https://onto.colossi.network/cdo#Track">Track</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isRegisteredBy">
+  <h3>is Registered By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isRegisteredBy</p>
+  <div class="comment">
+   <span class="markdown">relates an Index to a Record, indicating that an Index is registered by a Record.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Index" title="https://onto.colossi.network/cdo#Index">Index</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Record" title="https://onto.colossi.network/cdo#Record">Record</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isRepresentedBy">
+  <h3>is Represented By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isRepresentedBy</p>
+  <div class="comment">
+   <span class="markdown">relates a State to a Chart, indicating that a State is represented by a Chart.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#State" title="https://onto.colossi.network/cdo#State">State</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Chart" title="https://onto.colossi.network/cdo#Chart">Chart</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isStructuredBy">
+  <h3>is Structured By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isStructuredBy</p>
+  <div class="comment">
+   <span class="markdown">relates an Object to a Scheme, indicating that an Object is structured by a Scheme.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Object" title="https://onto.colossi.network/cdo#Object">Object</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Scheme" title="https://onto.colossi.network/cdo#Scheme">Scheme</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isTransmittedAs">
+  <h3>is Transmitted As<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isTransmittedAs</p>
+  <div class="comment">
+   <span class="markdown">relates a Package to a Packet, indicating that a Package is transmitted as a Packet.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Package" title="https://onto.colossi.network/cdo#Package">Package</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Packet" title="https://onto.colossi.network/cdo#Packet">Packet</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isWrittenTo">
+  <h3>is Written To<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isWrittenTo</p>
+  <div class="comment">
+   <span class="markdown">relates a Stemma to a Ledger, indicating that a Stemma is written to a Ledger.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Stemma" title="https://onto.colossi.network/cdo#Stemma">Stemma</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Ledger" title="https://onto.colossi.network/cdo#Ledger">Ledger</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="loggedAt">
+  <h3>logged At<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#loggedAt</p>
+  <div class="comment">
+   <span class="markdown">The recorded process logs of the schema synthesization and transformation pipeline.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Log" title="https://onto.colossi.network/cdo#Log">Log</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2006/time#Instant" target="_blank" title="http://www.w3.org/2006/time#Instant">Instant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="occursIn">
+  <h3>occurs In<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#occursIn</p>
+  <div class="comment">
+   <span class="markdown">relates an Event to a Field, indicating that an Event occurs in a Field.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Event" title="https://onto.colossi.network/cdo#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Field" title="https://onto.colossi.network/cdo#Field">Field</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="orders">
+  <h3>orders<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#orders</p>
+  <div class="comment">
+   <span class="markdown">relates a Stemma to an Effect, indicating that a Stemma orders an Effect.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Stemma" title="https://onto.colossi.network/cdo#Stemma">Stemma</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Effect" title="https://onto.colossi.network/cdo#Effect">Effect</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="produces">
+  <h3>produces<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#produces</p>
+  <div class="comment">
+   <span class="markdown">relates a Log to a Stemma, indicating that a Log produces a Stemma.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Log" title="https://onto.colossi.network/cdo#Log">Log</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Stemma" title="https://onto.colossi.network/cdo#Stemma">Stemma</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="qualifies">
+  <h3>qualifies<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#qualifies</p>
+  <div class="comment">
+   <span class="markdown">relates a Perspective to a Subjective, indicating that a Perspective qualifies a Subjective.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Perspective" title="https://onto.colossi.network/cdo#Perspective">Perspective</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Subjective" title="https://onto.colossi.network/cdo#Subjective">Subjective</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="realizes">
+  <h3>realizes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#realizes</p>
+  <div class="comment">
+   <span class="markdown">relates an Event to an Effect, indicating that an Event realizes an Effect.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Event" title="https://onto.colossi.network/cdo#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Effect" title="https://onto.colossi.network/cdo#Effect">Effect</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="represents">
+  <h3>represents<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#represents</p>
+  <div class="comment">
+   <span class="markdown">relates a Form to a State, indicating that a Form represents a State.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Form" title="https://onto.colossi.network/cdo#Form">Form</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#State" title="https://onto.colossi.network/cdo#State">State</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="stimulates">
+  <h3>stimulates<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#stimulates</p>
+  <div class="comment">
+   <span class="markdown">relates an Active to a Behaviour, indicating that an Active stimulates a Behaviour.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Active" title="https://onto.colossi.network/cdo#Active">Active</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Behaviour" title="https://onto.colossi.network/cdo#Behaviour">Behaviour</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="supports">
+  <h3>supports<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#supports</p>
+  <div class="comment">
+   <span class="markdown">relates a Text to a Stemma, indicating that a Text supports a Stemma.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Text" title="https://onto.colossi.network/cdo#Text">Text</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Stemma" title="https://onto.colossi.network/cdo#Stemma">Stemma</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="traces">
+  <h3>traces<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#traces</p>
+  <div class="comment">
+   <span class="markdown">relates a Track to a Stemma, indicating that a Track traces a Stemma.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Track" title="https://onto.colossi.network/cdo#Track">Track</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Stemma" title="https://onto.colossi.network/cdo#Stemma">Stemma</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="undergoes">
+  <h3>undergoes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#undergoes</p>
+  <div class="comment">
+   <span class="markdown">relates an Object to an Effect, indicating that an Object undergoes an Effect.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Object" title="https://onto.colossi.network/cdo#Object">Object</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Effect" title="https://onto.colossi.network/cdo#Effect">Effect</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

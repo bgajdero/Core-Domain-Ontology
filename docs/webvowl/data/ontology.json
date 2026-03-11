@@ -1,0 +1,1639 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "https://onto.colossi.network/cdo", "http://www.w3.org/2006/time" ],
+    "title" : {
+      "undefined" : "Core Domain Ontology"
+    },
+    "iri" : "https://onto.colossi.network/cdo#CoreDomainOntology",
+    "version" : "\nVersion 1 March 11, 2026",
+    "author" : [ "Keith Dugas (keith.dugas@secours.ai)", "Bart Gajderowicz (bart.gajderowicz@usu.edu", "Paul Knowles (paul@secours.ai)" ],
+    "labels" : {
+      "undefined" : "Core Domain Ontology"
+    },
+    "comments" : {
+      "undefined" : "\nCore Domain Ontology (CDO) is a semantic model developed to support the Informatics Domain Model IDM. \nThe CDO is structured around five central nodes: objects, events, concepts, actions, and domain, which \nunderpin various aspects of planning, reasoning, and execution in digital systems. It enables \ndecentralized data representation, transformation, and alignment. \n                                "
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "http://creativecommons.org/licenses/by/3.0/",
+        "type" : "label"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Paul Knowles (paul@secours.ai)",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Bart Gajderowicz (bart.gajderowicz@usu.edu",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Keith Dugas (keith.dugas@secours.ai)",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "cdo",
+        "type" : "label"
+      } ],
+      "rights" : [ {
+        "identifier" : "rights",
+        "language" : "undefined",
+        "value" : "Copyright @ 2026 Paul Knowles, Bart Gajderowicz, Keith Dugas",
+        "type" : "label"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2026-03-11",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "\nVersion 1 March 11, 2026",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://onto.colossi.network/cdo#",
+        "type" : "label"
+      } ],
+      "issued" : [ {
+        "identifier" : "issued",
+        "language" : "undefined",
+        "value" : "2025-03-20",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "Core Domain Ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "33",
+    "type" : "owl:Class"
+  }, {
+    "id" : "42",
+    "type" : "owl:Class"
+  }, {
+    "id" : "44",
+    "type" : "owl:Class"
+  }, {
+    "id" : "38",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "52",
+    "type" : "owl:Class"
+  }, {
+    "id" : "50",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "56",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "63",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "41",
+    "type" : "owl:Class"
+  }, {
+    "id" : "65",
+    "type" : "owl:Class"
+  }, {
+    "id" : "68",
+    "type" : "owl:Class"
+  }, {
+    "id" : "46",
+    "type" : "owl:Class"
+  }, {
+    "id" : "58",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "76",
+    "type" : "owl:Class"
+  }, {
+    "id" : "48",
+    "type" : "owl:Class"
+  }, {
+    "id" : "79",
+    "type" : "owl:Class"
+  }, {
+    "id" : "35",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "owl:Class"
+  }, {
+    "id" : "40",
+    "type" : "owl:Class"
+  }, {
+    "id" : "82",
+    "type" : "owl:Class"
+  }, {
+    "id" : "84",
+    "type" : "owl:Class"
+  }, {
+    "id" : "70",
+    "type" : "owl:Class"
+  }, {
+    "id" : "89",
+    "type" : "owl:Class"
+  }, {
+    "id" : "71",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://onto.colossi.network/cdo#Note",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Note"
+    },
+    "comment" : {
+      "undefined" : "a brief annotation or explanatory comment attached to a data element within a computational system, providing contextual insight, clarification, or guidance without altering the underlying data."
+    },
+    "attributes" : [ "external" ],
+    "id" : "5"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Purpose",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Purpose"
+    },
+    "comment" : {
+      "undefined" : "the declared operational reason within a computational or analytical context for which data is collected, processed, or utilized, distinct from legal justification and focused on functional intent at the data layer."
+    },
+    "attributes" : [ "external" ],
+    "id" : "6"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Card",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Card"
+    },
+    "comment" : {
+      "undefined" : "the central structural element within a data object that governs how its attributes are organized, interpreted, or processed within a given computational or semantic framework."
+    },
+    "attributes" : [ "external" ],
+    "id" : "15"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Passive",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Passive"
+    },
+    "comment" : {
+      "undefined" : "data that resides in a computational system without actively influencing or participating in current processes, typically stored for reference, archival, or deferred analysis."
+    },
+    "attributes" : [ "external" ],
+    "id" : "18"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Package",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Package"
+    },
+    "comment" : {
+      "undefined" : "a bundled collection of programs or subroutines within a computational system, organized for coherent transport, processing, or reuse as a functional unit."
+    },
+    "attributes" : [ "external" ],
+    "id" : "21"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Object",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Object"
+    },
+    "comment" : {
+      "undefined" : "a structured data construct within a computational system that represents a defined entity or data model that encapsulates both its attributes and kernels for its structural interpretation or operation."
+    },
+    "attributes" : [ "external" ],
+    "id" : "22"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Payload",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Payload"
+    },
+    "comment" : {
+      "undefined" : "the core content or meaningful information carried within a data packet, excluding metadata or control structures, and intended for processing, storage, or interpretation by the receiving system."
+    },
+    "attributes" : [ "external" ],
+    "id" : "32"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Method",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Method"
+    },
+    "comment" : {
+      "undefined" : "a defined and repeatable procedure within a computational system used to process, analyze, or manipulate data according to a systematic approach or established protocol."
+    },
+    "attributes" : [ "external" ],
+    "id" : "17"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Chart",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Chart"
+    },
+    "comment" : {
+      "undefined" : "a visual representation of structured data within a computational system, expressed through tables, graphs, or diagrams to reveal patterns, trends, or relationships for interpretation or analysis."
+    },
+    "attributes" : [ "external" ],
+    "id" : "33"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Function",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Function"
+    },
+    "comment" : {
+      "undefined" : "a discrete, executable operation within a computational system that performs a defined task on data—such as computation, transformation, retrieval, or validation—to support a broader process or outcome."
+    },
+    "attributes" : [ "external" ],
+    "id" : "42"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Record",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Record"
+    },
+    "comment" : {
+      "undefined" : "a structured collection of related data fields treated as a single unit within a computational system, typically representing an instance of an entity or event for storage, retrieval, or processing."
+    },
+    "attributes" : [ "external" ],
+    "id" : "44"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Token",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Token"
+    },
+    "comment" : {
+      "undefined" : "a discrete invocation unit within a computational system that conveys delegated authority and actively initiates the execution of specific actions or functions, serving as a proximal trigger within controlled workflows."
+    },
+    "attributes" : [ "external" ],
+    "id" : "38"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Log",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Log"
+    },
+    "comment" : {
+      "undefined" : "a chronological record of system-generated or user-triggered events captured within a computational system to support monitoring, auditing, debugging, or traceability."
+    },
+    "attributes" : [ "external" ],
+    "id" : "27"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Frame",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Frame"
+    },
+    "comment" : {
+      "undefined" : "a semantic structure within a computational system that organizes and contextualizes data by linking attributes to concepts, enabling meaningful interpretation, interoperability, and knowledge representation."
+    },
+    "attributes" : [ "external" ],
+    "id" : "52"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#State",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "State"
+    },
+    "comment" : {
+      "undefined" : "the specific condition or configuration of a data object or system component at a given point in time, reflecting its current values, status, or operational context within a computational process."
+    },
+    "attributes" : [ "external" ],
+    "id" : "50"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Effect",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Effect"
+    },
+    "comment" : {
+      "undefined" : "a resulting change or outcome within a computational system that occurs as a consequence of a specific data cause, action, or condition, often used to evaluate impact or derive meaning."
+    },
+    "attributes" : [ "external" ],
+    "id" : "25"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Parameter",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Parameter"
+    },
+    "comment" : {
+      "undefined" : "a semantic modifier within a computational system that refines the intent, scope, or behavior of a term or command, enabling contextual interpretation and meaningful configuration."
+    },
+    "attributes" : [ "external" ],
+    "id" : "4"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Statement",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Statement"
+    },
+    "comment" : {
+      "undefined" : "a clearly defined expression of a fact, rule, or condition within a computational system, often used to declare, assert, or instruct how data should be processed, interpreted, or constrained."
+    },
+    "attributes" : [ "external" ],
+    "id" : "56"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Goal",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Goal"
+    },
+    "comment" : {
+      "undefined" : "a defined objective or desired outcome that guides the collection, processing, or analysis of data within a computational system, often shaping methodologies, metrics, or system behavior."
+    },
+    "attributes" : [ "external" ],
+    "id" : "12"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Text",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Text"
+    },
+    "comment" : {
+      "undefined" : "alphanumeric content within a computational system that conveys human-readable information, typically used for labels, descriptions, entries, or communication in structured or unstructured formats."
+    },
+    "attributes" : [ "external" ],
+    "id" : "14"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Notice",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Notice"
+    },
+    "comment" : {
+      "undefined" : "a time-sensitive notification within a computational system that conveys important information, conditions, or changes related to data, prompting awareness, preparation, or responsive action."
+    },
+    "attributes" : [ "external" ],
+    "id" : "36"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Stemma",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Stemma"
+    },
+    "comment" : {
+      "undefined" : "a branching diagram or structural lineage within a computational system that traces the derivation, transformation, or version history of data across sources or processes."
+    },
+    "attributes" : [ "external" ],
+    "id" : "24"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Schema",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Schema"
+    },
+    "comment" : {
+      "undefined" : "a structured framework that defines the organization, types, and relationships of data attributes within a data object, guiding its validation, interpretation, and integration in computational systems."
+    },
+    "attributes" : [ "external" ],
+    "id" : "63"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Index",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Index"
+    },
+    "comment" : {
+      "undefined" : "a structured containment layer that encapsulates one or more fields, defining local boundaries, validation logic, and schema constraints within a form or data model."
+    },
+    "attributes" : [ "external" ],
+    "id" : "31"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Scheme",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Scheme"
+    },
+    "comment" : {
+      "undefined" : "a defined and ordered arrangement of related data structures—such as schemas, fields, or classification systems—within a computational system, used to organize, relate, and standardize data across contexts."
+    },
+    "attributes" : [ "external" ],
+    "id" : "41"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Event",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Event"
+    },
+    "comment" : {
+      "undefined" : "a recorded occurrence within a computational system that captures a change of state, action, or condition in time, often triggering processes or serving as a reference point in data trails."
+    },
+    "attributes" : [ "external" ],
+    "id" : "65"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Domain",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Domain"
+    },
+    "comment" : {
+      "undefined" : "facts and statistics entered into a computational system, structured for reference, processing, or analysis within a defined informational context."
+    },
+    "attributes" : [ "external" ],
+    "id" : "68"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Objective",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Objective"
+    },
+    "comment" : {
+      "undefined" : "data that represents observable facts or measurable phenomena within a computational system, recorded without personal bias or interpretation and verifiable through consistent methods or standards."
+    },
+    "attributes" : [ "external" ],
+    "id" : "46"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Packet",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Packet"
+    },
+    "comment" : {
+      "undefined" : "a structured unit of data formatted for transmission within or between computational systems, containing both payload and control information to ensure proper delivery, interpretation, and routing."
+    },
+    "attributes" : [ "external" ],
+    "id" : "58"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Concept",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concept"
+    },
+    "comment" : {
+      "undefined" : "an abstract, structured idea within a computational system that provides semantic meaning or contextual framing to data, enabling consistent interpretation, classification, and interoperability across domains."
+    },
+    "attributes" : [ "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Term",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Term"
+    },
+    "comment" : {
+      "undefined" : "a defined word or phrase used within a computational system to label, express, or reference a data concept, enabling standardized interpretation and communication across structured data environments."
+    },
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Active",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Active"
+    },
+    "comment" : {
+      "undefined" : "data that is currently in use, being processed, or engaged in real-time operations within a computational system, often contributing to immediate functions, decisions, or interactions."
+    },
+    "attributes" : [ "external" ],
+    "id" : "76"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Cause",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Cause"
+    },
+    "comment" : {
+      "undefined" : "an identified factor or trigger within a computational system that initiates or gives rise to a data event, state change, or processing action, often captured for traceability or causal analysis."
+    },
+    "attributes" : [ "external" ],
+    "id" : "48"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Fact",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Fact"
+    },
+    "comment" : {
+      "undefined" : "a verified unit of information within a computational system that represents an objective truth or observed reality, serving as a foundational element for analysis, inference, or decision-making."
+    },
+    "attributes" : [ "external" ],
+    "id" : "79"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Policy",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Policy"
+    },
+    "comment" : {
+      "undefined" : "a defined set of principles or rules within a computational system that governs the collection, usage, access, sharing, or retention of data to ensure compliance, security, and ethical management."
+    },
+    "attributes" : [ "external" ],
+    "id" : "35"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Reason",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Reason"
+    },
+    "comment" : {
+      "undefined" : "an explanatory reference within a computational system that justifies or clarifies the motivation behind a specific data-related action, decision, or condition, distinct from legal or policy mandates."
+    },
+    "attributes" : [ "external" ],
+    "id" : "61"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Mechanism",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Mechanism"
+    },
+    "comment" : {
+      "undefined" : "an established structural or procedural construct within a computational system that enables the flow, transformation, or enforcement of rules upon data as part of a broader operational process."
+    },
+    "attributes" : [ "external" ],
+    "id" : "40"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Attribute",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Attribute"
+    },
+    "comment" : {
+      "undefined" : "a defined unit of information within a data object that expresses a specific property, characteristic, or qualifier used to describe, differentiate, or structure the underlying entity."
+    },
+    "attributes" : [ "external" ],
+    "id" : "82"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Form",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Form"
+    },
+    "comment" : {
+      "undefined" : "a particular configuration or expression of data shaped by its structure, type, or representation within a computational system, often determining how it is stored, displayed, or exchanged."
+    },
+    "attributes" : [ "external" ],
+    "id" : "84"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Ledger",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Ledger"
+    },
+    "comment" : {
+      "undefined" : "an ordered and immutable collection of data logs or events maintained within a computational system to provide a verifiable record of actions, transactions, or changes over time."
+    },
+    "attributes" : [ "external" ],
+    "id" : "70"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Receipt",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Receipt"
+    },
+    "comment" : {
+      "undefined" : "a recorded acknowledgment within a computational system confirming the successful reception of a data object, message, or transaction, often including metadata such as timestamp, source, and verification status."
+    },
+    "attributes" : [ "external" ],
+    "id" : "89"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Track",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Track"
+    },
+    "comment" : {
+      "undefined" : "a structured sequence of linked data points or events within a computational system that traces the progression, movement, or lifecycle of an entity or process over time."
+    },
+    "attributes" : [ "external" ],
+    "id" : "71"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Behaviour",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Behaviour"
+    },
+    "comment" : {
+      "undefined" : "the observable pattern of responses, interactions, or state changes exhibited by data within a computational system in reaction to specific inputs, conditions, or stimuli."
+    },
+    "attributes" : [ "external" ],
+    "id" : "11"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Subjective",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Subjective"
+    },
+    "comment" : {
+      "undefined" : "data that reflects personal opinions, interpretations, emotions, or perceptions captured within a computational system, often influenced by individual experience or context rather than objective measurement."
+    },
+    "attributes" : [ "external" ],
+    "id" : "9"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Perspective",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Perspective"
+    },
+    "comment" : {
+      "undefined" : "a specific contextual or interpretive viewpoint applied to data within a computational system, shaping how it is understood, framed, or utilized based on user roles, objectives, or analytical models."
+    },
+    "attributes" : [ "external" ],
+    "id" : "8"
+  }, {
+    "iri" : "http://www.w3.org/2006/time#Instant",
+    "baseIri" : "http://www.w3.org/2006/time",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Instant"
+    },
+    "attributes" : [ "external" ],
+    "id" : "28"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Action",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Action"
+    },
+    "comment" : {
+      "undefined" : "an intentional operation performed within a computational system that acts upon data to achieve a specific outcome, such as creation, transformation, transmission, or deletion."
+    },
+    "attributes" : [ "external" ],
+    "id" : "20"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#Field",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Field"
+    },
+    "comment" : {
+      "undefined" : "a designated element within a data structure that holds a specific value corresponding to a defined attribute, enabling organized storage, access, and retrieval of information in a computational system."
+    },
+    "attributes" : [ "external" ],
+    "id" : "30"
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "3",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "7",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "10",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "13",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "16",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "19",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "34",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "37",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "39",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "43",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "45",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "47",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "49",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "51",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "53",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "54",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "55",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "57",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "59",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "60",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "62",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "64",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "66",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "67",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "69",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "72",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "73",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "74",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "75",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "77",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "78",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "80",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "81",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "83",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "85",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "86",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "87",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "88",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "90",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "91",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "92",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "93",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "94",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "95",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "96",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "97",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "98",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "99",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://onto.colossi.network/cdo#defines",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "defines"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "relates a Concept to a Term, indicating that a Concept defines a Term."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isModifiedBy",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "isModifiedBy"
+    },
+    "domain" : "2",
+    "comment" : {
+      "undefined" : "relates a Term to a Parameter, indicating that a Term is modified by a Parameter."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#qualifies",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "qualifies"
+    },
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "relates a Perspective to a Subjective, indicating that a Perspective qualifies a Subjective."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "7"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#aimsToward",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "aimsToward"
+    },
+    "domain" : "11",
+    "comment" : {
+      "undefined" : "relates a Behaviour to a Goal, indicating that a Behaviour aims toward a Goal."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "10"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#annotates",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "annotates"
+    },
+    "domain" : "5",
+    "comment" : {
+      "undefined" : "relates a Note to a Text, indicating that a Note annotates a Text."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "13"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#fulfills",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "fulfills"
+    },
+    "domain" : "17",
+    "comment" : {
+      "undefined" : "relates a Method to a Purpose, indicating that a Method fulfills a Purpose."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "16"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isInstanceOf",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "isInstanceOf"
+    },
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "relates an Action to a Purpose, indicating that an Action is instance of a Purpose."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "19"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#orders",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "orders"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "relates a Stemma to an Effect, indicating that a Stemma orders an Effect."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "23"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#loggedAt",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "loggedAt"
+    },
+    "domain" : "27",
+    "comment" : {
+      "undefined" : "The recorded process logs of the schema synthesization and transformation pipeline."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "26"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isAddressedBy",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "31",
+    "label" : {
+      "IRI-based" : "isAddressedBy"
+    },
+    "domain" : "30",
+    "comment" : {
+      "undefined" : "relates a Field to an Index, indicating that a Field is addressed by an Index."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "29"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#authorizes",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "36",
+    "label" : {
+      "IRI-based" : "authorizes"
+    },
+    "domain" : "35",
+    "comment" : {
+      "undefined" : "relates a Policy to a Notice, indicating that a Policy authorizes a Notice."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "34"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isActivatedBy",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "isActivatedBy"
+    },
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "relates an Action to a Token, indicating that an Action is activated by a Token."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "37"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#constructs",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "41",
+    "label" : {
+      "IRI-based" : "constructs"
+    },
+    "domain" : "40",
+    "comment" : {
+      "undefined" : "relates a Mechanism to a Scheme, indicating that a Mechanism constructs a Scheme."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "39"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isRegisteredBy",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "44",
+    "label" : {
+      "IRI-based" : "isRegisteredBy"
+    },
+    "domain" : "31",
+    "comment" : {
+      "undefined" : "relates an Index to a Record, indicating that an Index is registered by a Record."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "43"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#frames",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "46",
+    "label" : {
+      "IRI-based" : "frames"
+    },
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "relates a Perspective to an Objective, indicating that a Perspective frames an Objective."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "45"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#initiates",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "48",
+    "label" : {
+      "IRI-based" : "initiates"
+    },
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "relates an Action to a Cause, indicating that an Action initiates a Cause."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "47"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isRepresentedBy",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "33",
+    "label" : {
+      "IRI-based" : "isRepresentedBy"
+    },
+    "domain" : "50",
+    "comment" : {
+      "undefined" : "relates a State to a Chart, indicating that a State is represented by a Chart."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "49"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isExpressedBy",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "52",
+    "label" : {
+      "IRI-based" : "isExpressedBy"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "relates a Concept to a Frame, indicating that a Concept is expressed by a Frame."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "51"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isAnnotatedBy",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "isAnnotatedBy"
+    },
+    "domain" : "33",
+    "comment" : {
+      "undefined" : "relates a Chart to a Text, indicating that a Chart is annotated by a Text."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "53"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#interprets",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "interprets"
+    },
+    "domain" : "52",
+    "comment" : {
+      "undefined" : "relates a Frame to a Parameter, indicating that a Frame interprets a Parameter."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "54"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#conditions",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "conditions"
+    },
+    "domain" : "18",
+    "comment" : {
+      "undefined" : "relates a Passive to a Behaviour, indicating that a Passive conditions a Behaviour."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "55"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isTransmittedAs",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "58",
+    "label" : {
+      "IRI-based" : "isTransmittedAs"
+    },
+    "domain" : "21",
+    "comment" : {
+      "undefined" : "relates a Package to a Packet, indicating that a Package is transmitted as a Packet."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "57"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isStructuredBy",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "41",
+    "label" : {
+      "IRI-based" : "isStructuredBy"
+    },
+    "domain" : "22",
+    "comment" : {
+      "undefined" : "relates an Object to a Scheme, indicating that an Object is structured by a Scheme."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "59"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#guides",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "61",
+    "label" : {
+      "IRI-based" : "guides"
+    },
+    "domain" : "6",
+    "comment" : {
+      "undefined" : "relates a Purpose to a Reason, indicating that a Purpose guides a Reason."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "60"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#supports",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "supports"
+    },
+    "domain" : "14",
+    "comment" : {
+      "undefined" : "relates a Text to a Stemma, indicating that a Text supports a Stemma."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "62"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#realizes",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "realizes"
+    },
+    "domain" : "65",
+    "comment" : {
+      "undefined" : "relates an Event to an Effect, indicating that an Event realizes an Effect."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "64"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#documents",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "documents"
+    },
+    "domain" : "44",
+    "comment" : {
+      "undefined" : "relates a Record to a Note, indicating that a Record documents a Note."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "66"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isImpactedBy",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "48",
+    "label" : {
+      "IRI-based" : "isImpactedBy"
+    },
+    "domain" : "22",
+    "comment" : {
+      "undefined" : "relates an Object to a Cause, indicating that an Object is impacted by a Cause."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "67"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isRecordedAs",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "71",
+    "label" : {
+      "IRI-based" : "isRecordedAs"
+    },
+    "domain" : "70",
+    "comment" : {
+      "undefined" : "relates a Ledger to a Track, indicating that a Ledger is recorded as a Track."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "69"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#produces",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "produces"
+    },
+    "domain" : "27",
+    "comment" : {
+      "undefined" : "relates a Log to a Stemma, indicating that a Log produces a Stemma."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "72"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#encapsulates",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "32",
+    "label" : {
+      "IRI-based" : "encapsulates"
+    },
+    "domain" : "42",
+    "comment" : {
+      "undefined" : "relates a Function to a Payload, indicating that a Function encapsulates a Payload."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "73"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isCommittedTo",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "isCommittedTo"
+    },
+    "domain" : "44",
+    "comment" : {
+      "undefined" : "relates a Record to a Log, indicating that a Record is committed to a Log."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "74"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isWrittenTo",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "70",
+    "label" : {
+      "IRI-based" : "isWrittenTo"
+    },
+    "domain" : "24",
+    "comment" : {
+      "undefined" : "relates a Stemma to a Ledger, indicating that a Stemma is written to a Ledger."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "75"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#traces",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "traces"
+    },
+    "domain" : "71",
+    "comment" : {
+      "undefined" : "relates a Track to a Stemma, indicating that a Track traces a Stemma."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "77"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#undergoes",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "undergoes"
+    },
+    "domain" : "22",
+    "comment" : {
+      "undefined" : "relates an Object to an Effect, indicating that an Object undergoes an Effect."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "78"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isPackagedAs",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "isPackagedAs"
+    },
+    "domain" : "32",
+    "comment" : {
+      "undefined" : "relates a Payload to a Package, indicating that a Payload is packaged as a Package."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "80"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#accessedBy",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "accessedBy"
+    },
+    "domain" : "68",
+    "comment" : {
+      "undefined" : "relates a Domain to a Concept, indicating that a Domain is accessed by a Concept."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "81"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#definesLayoutFor",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "84",
+    "label" : {
+      "IRI-based" : "definesLayoutFor"
+    },
+    "domain" : "63",
+    "comment" : {
+      "undefined" : "relates a Schema to a Form, indicating that a Schema defines layout for a Form."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "83"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#occursIn",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "30",
+    "label" : {
+      "IRI-based" : "occursIn"
+    },
+    "domain" : "65",
+    "comment" : {
+      "undefined" : "relates an Event to a Field, indicating that an Event occurs in a Field."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "85"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#affirms",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "79",
+    "label" : {
+      "IRI-based" : "affirms"
+    },
+    "domain" : "56",
+    "comment" : {
+      "undefined" : "relates a Statement to a Fact, indicating that a Statement affirms a Fact."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "86"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isDescribedBy",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "82",
+    "label" : {
+      "IRI-based" : "isDescribedBy"
+    },
+    "domain" : "22",
+    "comment" : {
+      "undefined" : "relates an Object to an Attribute, indicating that an Object is described by an Attribute."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "87"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#delivers",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "56",
+    "label" : {
+      "IRI-based" : "delivers"
+    },
+    "domain" : "58",
+    "comment" : {
+      "undefined" : "relates a Packet to a Statement, indicating that a Packet delivers a Statement."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "88"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isRealizedThrough",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "40",
+    "label" : {
+      "IRI-based" : "isRealizedThrough"
+    },
+    "domain" : "25",
+    "comment" : {
+      "undefined" : "relates an Effect to a Mechanism, indicating that an Effect is realized through a Mechanism."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "90"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#invokes",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "42",
+    "label" : {
+      "IRI-based" : "invokes"
+    },
+    "domain" : "38",
+    "comment" : {
+      "undefined" : "relates a Token to a Function, indicating that a Token invokes a Function."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "91"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#capturedAs",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "22",
+    "label" : {
+      "IRI-based" : "capturedAs"
+    },
+    "domain" : "68",
+    "comment" : {
+      "undefined" : "relates a Domain to an Object, indicating that a Domain is captured as an Object."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "92"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isDrivenBy",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "61",
+    "label" : {
+      "IRI-based" : "isDrivenBy"
+    },
+    "domain" : "68",
+    "comment" : {
+      "undefined" : "relates a Domain to a Reason, indicating that a Domain is driven by a Reason."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "93"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#acknowledges",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "36",
+    "label" : {
+      "IRI-based" : "acknowledges"
+    },
+    "domain" : "89",
+    "comment" : {
+      "undefined" : "relates a Receipt to a Notice, indicating that a Receipt acknowledges a Notice."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "94"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#enteredAs",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "65",
+    "label" : {
+      "IRI-based" : "enteredAs"
+    },
+    "domain" : "68",
+    "comment" : {
+      "undefined" : "relates a Domain to an Event, indicating that a Domain is entered as an Event."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "95"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#exchangedThrough",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "exchangedThrough"
+    },
+    "domain" : "22",
+    "comment" : {
+      "undefined" : "relates an Object to an Action, indicating that an Object exchanged through an Action."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "96"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#stimulates",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "stimulates"
+    },
+    "domain" : "76",
+    "comment" : {
+      "undefined" : "relates an Active to a Behaviour, indicating that an Active stimulates a Behaviour."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "97"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#isBundledIn",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "63",
+    "label" : {
+      "IRI-based" : "isBundledIn"
+    },
+    "domain" : "15",
+    "comment" : {
+      "undefined" : "relates a Card to a Schema, indicating that a Card is bundled in a Schema."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "98"
+  }, {
+    "iri" : "https://onto.colossi.network/cdo#represents",
+    "baseIri" : "https://onto.colossi.network/cdo",
+    "range" : "50",
+    "label" : {
+      "IRI-based" : "represents"
+    },
+    "domain" : "84",
+    "comment" : {
+      "undefined" : "relates a Form to a State, indicating that a Form represents a State."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "99"
+  } ]
+}
