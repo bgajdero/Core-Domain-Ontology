@@ -14,18 +14,18 @@
         <terms:creator>Bart Gajderowicz (bart.gajderowicz@usu.edu</terms:creator>
         <terms:creator>Keith Dugas (keith.dugas@secours.ai)</terms:creator>
         <terms:creator>Paul Knowles (paul@secours.ai)</terms:creator>
+        <terms:description>
+Core Domain Ontology (CDO) is a semantic model developed to support the Informatics Domain Model IDM. 
+The CDO is structured around five central nodes: objects, events, concepts, actions, and domain, which 
+underpin various aspects of planning, reasoning, and execution in digital systems. It enables 
+decentralized data representation, transformation, and alignment. 
+                                </terms:description>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-03-20</terms:issued>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-03-11</terms:modified>
         <terms:rights>Copyright @ 2026 Paul Knowles, Bart Gajderowicz, Keith Dugas</terms:rights>
         <terms:title>Core Domain Ontology</terms:title>
         <vann:preferredNamespacePrefix>cdo</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://onto.colossi.network/cdo#</vann:preferredNamespaceUri>
-        <rdfs:comment>
-Core Domain Ontology (CDO) is a semantic model developed to support the Informatics Domain Model IDM. 
-The CDO is structured around five central nodes: objects, events, concepts, actions, and domain, which 
-underpin various aspects of planning, reasoning, and execution in digital systems. It enables 
-decentralized data representation, transformation, and alignment. 
-                                </rdfs:comment>
         <rdfs:label>Core Domain Ontology</rdfs:label>
         <owl:versionInfo>
 Version 1 March 11, 2026</owl:versionInfo>
@@ -56,6 +56,13 @@ Version 1 March 11, 2026</owl:versionInfo>
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
     
 
 
@@ -143,13 +150,24 @@ Version 1 March 11, 2026</owl:versionInfo>
     
 
 
+    <!-- https://onto.colossi.network/cdo#achieves -->
+
+
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#achieves">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Event"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Goal"/>
+        <rdfs:comment>relates an Event to a Goal, indicating that an Event defines a Goal.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://onto.colossi.network/cdo#acknowledges -->
 
 
     <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#acknowledges">
         <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Receipt"/>
-        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Notice"/>
-        <rdfs:comment>relates a Receipt to a Notice, indicating that a Receipt acknowledges a Notice.</rdfs:comment>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Packet"/>
+        <rdfs:comment>relates a Receipt to a Packet, indicating that a Receipt acknowledges a Packet.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -165,35 +183,24 @@ Version 1 March 11, 2026</owl:versionInfo>
     
 
 
-    <!-- https://onto.colossi.network/cdo#aimsToward -->
-
-
-    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#aimsToward">
-        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Behaviour"/>
-        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Goal"/>
-        <rdfs:comment>relates a Behaviour to a Goal, indicating that a Behaviour aims toward a Goal.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://onto.colossi.network/cdo#annotates -->
 
 
     <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#annotates">
         <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Note"/>
-        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Text"/>
-        <rdfs:comment>relates a Note to a Text, indicating that a Note annotates a Text.</rdfs:comment>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Packet"/>
+        <rdfs:comment>relates a Note to a Packet, indicating that a Note annotates a Packet.</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://onto.colossi.network/cdo#authorizes -->
+    <!-- https://onto.colossi.network/cdo#attributedTo -->
 
 
-    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#authorizes">
-        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Policy"/>
-        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Notice"/>
-        <rdfs:comment>relates a Policy to a Notice, indicating that a Policy authorizes a Notice.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#attributedTo">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Event"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Reason"/>
+        <rdfs:comment>relates an Event to a Reason, indicating that an Event is attributed to a Reason.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -209,17 +216,6 @@ Version 1 March 11, 2026</owl:versionInfo>
     
 
 
-    <!-- https://onto.colossi.network/cdo#conditions -->
-
-
-    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#conditions">
-        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Passive"/>
-        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Behaviour"/>
-        <rdfs:comment>relates a Passive to a Behaviour, indicating that a Passive conditions a Behaviour.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://onto.colossi.network/cdo#constructs -->
 
 
@@ -231,13 +227,45 @@ Version 1 March 11, 2026</owl:versionInfo>
     
 
 
+    <!-- https://onto.colossi.network/cdo#contextualizes -->
+
+
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#contextualizes">
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Object"/>
+        <rdfs:comment>relates a Object to a Concept, indicating that a Concept contexualizes an Object.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://onto.colossi.network/cdo#conveys -->
+
+
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#conveys">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Packet"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Payload"/>
+        <rdfs:comment>relates a Packet to a Payload, indicating that a Packet conveys a Method.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://onto.colossi.network/cdo#declares -->
+
+
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#declares">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Packet"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Method"/>
+        <rdfs:comment>relates a Packet to a Method, indicating that a Packet declares a Method.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://onto.colossi.network/cdo#defines -->
 
 
     <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#defines">
         <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Concept"/>
-        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Term"/>
-        <rdfs:comment>relates a Concept to a Term, indicating that a Concept defines a Term.</rdfs:comment>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Goal"/>
+        <rdfs:comment>relates a Concept to a Goal, indicating that a Concept defines a Goal.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -264,17 +292,6 @@ Version 1 March 11, 2026</owl:versionInfo>
     
 
 
-    <!-- https://onto.colossi.network/cdo#documents -->
-
-
-    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#documents">
-        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Record"/>
-        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Note"/>
-        <rdfs:comment>relates a Record to a Note, indicating that a Record documents a Note.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://onto.colossi.network/cdo#encapsulates -->
 
 
@@ -282,6 +299,17 @@ Version 1 March 11, 2026</owl:versionInfo>
         <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Function"/>
         <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Payload"/>
         <rdfs:comment>relates a Function to a Payload, indicating that a Function encapsulates a Payload.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://onto.colossi.network/cdo#encodes -->
+
+
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#encodes">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Payload"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#State"/>
+        <rdfs:comment>relates a Payload to a State, indicating that a Payload encodes a State.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -301,20 +329,9 @@ Version 1 March 11, 2026</owl:versionInfo>
 
 
     <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#exchangedThrough">
-        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Object"/>
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Domain"/>
         <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Action"/>
-        <rdfs:comment>relates an Object to an Action, indicating that an Object exchanged through an Action.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://onto.colossi.network/cdo#frames -->
-
-
-    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#frames">
-        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Perspective"/>
-        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Objective"/>
-        <rdfs:comment>relates a Perspective to an Objective, indicating that a Perspective frames an Objective.</rdfs:comment>
+        <rdfs:comment>relates a Domain to an Action, indicating that a Domain is exchanged through an Action.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -352,17 +369,6 @@ Version 1 March 11, 2026</owl:versionInfo>
     
 
 
-    <!-- https://onto.colossi.network/cdo#interprets -->
-
-
-    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#interprets">
-        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Frame"/>
-        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Parameter"/>
-        <rdfs:comment>relates a Frame to a Parameter, indicating that a Frame interprets a Parameter.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://onto.colossi.network/cdo#invokes -->
 
 
@@ -370,6 +376,17 @@ Version 1 March 11, 2026</owl:versionInfo>
         <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Token"/>
         <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Function"/>
         <rdfs:comment>relates a Token to a Function, indicating that a Token invokes a Function.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://onto.colossi.network/cdo#isAcknowledgedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#isAcknowledgedBy">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Notice"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Receipt"/>
+        <rdfs:comment>relates a Notice to a Receipt, inverse of isAcknowlegedBy, indicating that a Notice is acknowledged by a Receipt.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -418,6 +435,17 @@ Version 1 March 11, 2026</owl:versionInfo>
     
 
 
+    <!-- https://onto.colossi.network/cdo#isCapturedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#isCapturedBy">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Payload"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Record"/>
+        <rdfs:comment>relates a Payload to a Record, indicating that a Payload is capturted by a Record.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://onto.colossi.network/cdo#isCommittedTo -->
 
 
@@ -425,6 +453,28 @@ Version 1 March 11, 2026</owl:versionInfo>
         <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Record"/>
         <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Log"/>
         <rdfs:comment>relates a Record to a Log, indicating that a Record is committed to a Log.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://onto.colossi.network/cdo#isConsumedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#isConsumedBy">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Form"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Mechanism"/>
+        <rdfs:comment>relates a Form to a Mechanism, indicating that a Form is consumed by a Mechanism.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://onto.colossi.network/cdo#isDefinedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#isDefinedBy">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Concept"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Term"/>
+        <rdfs:comment>relates a Concept to a Term, indicating that a Concept is defined by a Term.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -444,20 +494,20 @@ Version 1 March 11, 2026</owl:versionInfo>
 
 
     <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#isDrivenBy">
-        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Domain"/>
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Action"/>
         <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Reason"/>
-        <rdfs:comment>relates a Domain to a Reason, indicating that a Domain is driven by a Reason.</rdfs:comment>
+        <rdfs:comment>relates an Action to a Reason, indicating that an Action is driven by a Reason.</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://onto.colossi.network/cdo#isExpressedBy -->
+    <!-- https://onto.colossi.network/cdo#isExplainedBy -->
 
 
-    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#isExpressedBy">
-        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Concept"/>
-        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Frame"/>
-        <rdfs:comment>relates a Concept to a Frame, indicating that a Concept is expressed by a Frame.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#isExplainedBy">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Policy"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Note"/>
+        <rdfs:comment>relates a Policy to a Note, indicating that a Policy is explained by a Note.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -478,19 +528,19 @@ Version 1 March 11, 2026</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#isInstanceOf">
         <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Action"/>
-        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Purpose"/>
-        <rdfs:comment>relates an Action to a Purpose, indicating that an Action is instance of a Purpose.</rdfs:comment>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Method"/>
+        <rdfs:comment>relates an Action to a Method, indicating that an Action is instance of a Method.</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://onto.colossi.network/cdo#isModifiedBy -->
+    <!-- https://onto.colossi.network/cdo#isIssuedUnder -->
 
 
-    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#isModifiedBy">
-        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Term"/>
-        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Parameter"/>
-        <rdfs:comment>relates a Term to a Parameter, indicating that a Term is modified by a Parameter.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#isIssuedUnder">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Receipt"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Policy"/>
+        <rdfs:comment>relates a Receipt to a Policy, indicating that a Receipt is issued under (according to) a Policy.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -528,6 +578,17 @@ Version 1 March 11, 2026</owl:versionInfo>
     
 
 
+    <!-- https://onto.colossi.network/cdo#isRefinedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#isRefinedBy">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Term"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Parameter"/>
+        <rdfs:comment>relates a Term to a Parameter, indicating that a Term is refined by a Parameter.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://onto.colossi.network/cdo#isRegisteredBy -->
 
 
@@ -543,9 +604,23 @@ Version 1 March 11, 2026</owl:versionInfo>
 
 
     <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#isRepresentedBy">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Attribute"/>
         <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#State"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Card"/>
         <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Chart"/>
+        <rdfs:comment>relates a Attribute to a Card, indicating that an Attribute is represented by a Card.</rdfs:comment>
         <rdfs:comment>relates a State to a Chart, indicating that a State is represented by a Chart.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://onto.colossi.network/cdo#isScopedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#isScopedBy">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Concept"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Scheme"/>
+        <rdfs:comment>relates a Concept to a Scheme, indicating that a Concept is scoped by a Scheme.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -555,7 +630,10 @@ Version 1 March 11, 2026</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#isStructuredBy">
         <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Object"/>
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Parameter"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Frame"/>
         <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Scheme"/>
+        <rdfs:comment>relates a Parameter to a Frame, indicating that a Parameter is structured by a Frame.</rdfs:comment>
         <rdfs:comment>relates an Object to a Scheme, indicating that an Object is structured by a Scheme.</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -620,20 +698,12 @@ Version 1 March 11, 2026</owl:versionInfo>
 
 
     <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#produces">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Action"/>
         <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Log"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Event"/>
         <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Stemma"/>
         <rdfs:comment>relates a Log to a Stemma, indicating that a Log produces a Stemma.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://onto.colossi.network/cdo#qualifies -->
-
-
-    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#qualifies">
-        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Perspective"/>
-        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Subjective"/>
-        <rdfs:comment>relates a Perspective to a Subjective, indicating that a Perspective qualifies a Subjective.</rdfs:comment>
+        <rdfs:comment>relates an Action to an Event, indicating that an Action produces an Event.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -660,13 +730,24 @@ Version 1 March 11, 2026</owl:versionInfo>
     
 
 
-    <!-- https://onto.colossi.network/cdo#stimulates -->
+    <!-- https://onto.colossi.network/cdo#specifies -->
 
 
-    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#stimulates">
-        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Active"/>
-        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Behaviour"/>
-        <rdfs:comment>relates an Active to a Behaviour, indicating that an Active stimulates a Behaviour.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#specifies">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Concept"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Method"/>
+        <rdfs:comment>relates a Concept to a Method, indicating that a Concept specifiesa Method.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://onto.colossi.network/cdo#stores -->
+
+
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#stores">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Record"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Form"/>
+        <rdfs:comment>relates a Record to a Form, indicating that a Record storesa Form.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -675,8 +756,11 @@ Version 1 March 11, 2026</owl:versionInfo>
 
 
     <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#supports">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Fact"/>
         <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Text"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Purpose"/>
         <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Stemma"/>
+        <rdfs:comment>relates a Fact to a Purpose, indicating that a Fact supports a Purpose.</rdfs:comment>
         <rdfs:comment>relates a Text to a Stemma, indicating that a Text supports a Stemma.</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -704,6 +788,17 @@ Version 1 March 11, 2026</owl:versionInfo>
     
 
 
+    <!-- https://onto.colossi.network/cdo#yields -->
+
+
+    <owl:ObjectProperty rdf:about="https://onto.colossi.network/cdo#yields">
+        <rdfs:domain rdf:resource="https://onto.colossi.network/cdo#Frame"/>
+        <rdfs:range rdf:resource="https://onto.colossi.network/cdo#Notice"/>
+        <rdfs:comment>relates a Frame to a Notice, indicating that a Frame yields a Notice.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -727,6 +822,7 @@ Version 1 March 11, 2026</owl:versionInfo>
 
 
     <owl:Class rdf:about="https://onto.colossi.network/cdo#Action">
+        <rdfs:subClassOf rdf:resource="https://onto.colossi.network/cdo#Active"/>
         <rdfs:comment>an intentional operation performed within a computational system that acts upon data to achieve a specific outcome, such as creation, transformation, transmission, or deletion.</rdfs:comment>
     </owl:Class>
     
@@ -736,6 +832,7 @@ Version 1 March 11, 2026</owl:versionInfo>
 
 
     <owl:Class rdf:about="https://onto.colossi.network/cdo#Active">
+        <rdfs:subClassOf rdf:resource="https://onto.colossi.network/cdo#Behaviour"/>
         <rdfs:comment>data that is currently in use, being processed, or engaged in real-time operations within a computational system, often contributing to immediate functions, decisions, or interactions.</rdfs:comment>
     </owl:Class>
     
@@ -790,6 +887,7 @@ Version 1 March 11, 2026</owl:versionInfo>
 
 
     <owl:Class rdf:about="https://onto.colossi.network/cdo#Concept">
+        <rdfs:subClassOf rdf:resource="https://onto.colossi.network/cdo#Subjective"/>
         <rdfs:comment>an abstract, structured idea within a computational system that provides semantic meaning or contextual framing to data, enabling consistent interpretation, classification, and interoperability across domains.</rdfs:comment>
     </owl:Class>
     
@@ -817,6 +915,7 @@ Version 1 March 11, 2026</owl:versionInfo>
 
 
     <owl:Class rdf:about="https://onto.colossi.network/cdo#Event">
+        <rdfs:subClassOf rdf:resource="https://onto.colossi.network/cdo#Objective"/>
         <rdfs:comment>a recorded occurrence within a computational system that captures a change of state, action, or condition in time, often triggering processes or serving as a reference point in data trails.</rdfs:comment>
     </owl:Class>
     
@@ -943,6 +1042,7 @@ Version 1 March 11, 2026</owl:versionInfo>
 
 
     <owl:Class rdf:about="https://onto.colossi.network/cdo#Object">
+        <rdfs:subClassOf rdf:resource="https://onto.colossi.network/cdo#Passive"/>
         <rdfs:comment>a structured data construct within a computational system that represents a defined entity or data model that encapsulates both its attributes and kernels for its structural interpretation or operation.</rdfs:comment>
     </owl:Class>
     
@@ -952,6 +1052,7 @@ Version 1 March 11, 2026</owl:versionInfo>
 
 
     <owl:Class rdf:about="https://onto.colossi.network/cdo#Objective">
+        <rdfs:subClassOf rdf:resource="https://onto.colossi.network/cdo#Perspective"/>
         <rdfs:comment>data that represents observable facts or measurable phenomena within a computational system, recorded without personal bias or interpretation and verifiable through consistent methods or standards.</rdfs:comment>
     </owl:Class>
     
@@ -988,6 +1089,7 @@ Version 1 March 11, 2026</owl:versionInfo>
 
 
     <owl:Class rdf:about="https://onto.colossi.network/cdo#Passive">
+        <rdfs:subClassOf rdf:resource="https://onto.colossi.network/cdo#Behaviour"/>
         <rdfs:comment>data that resides in a computational system without actively influencing or participating in current processes, typically stored for reference, archival, or deferred analysis.</rdfs:comment>
     </owl:Class>
     
@@ -1105,6 +1207,7 @@ Version 1 March 11, 2026</owl:versionInfo>
 
 
     <owl:Class rdf:about="https://onto.colossi.network/cdo#Subjective">
+        <rdfs:subClassOf rdf:resource="https://onto.colossi.network/cdo#Perspective"/>
         <rdfs:comment>data that reflects personal opinions, interpretations, emotions, or perceptions captured within a computational system, often influenced by individual experience or context rather than objective measurement.</rdfs:comment>
     </owl:Class>
     

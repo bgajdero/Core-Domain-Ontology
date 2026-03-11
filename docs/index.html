@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://onto.colossi.network/cdo#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://onto.colossi.network/cdo#","name":"Core Domain Ontology", "headline":"Document describing the ontology https://onto.colossi.network/cdo#", "dateReleased":"Wed Mar 11 12:21:46 MDT 2026", "dateModified":"2026-03-11", "version":"
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://onto.colossi.network/cdo#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://onto.colossi.network/cdo#","name":"Core Domain Ontology", "headline":"Document describing the ontology https://onto.colossi.network/cdo#", "dateReleased":"Wed Mar 11 16:11:57 MDT 2026", "dateModified":"2026-03-11", "version":"
 Version 1 March 11, 2026", "license":"http://creativecommons.org/licenses/by/3.0/", "author":[{"@type":"Person","name":"Bart Gajderowicz (bart.gajderowicz@usu.edu"},{"@type":"Person","name":"Keith Dugas (keith.dugas@secours.ai)"},{"@type":"Person","name":"Paul Knowles (paul@secours.ai)"}]}</script>
 
 <script src="resources/jquery.js"></script> 
@@ -356,6 +356,11 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#achieves" title="https://onto.colossi.network/cdo#achieves">
+         <span>achieves</span>
+      </a>
+   </li>
+   <li>
       <a href="#acknowledges" title="https://onto.colossi.network/cdo#acknowledges">
          <span>acknowledges</span>
       </a>
@@ -366,18 +371,13 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#aimsToward" title="https://onto.colossi.network/cdo#aimsToward">
-         <span>aims Toward</span>
-      </a>
-   </li>
-   <li>
       <a href="#annotates" title="https://onto.colossi.network/cdo#annotates">
          <span>annotates</span>
       </a>
    </li>
    <li>
-      <a href="#authorizes" title="https://onto.colossi.network/cdo#authorizes">
-         <span>authorizes</span>
+      <a href="#attributedTo" title="https://onto.colossi.network/cdo#attributedTo">
+         <span>attributed To</span>
       </a>
    </li>
    <li>
@@ -386,13 +386,23 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#conditions" title="https://onto.colossi.network/cdo#conditions">
-         <span>conditions</span>
+      <a href="#constructs" title="https://onto.colossi.network/cdo#constructs">
+         <span>constructs</span>
       </a>
    </li>
    <li>
-      <a href="#constructs" title="https://onto.colossi.network/cdo#constructs">
-         <span>constructs</span>
+      <a href="#contextualizes" title="https://onto.colossi.network/cdo#contextualizes">
+         <span>contextualizes</span>
+      </a>
+   </li>
+   <li>
+      <a href="#conveys" title="https://onto.colossi.network/cdo#conveys">
+         <span>conveys</span>
+      </a>
+   </li>
+   <li>
+      <a href="#declares" title="https://onto.colossi.network/cdo#declares">
+         <span>declares</span>
       </a>
    </li>
    <li>
@@ -412,13 +422,13 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#documents" title="https://onto.colossi.network/cdo#documents">
-         <span>documents</span>
+      <a href="#encapsulates" title="https://onto.colossi.network/cdo#encapsulates">
+         <span>encapsulates</span>
       </a>
    </li>
    <li>
-      <a href="#encapsulates" title="https://onto.colossi.network/cdo#encapsulates">
-         <span>encapsulates</span>
+      <a href="#encodes" title="https://onto.colossi.network/cdo#encodes">
+         <span>encodes</span>
       </a>
    </li>
    <li>
@@ -430,11 +440,6 @@ This ontology has the following classes and properties.</span>
       <a href="#exchangedThrough"
          title="https://onto.colossi.network/cdo#exchangedThrough">
          <span>exchanged Through</span>
-      </a>
-   </li>
-   <li>
-      <a href="#frames" title="https://onto.colossi.network/cdo#frames">
-         <span>frames</span>
       </a>
    </li>
    <li>
@@ -453,13 +458,14 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#interprets" title="https://onto.colossi.network/cdo#interprets">
-         <span>interprets</span>
+      <a href="#invokes" title="https://onto.colossi.network/cdo#invokes">
+         <span>invokes</span>
       </a>
    </li>
    <li>
-      <a href="#invokes" title="https://onto.colossi.network/cdo#invokes">
-         <span>invokes</span>
+      <a href="#isAcknowledgedBy"
+         title="https://onto.colossi.network/cdo#isAcknowledgedBy">
+         <span>is Acknowledged By</span>
       </a>
    </li>
    <li>
@@ -483,8 +489,23 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#isCapturedBy" title="https://onto.colossi.network/cdo#isCapturedBy">
+         <span>is Captured By</span>
+      </a>
+   </li>
+   <li>
       <a href="#isCommittedTo" title="https://onto.colossi.network/cdo#isCommittedTo">
          <span>is Committed To</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isConsumedBy" title="https://onto.colossi.network/cdo#isConsumedBy">
+         <span>is Consumed By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isDefinedBy" title="https://onto.colossi.network/cdo#isDefinedBy">
+         <span>is Defined By</span>
       </a>
    </li>
    <li>
@@ -498,8 +519,8 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#isExpressedBy" title="https://onto.colossi.network/cdo#isExpressedBy">
-         <span>is Expressed By</span>
+      <a href="#isExplainedBy" title="https://onto.colossi.network/cdo#isExplainedBy">
+         <span>is Explained By</span>
       </a>
    </li>
    <li>
@@ -513,8 +534,8 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#isModifiedBy" title="https://onto.colossi.network/cdo#isModifiedBy">
-         <span>is Modified By</span>
+      <a href="#isIssuedUnder" title="https://onto.colossi.network/cdo#isIssuedUnder">
+         <span>is Issued Under</span>
       </a>
    </li>
    <li>
@@ -534,6 +555,11 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#isRefinedBy" title="https://onto.colossi.network/cdo#isRefinedBy">
+         <span>is Refined By</span>
+      </a>
+   </li>
+   <li>
       <a href="#isRegisteredBy" title="https://onto.colossi.network/cdo#isRegisteredBy">
          <span>is Registered By</span>
       </a>
@@ -541,6 +567,11 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#isRepresentedBy" title="https://onto.colossi.network/cdo#isRepresentedBy">
          <span>is Represented By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isScopedBy" title="https://onto.colossi.network/cdo#isScopedBy">
+         <span>is Scoped By</span>
       </a>
    </li>
    <li>
@@ -579,11 +610,6 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#qualifies" title="https://onto.colossi.network/cdo#qualifies">
-         <span>qualifies</span>
-      </a>
-   </li>
-   <li>
       <a href="#realizes" title="https://onto.colossi.network/cdo#realizes">
          <span>realizes</span>
       </a>
@@ -594,8 +620,13 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#stimulates" title="https://onto.colossi.network/cdo#stimulates">
-         <span>stimulates</span>
+      <a href="#specifies" title="https://onto.colossi.network/cdo#specifies">
+         <span>specifies</span>
+      </a>
+   </li>
+   <li>
+      <a href="#stores" title="https://onto.colossi.network/cdo#stores">
+         <span>stores</span>
       </a>
    </li>
    <li>
@@ -611,6 +642,11 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#undergoes" title="https://onto.colossi.network/cdo#undergoes">
          <span>undergoes</span>
+      </a>
+   </li>
+   <li>
+      <a href="#yields" title="https://onto.colossi.network/cdo#yields">
+         <span>yields</span>
       </a>
    </li>
 </ul><iframe src="webvowl/index.html"></iframe> 
@@ -690,10 +726,16 @@ This section provides details for each class and property defined by Core Domain
   </div>
   <dl class="description">
    <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Active" title="https://onto.colossi.network/cdo#Active">Active</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#initiates" title="https://onto.colossi.network/cdo#initiates">initiates</a> <sup class="type-op" title="object property">op</sup>, <a href="#isActivatedBy" title="https://onto.colossi.network/cdo#isActivatedBy">is Activated By</a> <sup class="type-op" title="object property">op</sup>, <a href="#isInstanceOf" title="https://onto.colossi.network/cdo#isInstanceOf">is Instance Of</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#initiates" title="https://onto.colossi.network/cdo#initiates">initiates</a> <sup class="type-op" title="object property">op</sup>, <a href="#isActivatedBy" title="https://onto.colossi.network/cdo#isActivatedBy">is Activated By</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDrivenBy" title="https://onto.colossi.network/cdo#isDrivenBy">is Driven By</a> <sup class="type-op" title="object property">op</sup>, <a href="#isInstanceOf" title="https://onto.colossi.network/cdo#isInstanceOf">is Instance Of</a> <sup class="type-op" title="object property">op</sup>, <a href="#produces" title="https://onto.colossi.network/cdo#produces">produces</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
@@ -711,10 +753,16 @@ This section provides details for each class and property defined by Core Domain
   </div>
   <dl class="description">
    <dt>
-    is in domain of
+    has super-classes
    </dt>
    <dd>
-    <a href="#stimulates" title="https://onto.colossi.network/cdo#stimulates">stimulates</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#Behaviour" title="https://onto.colossi.network/cdo#Behaviour">Behaviour</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Action" title="https://onto.colossi.network/cdo#Action">Action</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -725,6 +773,12 @@ This section provides details for each class and property defined by Core Domain
    <span class="markdown">a defined unit of information within a data object that expresses a specific property, characteristic, or qualifier used to describe, differentiate, or structure the underlying entity.</span>
   </div>
   <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isRepresentedBy" title="https://onto.colossi.network/cdo#isRepresentedBy">is Represented By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
    <dt>
     is in range of
    </dt>
@@ -741,16 +795,10 @@ This section provides details for each class and property defined by Core Domain
   </div>
   <dl class="description">
    <dt>
-    is in domain of
+    has sub-classes
    </dt>
    <dd>
-    <a href="#aimsToward" title="https://onto.colossi.network/cdo#aimsToward">aims Toward</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-   <dt>
-    is in range of
-   </dt>
-   <dd>
-    <a href="#conditions" title="https://onto.colossi.network/cdo#conditions">conditions</a> <sup class="type-op" title="object property">op</sup>, <a href="#stimulates" title="https://onto.colossi.network/cdo#stimulates">stimulates</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#Active" title="https://onto.colossi.network/cdo#Active">Active</a> <sup class="type-c" title="class">c</sup>, <a href="#Passive" title="https://onto.colossi.network/cdo#Passive">Passive</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -766,6 +814,12 @@ This section provides details for each class and property defined by Core Domain
    </dt>
    <dd>
     <a href="#isBundledIn" title="https://onto.colossi.network/cdo#isBundledIn">is Bundled In</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isRepresentedBy" title="https://onto.colossi.network/cdo#isRepresentedBy">is Represented By</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -813,10 +867,16 @@ This section provides details for each class and property defined by Core Domain
   </div>
   <dl class="description">
    <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Subjective" title="https://onto.colossi.network/cdo#Subjective">Subjective</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#defines" title="https://onto.colossi.network/cdo#defines">defines</a> <sup class="type-op" title="object property">op</sup>, <a href="#isExpressedBy" title="https://onto.colossi.network/cdo#isExpressedBy">is Expressed By</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#defines" title="https://onto.colossi.network/cdo#defines">defines</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDefinedBy" title="https://onto.colossi.network/cdo#isDefinedBy">is Defined By</a> <sup class="type-op" title="object property">op</sup>, <a href="#isScopedBy" title="https://onto.colossi.network/cdo#isScopedBy">is Scoped By</a> <sup class="type-op" title="object property">op</sup>, <a href="#specifies" title="https://onto.colossi.network/cdo#specifies">specifies</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
@@ -837,7 +897,7 @@ This section provides details for each class and property defined by Core Domain
     is in domain of
    </dt>
    <dd>
-    <a href="#accessedBy" title="https://onto.colossi.network/cdo#accessedBy">accessed By</a> <sup class="type-op" title="object property">op</sup>, <a href="#capturedAs" title="https://onto.colossi.network/cdo#capturedAs">captured As</a> <sup class="type-op" title="object property">op</sup>, <a href="#enteredAs" title="https://onto.colossi.network/cdo#enteredAs">entered As</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDrivenBy" title="https://onto.colossi.network/cdo#isDrivenBy">is Driven By</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#accessedBy" title="https://onto.colossi.network/cdo#accessedBy">accessed By</a> <sup class="type-op" title="object property">op</sup>, <a href="#capturedAs" title="https://onto.colossi.network/cdo#capturedAs">captured As</a> <sup class="type-op" title="object property">op</sup>, <a href="#enteredAs" title="https://onto.colossi.network/cdo#enteredAs">entered As</a> <sup class="type-op" title="object property">op</sup>, <a href="#exchangedThrough" title="https://onto.colossi.network/cdo#exchangedThrough">exchanged Through</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -870,16 +930,22 @@ This section provides details for each class and property defined by Core Domain
   </div>
   <dl class="description">
    <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Objective" title="https://onto.colossi.network/cdo#Objective">Objective</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#occursIn" title="https://onto.colossi.network/cdo#occursIn">occurs In</a> <sup class="type-op" title="object property">op</sup>, <a href="#realizes" title="https://onto.colossi.network/cdo#realizes">realizes</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#achieves" title="https://onto.colossi.network/cdo#achieves">achieves</a> <sup class="type-op" title="object property">op</sup>, <a href="#attributedTo" title="https://onto.colossi.network/cdo#attributedTo">attributed To</a> <sup class="type-op" title="object property">op</sup>, <a href="#occursIn" title="https://onto.colossi.network/cdo#occursIn">occurs In</a> <sup class="type-op" title="object property">op</sup>, <a href="#realizes" title="https://onto.colossi.network/cdo#realizes">realizes</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#enteredAs" title="https://onto.colossi.network/cdo#enteredAs">entered As</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#enteredAs" title="https://onto.colossi.network/cdo#enteredAs">entered As</a> <sup class="type-op" title="object property">op</sup>, <a href="#produces" title="https://onto.colossi.network/cdo#produces">produces</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -890,6 +956,12 @@ This section provides details for each class and property defined by Core Domain
    <span class="markdown">a verified unit of information within a computational system that represents an objective truth or observed reality, serving as a foundational element for analysis, inference, or decision-making.</span>
   </div>
   <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#supports" title="https://onto.colossi.network/cdo#supports">supports</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
    <dt>
     is in range of
    </dt>
@@ -930,13 +1002,13 @@ This section provides details for each class and property defined by Core Domain
     is in domain of
    </dt>
    <dd>
-    <a href="#represents" title="https://onto.colossi.network/cdo#represents">represents</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#isConsumedBy" title="https://onto.colossi.network/cdo#isConsumedBy">is Consumed By</a> <sup class="type-op" title="object property">op</sup>, <a href="#represents" title="https://onto.colossi.network/cdo#represents">represents</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#definesLayoutFor" title="https://onto.colossi.network/cdo#definesLayoutFor">defines Layout For</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#definesLayoutFor" title="https://onto.colossi.network/cdo#definesLayoutFor">defines Layout For</a> <sup class="type-op" title="object property">op</sup>, <a href="#stores" title="https://onto.colossi.network/cdo#stores">stores</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -951,13 +1023,13 @@ This section provides details for each class and property defined by Core Domain
     is in domain of
    </dt>
    <dd>
-    <a href="#interprets" title="https://onto.colossi.network/cdo#interprets">interprets</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#yields" title="https://onto.colossi.network/cdo#yields">yields</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#isExpressedBy" title="https://onto.colossi.network/cdo#isExpressedBy">is Expressed By</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#isStructuredBy" title="https://onto.colossi.network/cdo#isStructuredBy">is Structured By</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -993,7 +1065,7 @@ This section provides details for each class and property defined by Core Domain
     is in range of
    </dt>
    <dd>
-    <a href="#aimsToward" title="https://onto.colossi.network/cdo#aimsToward">aims Toward</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#achieves" title="https://onto.colossi.network/cdo#achieves">achieves</a> <sup class="type-op" title="object property">op</sup>, <a href="#defines" title="https://onto.colossi.network/cdo#defines">defines</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1077,7 +1149,7 @@ This section provides details for each class and property defined by Core Domain
     is in range of
    </dt>
    <dd>
-    <a href="#isRealizedThrough" title="https://onto.colossi.network/cdo#isRealizedThrough">is Realized Through</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#isConsumedBy" title="https://onto.colossi.network/cdo#isConsumedBy">is Consumed By</a> <sup class="type-op" title="object property">op</sup>, <a href="#isRealizedThrough" title="https://onto.colossi.network/cdo#isRealizedThrough">is Realized Through</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1093,6 +1165,12 @@ This section provides details for each class and property defined by Core Domain
    </dt>
    <dd>
     <a href="#fulfills" title="https://onto.colossi.network/cdo#fulfills">fulfills</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#declares" title="https://onto.colossi.network/cdo#declares">declares</a> <sup class="type-op" title="object property">op</sup>, <a href="#isInstanceOf" title="https://onto.colossi.network/cdo#isInstanceOf">is Instance Of</a> <sup class="type-op" title="object property">op</sup>, <a href="#specifies" title="https://onto.colossi.network/cdo#specifies">specifies</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1113,7 +1191,7 @@ This section provides details for each class and property defined by Core Domain
     is in range of
    </dt>
    <dd>
-    <a href="#documents" title="https://onto.colossi.network/cdo#documents">documents</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#isExplainedBy" title="https://onto.colossi.network/cdo#isExplainedBy">is Explained By</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1125,10 +1203,16 @@ This section provides details for each class and property defined by Core Domain
   </div>
   <dl class="description">
    <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isAcknowledgedBy" title="https://onto.colossi.network/cdo#isAcknowledgedBy">is Acknowledged By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#acknowledges" title="https://onto.colossi.network/cdo#acknowledges">acknowledges</a> <sup class="type-op" title="object property">op</sup>, <a href="#authorizes" title="https://onto.colossi.network/cdo#authorizes">authorizes</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#yields" title="https://onto.colossi.network/cdo#yields">yields</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1140,16 +1224,22 @@ This section provides details for each class and property defined by Core Domain
   </div>
   <dl class="description">
    <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Passive" title="https://onto.colossi.network/cdo#Passive">Passive</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#exchangedThrough" title="https://onto.colossi.network/cdo#exchangedThrough">exchanged Through</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDescribedBy" title="https://onto.colossi.network/cdo#isDescribedBy">is Described By</a> <sup class="type-op" title="object property">op</sup>, <a href="#isImpactedBy" title="https://onto.colossi.network/cdo#isImpactedBy">is Impacted By</a> <sup class="type-op" title="object property">op</sup>, <a href="#isStructuredBy" title="https://onto.colossi.network/cdo#isStructuredBy">is Structured By</a> <sup class="type-op" title="object property">op</sup>, <a href="#undergoes" title="https://onto.colossi.network/cdo#undergoes">undergoes</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#isDescribedBy" title="https://onto.colossi.network/cdo#isDescribedBy">is Described By</a> <sup class="type-op" title="object property">op</sup>, <a href="#isImpactedBy" title="https://onto.colossi.network/cdo#isImpactedBy">is Impacted By</a> <sup class="type-op" title="object property">op</sup>, <a href="#isStructuredBy" title="https://onto.colossi.network/cdo#isStructuredBy">is Structured By</a> <sup class="type-op" title="object property">op</sup>, <a href="#undergoes" title="https://onto.colossi.network/cdo#undergoes">undergoes</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#capturedAs" title="https://onto.colossi.network/cdo#capturedAs">captured As</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#capturedAs" title="https://onto.colossi.network/cdo#capturedAs">captured As</a> <sup class="type-op" title="object property">op</sup>, <a href="#contextualizes" title="https://onto.colossi.network/cdo#contextualizes">contextualizes</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1161,10 +1251,16 @@ This section provides details for each class and property defined by Core Domain
   </div>
   <dl class="description">
    <dt>
-    is in range of
+    has super-classes
    </dt>
    <dd>
-    <a href="#frames" title="https://onto.colossi.network/cdo#frames">frames</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#Perspective" title="https://onto.colossi.network/cdo#Perspective">Perspective</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Event" title="https://onto.colossi.network/cdo#Event">Event</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1200,13 +1296,13 @@ This section provides details for each class and property defined by Core Domain
     is in domain of
    </dt>
    <dd>
-    <a href="#delivers" title="https://onto.colossi.network/cdo#delivers">delivers</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#conveys" title="https://onto.colossi.network/cdo#conveys">conveys</a> <sup class="type-op" title="object property">op</sup>, <a href="#declares" title="https://onto.colossi.network/cdo#declares">declares</a> <sup class="type-op" title="object property">op</sup>, <a href="#delivers" title="https://onto.colossi.network/cdo#delivers">delivers</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#isTransmittedAs" title="https://onto.colossi.network/cdo#isTransmittedAs">is Transmitted As</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#acknowledges" title="https://onto.colossi.network/cdo#acknowledges">acknowledges</a> <sup class="type-op" title="object property">op</sup>, <a href="#annotates" title="https://onto.colossi.network/cdo#annotates">annotates</a> <sup class="type-op" title="object property">op</sup>, <a href="#isTransmittedAs" title="https://onto.colossi.network/cdo#isTransmittedAs">is Transmitted As</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1218,10 +1314,16 @@ This section provides details for each class and property defined by Core Domain
   </div>
   <dl class="description">
    <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isStructuredBy" title="https://onto.colossi.network/cdo#isStructuredBy">is Structured By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#interprets" title="https://onto.colossi.network/cdo#interprets">interprets</a> <sup class="type-op" title="object property">op</sup>, <a href="#isModifiedBy" title="https://onto.colossi.network/cdo#isModifiedBy">is Modified By</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#isRefinedBy" title="https://onto.colossi.network/cdo#isRefinedBy">is Refined By</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1233,10 +1335,16 @@ This section provides details for each class and property defined by Core Domain
   </div>
   <dl class="description">
    <dt>
-    is in domain of
+    has super-classes
    </dt>
    <dd>
-    <a href="#conditions" title="https://onto.colossi.network/cdo#conditions">conditions</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#Behaviour" title="https://onto.colossi.network/cdo#Behaviour">Behaviour</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Object" title="https://onto.colossi.network/cdo#Object">Object</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1251,13 +1359,13 @@ This section provides details for each class and property defined by Core Domain
     is in domain of
    </dt>
    <dd>
-    <a href="#isPackagedAs" title="https://onto.colossi.network/cdo#isPackagedAs">is Packaged As</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#encodes" title="https://onto.colossi.network/cdo#encodes">encodes</a> <sup class="type-op" title="object property">op</sup>, <a href="#isCapturedBy" title="https://onto.colossi.network/cdo#isCapturedBy">is Captured By</a> <sup class="type-op" title="object property">op</sup>, <a href="#isPackagedAs" title="https://onto.colossi.network/cdo#isPackagedAs">is Packaged As</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#encapsulates" title="https://onto.colossi.network/cdo#encapsulates">encapsulates</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#conveys" title="https://onto.colossi.network/cdo#conveys">conveys</a> <sup class="type-op" title="object property">op</sup>, <a href="#encapsulates" title="https://onto.colossi.network/cdo#encapsulates">encapsulates</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1269,10 +1377,10 @@ This section provides details for each class and property defined by Core Domain
   </div>
   <dl class="description">
    <dt>
-    is in domain of
+    has sub-classes
    </dt>
    <dd>
-    <a href="#frames" title="https://onto.colossi.network/cdo#frames">frames</a> <sup class="type-op" title="object property">op</sup>, <a href="#qualifies" title="https://onto.colossi.network/cdo#qualifies">qualifies</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#Objective" title="https://onto.colossi.network/cdo#Objective">Objective</a> <sup class="type-c" title="class">c</sup>, <a href="#Subjective" title="https://onto.colossi.network/cdo#Subjective">Subjective</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1287,7 +1395,13 @@ This section provides details for each class and property defined by Core Domain
     is in domain of
    </dt>
    <dd>
-    <a href="#authorizes" title="https://onto.colossi.network/cdo#authorizes">authorizes</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#isExplainedBy" title="https://onto.colossi.network/cdo#isExplainedBy">is Explained By</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isIssuedUnder" title="https://onto.colossi.network/cdo#isIssuedUnder">is Issued Under</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1308,7 +1422,7 @@ This section provides details for each class and property defined by Core Domain
     is in range of
    </dt>
    <dd>
-    <a href="#fulfills" title="https://onto.colossi.network/cdo#fulfills">fulfills</a> <sup class="type-op" title="object property">op</sup>, <a href="#isInstanceOf" title="https://onto.colossi.network/cdo#isInstanceOf">is Instance Of</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#fulfills" title="https://onto.colossi.network/cdo#fulfills">fulfills</a> <sup class="type-op" title="object property">op</sup>, <a href="#supports" title="https://onto.colossi.network/cdo#supports">supports</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1323,7 +1437,7 @@ This section provides details for each class and property defined by Core Domain
     is in range of
    </dt>
    <dd>
-    <a href="#guides" title="https://onto.colossi.network/cdo#guides">guides</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDrivenBy" title="https://onto.colossi.network/cdo#isDrivenBy">is Driven By</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#attributedTo" title="https://onto.colossi.network/cdo#attributedTo">attributed To</a> <sup class="type-op" title="object property">op</sup>, <a href="#guides" title="https://onto.colossi.network/cdo#guides">guides</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDrivenBy" title="https://onto.colossi.network/cdo#isDrivenBy">is Driven By</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1338,7 +1452,13 @@ This section provides details for each class and property defined by Core Domain
     is in domain of
    </dt>
    <dd>
-    <a href="#acknowledges" title="https://onto.colossi.network/cdo#acknowledges">acknowledges</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#acknowledges" title="https://onto.colossi.network/cdo#acknowledges">acknowledges</a> <sup class="type-op" title="object property">op</sup>, <a href="#isIssuedUnder" title="https://onto.colossi.network/cdo#isIssuedUnder">is Issued Under</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isAcknowledgedBy" title="https://onto.colossi.network/cdo#isAcknowledgedBy">is Acknowledged By</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1353,13 +1473,13 @@ This section provides details for each class and property defined by Core Domain
     is in domain of
    </dt>
    <dd>
-    <a href="#documents" title="https://onto.colossi.network/cdo#documents">documents</a> <sup class="type-op" title="object property">op</sup>, <a href="#isCommittedTo" title="https://onto.colossi.network/cdo#isCommittedTo">is Committed To</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#isCommittedTo" title="https://onto.colossi.network/cdo#isCommittedTo">is Committed To</a> <sup class="type-op" title="object property">op</sup>, <a href="#stores" title="https://onto.colossi.network/cdo#stores">stores</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#isRegisteredBy" title="https://onto.colossi.network/cdo#isRegisteredBy">is Registered By</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#isCapturedBy" title="https://onto.colossi.network/cdo#isCapturedBy">is Captured By</a> <sup class="type-op" title="object property">op</sup>, <a href="#isRegisteredBy" title="https://onto.colossi.network/cdo#isRegisteredBy">is Registered By</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1395,7 +1515,7 @@ This section provides details for each class and property defined by Core Domain
     is in range of
    </dt>
    <dd>
-    <a href="#constructs" title="https://onto.colossi.network/cdo#constructs">constructs</a> <sup class="type-op" title="object property">op</sup>, <a href="#isStructuredBy" title="https://onto.colossi.network/cdo#isStructuredBy">is Structured By</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#constructs" title="https://onto.colossi.network/cdo#constructs">constructs</a> <sup class="type-op" title="object property">op</sup>, <a href="#isScopedBy" title="https://onto.colossi.network/cdo#isScopedBy">is Scoped By</a> <sup class="type-op" title="object property">op</sup>, <a href="#isStructuredBy" title="https://onto.colossi.network/cdo#isStructuredBy">is Structured By</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1416,7 +1536,7 @@ This section provides details for each class and property defined by Core Domain
     is in range of
    </dt>
    <dd>
-    <a href="#represents" title="https://onto.colossi.network/cdo#represents">represents</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#encodes" title="https://onto.colossi.network/cdo#encodes">encodes</a> <sup class="type-op" title="object property">op</sup>, <a href="#represents" title="https://onto.colossi.network/cdo#represents">represents</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1470,10 +1590,16 @@ This section provides details for each class and property defined by Core Domain
   </div>
   <dl class="description">
    <dt>
-    is in range of
+    has super-classes
    </dt>
    <dd>
-    <a href="#qualifies" title="https://onto.colossi.network/cdo#qualifies">qualifies</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#Perspective" title="https://onto.colossi.network/cdo#Perspective">Perspective</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Concept" title="https://onto.colossi.network/cdo#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1488,13 +1614,13 @@ This section provides details for each class and property defined by Core Domain
     is in domain of
    </dt>
    <dd>
-    <a href="#isModifiedBy" title="https://onto.colossi.network/cdo#isModifiedBy">is Modified By</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#isRefinedBy" title="https://onto.colossi.network/cdo#isRefinedBy">is Refined By</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#defines" title="https://onto.colossi.network/cdo#defines">defines</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#isDefinedBy" title="https://onto.colossi.network/cdo#isDefinedBy">is Defined By</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1515,7 +1641,7 @@ This section provides details for each class and property defined by Core Domain
     is in range of
    </dt>
    <dd>
-    <a href="#annotates" title="https://onto.colossi.network/cdo#annotates">annotates</a> <sup class="type-op" title="object property">op</sup>, <a href="#isAnnotatedBy" title="https://onto.colossi.network/cdo#isAnnotatedBy">is Annotated By</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#isAnnotatedBy" title="https://onto.colossi.network/cdo#isAnnotatedBy">is Annotated By</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -1565,43 +1691,49 @@ This section provides details for each class and property defined by Core Domain
  <h3 id="properties" class="list">Object Properties</h3>
  <ul class="hlist">
   <li><a href="#accessedBy" title="https://onto.colossi.network/cdo#accessedBy"> <span>accessed By</span> </a></li>
+  <li><a href="#achieves" title="https://onto.colossi.network/cdo#achieves"> <span>achieves</span> </a></li>
   <li><a href="#acknowledges" title="https://onto.colossi.network/cdo#acknowledges"> <span>acknowledges</span> </a></li>
   <li><a href="#affirms" title="https://onto.colossi.network/cdo#affirms"> <span>affirms</span> </a></li>
-  <li><a href="#aimsToward" title="https://onto.colossi.network/cdo#aimsToward"> <span>aims Toward</span> </a></li>
   <li><a href="#annotates" title="https://onto.colossi.network/cdo#annotates"> <span>annotates</span> </a></li>
-  <li><a href="#authorizes" title="https://onto.colossi.network/cdo#authorizes"> <span>authorizes</span> </a></li>
+  <li><a href="#attributedTo" title="https://onto.colossi.network/cdo#attributedTo"> <span>attributed To</span> </a></li>
   <li><a href="#capturedAs" title="https://onto.colossi.network/cdo#capturedAs"> <span>captured As</span> </a></li>
-  <li><a href="#conditions" title="https://onto.colossi.network/cdo#conditions"> <span>conditions</span> </a></li>
   <li><a href="#constructs" title="https://onto.colossi.network/cdo#constructs"> <span>constructs</span> </a></li>
+  <li><a href="#contextualizes" title="https://onto.colossi.network/cdo#contextualizes"> <span>contextualizes</span> </a></li>
+  <li><a href="#conveys" title="https://onto.colossi.network/cdo#conveys"> <span>conveys</span> </a></li>
+  <li><a href="#declares" title="https://onto.colossi.network/cdo#declares"> <span>declares</span> </a></li>
   <li><a href="#defines" title="https://onto.colossi.network/cdo#defines"> <span>defines</span> </a></li>
   <li><a href="#definesLayoutFor" title="https://onto.colossi.network/cdo#definesLayoutFor"> <span>defines Layout For</span> </a></li>
   <li><a href="#delivers" title="https://onto.colossi.network/cdo#delivers"> <span>delivers</span> </a></li>
-  <li><a href="#documents" title="https://onto.colossi.network/cdo#documents"> <span>documents</span> </a></li>
   <li><a href="#encapsulates" title="https://onto.colossi.network/cdo#encapsulates"> <span>encapsulates</span> </a></li>
+  <li><a href="#encodes" title="https://onto.colossi.network/cdo#encodes"> <span>encodes</span> </a></li>
   <li><a href="#enteredAs" title="https://onto.colossi.network/cdo#enteredAs"> <span>entered As</span> </a></li>
   <li><a href="#exchangedThrough" title="https://onto.colossi.network/cdo#exchangedThrough"> <span>exchanged Through</span> </a></li>
-  <li><a href="#frames" title="https://onto.colossi.network/cdo#frames"> <span>frames</span> </a></li>
   <li><a href="#fulfills" title="https://onto.colossi.network/cdo#fulfills"> <span>fulfills</span> </a></li>
   <li><a href="#guides" title="https://onto.colossi.network/cdo#guides"> <span>guides</span> </a></li>
   <li><a href="#initiates" title="https://onto.colossi.network/cdo#initiates"> <span>initiates</span> </a></li>
-  <li><a href="#interprets" title="https://onto.colossi.network/cdo#interprets"> <span>interprets</span> </a></li>
   <li><a href="#invokes" title="https://onto.colossi.network/cdo#invokes"> <span>invokes</span> </a></li>
+  <li><a href="#isAcknowledgedBy" title="https://onto.colossi.network/cdo#isAcknowledgedBy"> <span>is Acknowledged By</span> </a></li>
   <li><a href="#isActivatedBy" title="https://onto.colossi.network/cdo#isActivatedBy"> <span>is Activated By</span> </a></li>
   <li><a href="#isAddressedBy" title="https://onto.colossi.network/cdo#isAddressedBy"> <span>is Addressed By</span> </a></li>
   <li><a href="#isAnnotatedBy" title="https://onto.colossi.network/cdo#isAnnotatedBy"> <span>is Annotated By</span> </a></li>
   <li><a href="#isBundledIn" title="https://onto.colossi.network/cdo#isBundledIn"> <span>is Bundled In</span> </a></li>
+  <li><a href="#isCapturedBy" title="https://onto.colossi.network/cdo#isCapturedBy"> <span>is Captured By</span> </a></li>
   <li><a href="#isCommittedTo" title="https://onto.colossi.network/cdo#isCommittedTo"> <span>is Committed To</span> </a></li>
+  <li><a href="#isConsumedBy" title="https://onto.colossi.network/cdo#isConsumedBy"> <span>is Consumed By</span> </a></li>
+  <li><a href="#isDefinedBy" title="https://onto.colossi.network/cdo#isDefinedBy"> <span>is Defined By</span> </a></li>
   <li><a href="#isDescribedBy" title="https://onto.colossi.network/cdo#isDescribedBy"> <span>is Described By</span> </a></li>
   <li><a href="#isDrivenBy" title="https://onto.colossi.network/cdo#isDrivenBy"> <span>is Driven By</span> </a></li>
-  <li><a href="#isExpressedBy" title="https://onto.colossi.network/cdo#isExpressedBy"> <span>is Expressed By</span> </a></li>
+  <li><a href="#isExplainedBy" title="https://onto.colossi.network/cdo#isExplainedBy"> <span>is Explained By</span> </a></li>
   <li><a href="#isImpactedBy" title="https://onto.colossi.network/cdo#isImpactedBy"> <span>is Impacted By</span> </a></li>
   <li><a href="#isInstanceOf" title="https://onto.colossi.network/cdo#isInstanceOf"> <span>is Instance Of</span> </a></li>
-  <li><a href="#isModifiedBy" title="https://onto.colossi.network/cdo#isModifiedBy"> <span>is Modified By</span> </a></li>
+  <li><a href="#isIssuedUnder" title="https://onto.colossi.network/cdo#isIssuedUnder"> <span>is Issued Under</span> </a></li>
   <li><a href="#isPackagedAs" title="https://onto.colossi.network/cdo#isPackagedAs"> <span>is Packaged As</span> </a></li>
   <li><a href="#isRealizedThrough" title="https://onto.colossi.network/cdo#isRealizedThrough"> <span>is Realized Through</span> </a></li>
   <li><a href="#isRecordedAs" title="https://onto.colossi.network/cdo#isRecordedAs"> <span>is Recorded As</span> </a></li>
+  <li><a href="#isRefinedBy" title="https://onto.colossi.network/cdo#isRefinedBy"> <span>is Refined By</span> </a></li>
   <li><a href="#isRegisteredBy" title="https://onto.colossi.network/cdo#isRegisteredBy"> <span>is Registered By</span> </a></li>
   <li><a href="#isRepresentedBy" title="https://onto.colossi.network/cdo#isRepresentedBy"> <span>is Represented By</span> </a></li>
+  <li><a href="#isScopedBy" title="https://onto.colossi.network/cdo#isScopedBy"> <span>is Scoped By</span> </a></li>
   <li><a href="#isStructuredBy" title="https://onto.colossi.network/cdo#isStructuredBy"> <span>is Structured By</span> </a></li>
   <li><a href="#isTransmittedAs" title="https://onto.colossi.network/cdo#isTransmittedAs"> <span>is Transmitted As</span> </a></li>
   <li><a href="#isWrittenTo" title="https://onto.colossi.network/cdo#isWrittenTo"> <span>is Written To</span> </a></li>
@@ -1609,13 +1741,14 @@ This section provides details for each class and property defined by Core Domain
   <li><a href="#occursIn" title="https://onto.colossi.network/cdo#occursIn"> <span>occurs In</span> </a></li>
   <li><a href="#orders" title="https://onto.colossi.network/cdo#orders"> <span>orders</span> </a></li>
   <li><a href="#produces" title="https://onto.colossi.network/cdo#produces"> <span>produces</span> </a></li>
-  <li><a href="#qualifies" title="https://onto.colossi.network/cdo#qualifies"> <span>qualifies</span> </a></li>
   <li><a href="#realizes" title="https://onto.colossi.network/cdo#realizes"> <span>realizes</span> </a></li>
   <li><a href="#represents" title="https://onto.colossi.network/cdo#represents"> <span>represents</span> </a></li>
-  <li><a href="#stimulates" title="https://onto.colossi.network/cdo#stimulates"> <span>stimulates</span> </a></li>
+  <li><a href="#specifies" title="https://onto.colossi.network/cdo#specifies"> <span>specifies</span> </a></li>
+  <li><a href="#stores" title="https://onto.colossi.network/cdo#stores"> <span>stores</span> </a></li>
   <li><a href="#supports" title="https://onto.colossi.network/cdo#supports"> <span>supports</span> </a></li>
   <li><a href="#traces" title="https://onto.colossi.network/cdo#traces"> <span>traces</span> </a></li>
   <li><a href="#undergoes" title="https://onto.colossi.network/cdo#undergoes"> <span>undergoes</span> </a></li>
+  <li><a href="#yields" title="https://onto.colossi.network/cdo#yields"> <span>yields</span> </a></li>
  </ul>
  <div class="entity" id="accessedBy">
   <h3>accessed By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
@@ -1640,11 +1773,34 @@ This section provides details for each class and property defined by Core Domain
    </dl>
   </div>
  </div>
+ <div class="entity" id="achieves">
+  <h3>achieves<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#achieves</p>
+  <div class="comment">
+   <span class="markdown">relates an Event to a Goal, indicating that an Event defines a Goal.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Event" title="https://onto.colossi.network/cdo#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Goal" title="https://onto.colossi.network/cdo#Goal">Goal</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="acknowledges">
   <h3>acknowledges<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://onto.colossi.network/cdo#acknowledges</p>
   <div class="comment">
-   <span class="markdown">relates a Receipt to a Notice, indicating that a Receipt acknowledges a Notice.</span>
+   <span class="markdown">relates a Receipt to a Packet, indicating that a Receipt acknowledges a Packet.</span>
   </div>
   <div class="description">
    <dl>
@@ -1658,7 +1814,7 @@ This section provides details for each class and property defined by Core Domain
      has range
     </dt>
     <dd>
-     <a href="#Notice" title="https://onto.colossi.network/cdo#Notice">Notice</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Packet" title="https://onto.colossi.network/cdo#Packet">Packet</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -1686,34 +1842,11 @@ This section provides details for each class and property defined by Core Domain
    </dl>
   </div>
  </div>
- <div class="entity" id="aimsToward">
-  <h3>aims Toward<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#aimsToward</p>
-  <div class="comment">
-   <span class="markdown">relates a Behaviour to a Goal, indicating that a Behaviour aims toward a Goal.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#Behaviour" title="https://onto.colossi.network/cdo#Behaviour">Behaviour</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#Goal" title="https://onto.colossi.network/cdo#Goal">Goal</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
  <div class="entity" id="annotates">
   <h3>annotates<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://onto.colossi.network/cdo#annotates</p>
   <div class="comment">
-   <span class="markdown">relates a Note to a Text, indicating that a Note annotates a Text.</span>
+   <span class="markdown">relates a Note to a Packet, indicating that a Note annotates a Packet.</span>
   </div>
   <div class="description">
    <dl>
@@ -1727,16 +1860,16 @@ This section provides details for each class and property defined by Core Domain
      has range
     </dt>
     <dd>
-     <a href="#Text" title="https://onto.colossi.network/cdo#Text">Text</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Packet" title="https://onto.colossi.network/cdo#Packet">Packet</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="authorizes">
-  <h3>authorizes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#authorizes</p>
+ <div class="entity" id="attributedTo">
+  <h3>attributed To<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#attributedTo</p>
   <div class="comment">
-   <span class="markdown">relates a Policy to a Notice, indicating that a Policy authorizes a Notice.</span>
+   <span class="markdown">relates an Event to a Reason, indicating that an Event is attributed to a Reason.</span>
   </div>
   <div class="description">
    <dl>
@@ -1744,13 +1877,13 @@ This section provides details for each class and property defined by Core Domain
      has domain
     </dt>
     <dd>
-     <a href="#Policy" title="https://onto.colossi.network/cdo#Policy">Policy</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Event" title="https://onto.colossi.network/cdo#Event">Event</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#Notice" title="https://onto.colossi.network/cdo#Notice">Notice</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Reason" title="https://onto.colossi.network/cdo#Reason">Reason</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -1778,29 +1911,6 @@ This section provides details for each class and property defined by Core Domain
    </dl>
   </div>
  </div>
- <div class="entity" id="conditions">
-  <h3>conditions<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#conditions</p>
-  <div class="comment">
-   <span class="markdown">relates a Passive to a Behaviour, indicating that a Passive conditions a Behaviour.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#Passive" title="https://onto.colossi.network/cdo#Passive">Passive</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#Behaviour" title="https://onto.colossi.network/cdo#Behaviour">Behaviour</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
  <div class="entity" id="constructs">
   <h3>constructs<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://onto.colossi.network/cdo#constructs</p>
@@ -1824,11 +1934,74 @@ This section provides details for each class and property defined by Core Domain
    </dl>
   </div>
  </div>
+ <div class="entity" id="contextualizes">
+  <h3>contextualizes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#contextualizes</p>
+  <div class="comment">
+   <span class="markdown">relates a Object to a Concept, indicating that a Concept contexualizes an Object.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Object" title="https://onto.colossi.network/cdo#Object">Object</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="conveys">
+  <h3>conveys<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#conveys</p>
+  <div class="comment">
+   <span class="markdown">relates a Packet to a Payload, indicating that a Packet conveys a Method.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Packet" title="https://onto.colossi.network/cdo#Packet">Packet</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Payload" title="https://onto.colossi.network/cdo#Payload">Payload</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="declares">
+  <h3>declares<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#declares</p>
+  <div class="comment">
+   <span class="markdown">relates a Packet to a Method, indicating that a Packet declares a Method.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Packet" title="https://onto.colossi.network/cdo#Packet">Packet</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Method" title="https://onto.colossi.network/cdo#Method">Method</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="defines">
   <h3>defines<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://onto.colossi.network/cdo#defines</p>
   <div class="comment">
-   <span class="markdown">relates a Concept to a Term, indicating that a Concept defines a Term.</span>
+   <span class="markdown">relates a Concept to a Goal, indicating that a Concept defines a Goal.</span>
   </div>
   <div class="description">
    <dl>
@@ -1842,7 +2015,7 @@ This section provides details for each class and property defined by Core Domain
      has range
     </dt>
     <dd>
-     <a href="#Term" title="https://onto.colossi.network/cdo#Term">Term</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Goal" title="https://onto.colossi.network/cdo#Goal">Goal</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -1893,29 +2066,6 @@ This section provides details for each class and property defined by Core Domain
    </dl>
   </div>
  </div>
- <div class="entity" id="documents">
-  <h3>documents<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#documents</p>
-  <div class="comment">
-   <span class="markdown">relates a Record to a Note, indicating that a Record documents a Note.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#Record" title="https://onto.colossi.network/cdo#Record">Record</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#Note" title="https://onto.colossi.network/cdo#Note">Note</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
  <div class="entity" id="encapsulates">
   <h3>encapsulates<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://onto.colossi.network/cdo#encapsulates</p>
@@ -1935,6 +2085,29 @@ This section provides details for each class and property defined by Core Domain
     </dt>
     <dd>
      <a href="#Payload" title="https://onto.colossi.network/cdo#Payload">Payload</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="encodes">
+  <h3>encodes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#encodes</p>
+  <div class="comment">
+   <span class="markdown">relates a Payload to a State, indicating that a Payload encodes a State.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Payload" title="https://onto.colossi.network/cdo#Payload">Payload</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#State" title="https://onto.colossi.network/cdo#State">State</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -1966,7 +2139,7 @@ This section provides details for each class and property defined by Core Domain
   <h3>exchanged Through<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://onto.colossi.network/cdo#exchangedThrough</p>
   <div class="comment">
-   <span class="markdown">relates an Object to an Action, indicating that an Object exchanged through an Action.</span>
+   <span class="markdown">relates a Domain to an Action, indicating that a Domain is exchanged through an Action.</span>
   </div>
   <div class="description">
    <dl>
@@ -1974,36 +2147,13 @@ This section provides details for each class and property defined by Core Domain
      has domain
     </dt>
     <dd>
-     <a href="#Object" title="https://onto.colossi.network/cdo#Object">Object</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Domain" title="https://onto.colossi.network/cdo#Domain">Domain</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
      <a href="#Action" title="https://onto.colossi.network/cdo#Action">Action</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="frames">
-  <h3>frames<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#frames</p>
-  <div class="comment">
-   <span class="markdown">relates a Perspective to an Objective, indicating that a Perspective frames an Objective.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#Perspective" title="https://onto.colossi.network/cdo#Perspective">Perspective</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#Objective" title="https://onto.colossi.network/cdo#Objective">Objective</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -2077,29 +2227,6 @@ This section provides details for each class and property defined by Core Domain
    </dl>
   </div>
  </div>
- <div class="entity" id="interprets">
-  <h3>interprets<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#interprets</p>
-  <div class="comment">
-   <span class="markdown">relates a Frame to a Parameter, indicating that a Frame interprets a Parameter.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#Frame" title="https://onto.colossi.network/cdo#Frame">Frame</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#Parameter" title="https://onto.colossi.network/cdo#Parameter">Parameter</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
  <div class="entity" id="invokes">
   <h3>invokes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://onto.colossi.network/cdo#invokes</p>
@@ -2119,6 +2246,29 @@ This section provides details for each class and property defined by Core Domain
     </dt>
     <dd>
      <a href="#Function" title="https://onto.colossi.network/cdo#Function">Function</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isAcknowledgedBy">
+  <h3>is Acknowledged By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isAcknowledgedBy</p>
+  <div class="comment">
+   <span class="markdown">relates a Notice to a Receipt, inverse of isAcknowlegedBy, indicating that a Notice is acknowledged by a Receipt.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Notice" title="https://onto.colossi.network/cdo#Notice">Notice</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Receipt" title="https://onto.colossi.network/cdo#Receipt">Receipt</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -2215,6 +2365,29 @@ This section provides details for each class and property defined by Core Domain
    </dl>
   </div>
  </div>
+ <div class="entity" id="isCapturedBy">
+  <h3>is Captured By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isCapturedBy</p>
+  <div class="comment">
+   <span class="markdown">relates a Payload to a Record, indicating that a Payload is capturted by a Record.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Payload" title="https://onto.colossi.network/cdo#Payload">Payload</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Record" title="https://onto.colossi.network/cdo#Record">Record</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="isCommittedTo">
   <h3>is Committed To<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isCommittedTo</p>
@@ -2234,6 +2407,52 @@ This section provides details for each class and property defined by Core Domain
     </dt>
     <dd>
      <a href="#Log" title="https://onto.colossi.network/cdo#Log">Log</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isConsumedBy">
+  <h3>is Consumed By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isConsumedBy</p>
+  <div class="comment">
+   <span class="markdown">relates a Form to a Mechanism, indicating that a Form is consumed by a Mechanism.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Form" title="https://onto.colossi.network/cdo#Form">Form</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Mechanism" title="https://onto.colossi.network/cdo#Mechanism">Mechanism</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isDefinedBy">
+  <h3>is Defined By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isDefinedBy</p>
+  <div class="comment">
+   <span class="markdown">relates a Concept to a Term, indicating that a Concept is defined by a Term.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Concept" title="https://onto.colossi.network/cdo#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Term" title="https://onto.colossi.network/cdo#Term">Term</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -2265,7 +2484,7 @@ This section provides details for each class and property defined by Core Domain
   <h3>is Driven By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isDrivenBy</p>
   <div class="comment">
-   <span class="markdown">relates a Domain to a Reason, indicating that a Domain is driven by a Reason.</span>
+   <span class="markdown">relates an Action to a Reason, indicating that an Action is driven by a Reason.</span>
   </div>
   <div class="description">
    <dl>
@@ -2273,7 +2492,7 @@ This section provides details for each class and property defined by Core Domain
      has domain
     </dt>
     <dd>
-     <a href="#Domain" title="https://onto.colossi.network/cdo#Domain">Domain</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Action" title="https://onto.colossi.network/cdo#Action">Action</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -2284,11 +2503,11 @@ This section provides details for each class and property defined by Core Domain
    </dl>
   </div>
  </div>
- <div class="entity" id="isExpressedBy">
-  <h3>is Expressed By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isExpressedBy</p>
+ <div class="entity" id="isExplainedBy">
+  <h3>is Explained By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isExplainedBy</p>
   <div class="comment">
-   <span class="markdown">relates a Concept to a Frame, indicating that a Concept is expressed by a Frame.</span>
+   <span class="markdown">relates a Policy to a Note, indicating that a Policy is explained by a Note.</span>
   </div>
   <div class="description">
    <dl>
@@ -2296,13 +2515,13 @@ This section provides details for each class and property defined by Core Domain
      has domain
     </dt>
     <dd>
-     <a href="#Concept" title="https://onto.colossi.network/cdo#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Policy" title="https://onto.colossi.network/cdo#Policy">Policy</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#Frame" title="https://onto.colossi.network/cdo#Frame">Frame</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Note" title="https://onto.colossi.network/cdo#Note">Note</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -2334,7 +2553,7 @@ This section provides details for each class and property defined by Core Domain
   <h3>is Instance Of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isInstanceOf</p>
   <div class="comment">
-   <span class="markdown">relates an Action to a Purpose, indicating that an Action is instance of a Purpose.</span>
+   <span class="markdown">relates an Action to a Method, indicating that an Action is instance of a Method.</span>
   </div>
   <div class="description">
    <dl>
@@ -2348,16 +2567,16 @@ This section provides details for each class and property defined by Core Domain
      has range
     </dt>
     <dd>
-     <a href="#Purpose" title="https://onto.colossi.network/cdo#Purpose">Purpose</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Method" title="https://onto.colossi.network/cdo#Method">Method</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="isModifiedBy">
-  <h3>is Modified By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isModifiedBy</p>
+ <div class="entity" id="isIssuedUnder">
+  <h3>is Issued Under<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isIssuedUnder</p>
   <div class="comment">
-   <span class="markdown">relates a Term to a Parameter, indicating that a Term is modified by a Parameter.</span>
+   <span class="markdown">relates a Receipt to a Policy, indicating that a Receipt is issued under (according to) a Policy.</span>
   </div>
   <div class="description">
    <dl>
@@ -2365,13 +2584,13 @@ This section provides details for each class and property defined by Core Domain
      has domain
     </dt>
     <dd>
-     <a href="#Term" title="https://onto.colossi.network/cdo#Term">Term</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Receipt" title="https://onto.colossi.network/cdo#Receipt">Receipt</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#Parameter" title="https://onto.colossi.network/cdo#Parameter">Parameter</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Policy" title="https://onto.colossi.network/cdo#Policy">Policy</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -2445,6 +2664,29 @@ This section provides details for each class and property defined by Core Domain
    </dl>
   </div>
  </div>
+ <div class="entity" id="isRefinedBy">
+  <h3>is Refined By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isRefinedBy</p>
+  <div class="comment">
+   <span class="markdown">relates a Term to a Parameter, indicating that a Term is refined by a Parameter.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Term" title="https://onto.colossi.network/cdo#Term">Term</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Parameter" title="https://onto.colossi.network/cdo#Parameter">Parameter</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="isRegisteredBy">
   <h3>is Registered By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isRegisteredBy</p>
@@ -2472,7 +2714,7 @@ This section provides details for each class and property defined by Core Domain
   <h3>is Represented By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isRepresentedBy</p>
   <div class="comment">
-   <span class="markdown">relates a State to a Chart, indicating that a State is represented by a Chart.</span>
+   <span class="markdown">relates a Attribute to a Card, indicating that an Attribute is represented by a Card.</span>
   </div>
   <div class="description">
    <dl>
@@ -2480,13 +2722,42 @@ This section provides details for each class and property defined by Core Domain
      has domain
     </dt>
     <dd>
+     <a href="#Attribute" title="https://onto.colossi.network/cdo#Attribute">Attribute</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
      <a href="#State" title="https://onto.colossi.network/cdo#State">State</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
+     <a href="#Card" title="https://onto.colossi.network/cdo#Card">Card</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
      <a href="#Chart" title="https://onto.colossi.network/cdo#Chart">Chart</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isScopedBy">
+  <h3>is Scoped By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isScopedBy</p>
+  <div class="comment">
+   <span class="markdown">relates a Concept to a Scheme, indicating that a Concept is scoped by a Scheme.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Concept" title="https://onto.colossi.network/cdo#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Scheme" title="https://onto.colossi.network/cdo#Scheme">Scheme</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -2495,7 +2766,7 @@ This section provides details for each class and property defined by Core Domain
   <h3>is Structured By<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://onto.colossi.network/cdo#isStructuredBy</p>
   <div class="comment">
-   <span class="markdown">relates an Object to a Scheme, indicating that an Object is structured by a Scheme.</span>
+   <span class="markdown">relates a Parameter to a Frame, indicating that a Parameter is structured by a Frame.</span>
   </div>
   <div class="description">
    <dl>
@@ -2505,9 +2776,15 @@ This section provides details for each class and property defined by Core Domain
     <dd>
      <a href="#Object" title="https://onto.colossi.network/cdo#Object">Object</a> <sup class="type-c" title="class">c</sup>
     </dd>
+    <dd>
+     <a href="#Parameter" title="https://onto.colossi.network/cdo#Parameter">Parameter</a> <sup class="type-c" title="class">c</sup>
+    </dd>
     <dt>
      has range
     </dt>
+    <dd>
+     <a href="#Frame" title="https://onto.colossi.network/cdo#Frame">Frame</a> <sup class="type-c" title="class">c</sup>
+    </dd>
     <dd>
      <a href="#Scheme" title="https://onto.colossi.network/cdo#Scheme">Scheme</a> <sup class="type-c" title="class">c</sup>
     </dd>
@@ -2641,36 +2918,19 @@ This section provides details for each class and property defined by Core Domain
      has domain
     </dt>
     <dd>
+     <a href="#Action" title="https://onto.colossi.network/cdo#Action">Action</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
      <a href="#Log" title="https://onto.colossi.network/cdo#Log">Log</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
+     <a href="#Event" title="https://onto.colossi.network/cdo#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
      <a href="#Stemma" title="https://onto.colossi.network/cdo#Stemma">Stemma</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="qualifies">
-  <h3>qualifies<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#qualifies</p>
-  <div class="comment">
-   <span class="markdown">relates a Perspective to a Subjective, indicating that a Perspective qualifies a Subjective.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#Perspective" title="https://onto.colossi.network/cdo#Perspective">Perspective</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#Subjective" title="https://onto.colossi.network/cdo#Subjective">Subjective</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -2721,11 +2981,11 @@ This section provides details for each class and property defined by Core Domain
    </dl>
   </div>
  </div>
- <div class="entity" id="stimulates">
-  <h3>stimulates<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#stimulates</p>
+ <div class="entity" id="specifies">
+  <h3>specifies<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#specifies</p>
   <div class="comment">
-   <span class="markdown">relates an Active to a Behaviour, indicating that an Active stimulates a Behaviour.</span>
+   <span class="markdown">relates a Concept to a Method, indicating that a Concept specifiesa Method.</span>
   </div>
   <div class="description">
    <dl>
@@ -2733,13 +2993,36 @@ This section provides details for each class and property defined by Core Domain
      has domain
     </dt>
     <dd>
-     <a href="#Active" title="https://onto.colossi.network/cdo#Active">Active</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Concept" title="https://onto.colossi.network/cdo#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#Behaviour" title="https://onto.colossi.network/cdo#Behaviour">Behaviour</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Method" title="https://onto.colossi.network/cdo#Method">Method</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="stores">
+  <h3>stores<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#stores</p>
+  <div class="comment">
+   <span class="markdown">relates a Record to a Form, indicating that a Record storesa Form.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Record" title="https://onto.colossi.network/cdo#Record">Record</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Form" title="https://onto.colossi.network/cdo#Form">Form</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -2748,7 +3031,7 @@ This section provides details for each class and property defined by Core Domain
   <h3>supports<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://onto.colossi.network/cdo#supports</p>
   <div class="comment">
-   <span class="markdown">relates a Text to a Stemma, indicating that a Text supports a Stemma.</span>
+   <span class="markdown">relates a Fact to a Purpose, indicating that a Fact supports a Purpose.</span>
   </div>
   <div class="description">
    <dl>
@@ -2756,11 +3039,17 @@ This section provides details for each class and property defined by Core Domain
      has domain
     </dt>
     <dd>
+     <a href="#Fact" title="https://onto.colossi.network/cdo#Fact">Fact</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
      <a href="#Text" title="https://onto.colossi.network/cdo#Text">Text</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
+    <dd>
+     <a href="#Purpose" title="https://onto.colossi.network/cdo#Purpose">Purpose</a> <sup class="type-c" title="class">c</sup>
+    </dd>
     <dd>
      <a href="#Stemma" title="https://onto.colossi.network/cdo#Stemma">Stemma</a> <sup class="type-c" title="class">c</sup>
     </dd>
@@ -2809,6 +3098,29 @@ This section provides details for each class and property defined by Core Domain
     </dt>
     <dd>
      <a href="#Effect" title="https://onto.colossi.network/cdo#Effect">Effect</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="yields">
+  <h3>yields<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://onto.colossi.network/cdo#yields</p>
+  <div class="comment">
+   <span class="markdown">relates a Frame to a Notice, indicating that a Frame yields a Notice.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Frame" title="https://onto.colossi.network/cdo#Frame">Frame</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Notice" title="https://onto.colossi.network/cdo#Notice">Notice</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
